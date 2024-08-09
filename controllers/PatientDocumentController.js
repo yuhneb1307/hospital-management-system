@@ -1,4 +1,4 @@
-const PatientDocument = require('../models/PatientDocument');
+const PatientDocument = require("../models/PatientDocument");
 
 exports.create = async (req, res) => {
   try {
@@ -13,7 +13,9 @@ exports.create = async (req, res) => {
 
 exports.getByPatientId = async (req, res) => {
   try {
-    const documents = await PatientDocument.find({ patientId: req.params.patientId });
+    const documents = await PatientDocument.find({
+      patientId: req.params.patientId,
+    });
     res.status(200).send(documents);
   } catch (err) {
     res.status(400).send(err.message);

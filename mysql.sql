@@ -1,4 +1,6 @@
+CREATE DATABASE HospitalManagement;
 
+USE HospitalManagement;
 
 CREATE TABLE Patients (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -13,7 +15,7 @@ CREATE TABLE Patients (
 CREATE TABLE Staff (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  job_type ENUM('doctor', 'nurse', 'admin'),
+  job_type ENUM('Doctor', 'Nurse', 'Admin'),
   qualifications TEXT,
   department_id INT,
   schedule TEXT,
