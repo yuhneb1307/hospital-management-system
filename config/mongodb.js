@@ -11,25 +11,34 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // PatientDocuments Schema:
 const PatientDocumentSchema = new mongoose.Schema({
-  patientId: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient', required: true },
+  patientId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Patient",
+    required: true,
+  },
   documentType: { type: String, required: true }, // e.g., doctor's notes, diagnostic images, lab results
   content: { type: String, required: true },
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
 });
-module.exports = mongoose.model('PatientDocument', PatientDocumentSchema);
+module.exports = mongoose.model("PatientDocument", PatientDocumentSchema);
 
 // StaffDocuments Schema:
 const StaffDocumentSchema = new mongoose.Schema({
-    staffId: { type: mongoose.Schema.Types.ObjectId, ref: 'Staff', required: true },
-    documentType: { type: String, required: true }, // e.g., certificates, training materials
-    content: { type: String, required: true },
-    date: { type: Date, default: Date.now }
-  });
-  module.exports = mongoose.model('StaffDocument', StaffDocumentSchema);
+  staffId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Staff",
+    required: true,
+  },
+  documentType: { type: String, required: true }, // e.g., certificates, training materials
+  content: { type: String, required: true },
+  date: { type: Date, default: Date.now },
+});
+module.exports = mongoose.model("StaffDocument", StaffDocumentSchema);
 
-// Example 2 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://quynguyen2436:<password>@cluster0.8xjsbu3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// Example 2
+const { MongoClient, ServerApiVersion } = require("mongodb");
+const uri =
+  "mongodb+srv://quynguyen2436:<password>@cluster0.8xjsbu3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -37,7 +46,7 @@ const client = new MongoClient(uri, {
     version: ServerApiVersion.v1,
     strict: true,
     deprecationErrors: true,
-  }
+  },
 });
 
 async function run() {
@@ -46,7 +55,9 @@ async function run() {
     await client.connect();
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    console.log(
+      "Pinged your deployment. You successfully connected to MongoDB!"
+    );
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
