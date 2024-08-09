@@ -20,15 +20,6 @@ const mysqlConnection = require('./config/db'); // MySQL connection
 const mongoose = require('mongoose');
 const mongoConfig = require('./config/mongodb'); // MongoDB connection
 
-// Connect to MongoDB using your config
-mongoose.connect(mongoConfig.uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
-  console.log('Connected to MongoDB!');
-}).catch(err => {
-  console.error('Could not connect to MongoDB', err);
-});
 
 // Basic route for testing the server
 app.get('/', (req, res) => {
