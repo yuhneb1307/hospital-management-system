@@ -1,5 +1,3 @@
-CREATE DATABASE HospitalManagement;
-
 USE dataProject;
 
 DROP TABLE Patients;
