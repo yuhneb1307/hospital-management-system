@@ -62,11 +62,26 @@ INSERT INTO Departments (name) VALUES
 ('Emergency Care'),
 ('Administration');
 
+  -- _id: mongoose.Schema.Types.ObjectId,
+  -- username: { type: String, required: true, unique: true },
+  -- password: { type: String, required: true },
+  -- role: { type: String, required: true }, // e.g., admin, doctor, nurse, patient
+  -- id: { type: Number, required: true },
+
+-- Create User table
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username TEXT,
+  password TEXT,
+  role ENUM('Doctor', 'Nurse', 'Admin', 'Patient'),
+  user_id INT
+) ENGINE = InnoDB;
+
 -- Insert data into Staff table
 INSERT INTO Staff (name, job_type, qualifications, department_id, schedule, salary) VALUES
-('Dr. Alice Johnson', 'Doctor', 'MD, Cardiology', 1, 'Mon-Fri 9am-5pm', 150000.00),
-('Nurse Bob Brown', 'Nurse', 'RN, Emergency Care', 2, 'Wed-Sun 7am-3pm', 80000.00),
-('Mary Green', 'Admin', 'Bachelor of Business Administration', 3, 'Mon-Fri 8am-4pm', 60000.00);
+('Dr. Alice Johnson', 'Doctor', 'MD, Cardiology', 1, 'Full week', 150000.00),
+('Nurse Bob Brown', 'Nurse', 'RN, Emergency Care', 2, 'On-call Sunday', 80000.00),
+('Mary Green', 'Admin', 'Bachelor of Business Administration', 3, 'Off-Sunday', 60000.00);
 
 -- Insert data into Patients table
 INSERT INTO Patients (name, age, gender, contact_details, allergies, treatment_history) VALUES
@@ -83,9 +98,16 @@ INSERT INTO Relationships (staff_id, manager_id) VALUES
 (2, 1),  -- Nurse Bob Brown is managed by Dr. Alice Johnson
 (3, 1);  -- Mary Green (Admin) is managed by Dr. Alice Johnson
 
+INSERT INTO users (id, username, password, role, user_id) VALUES
+(1, 'AliceJohnson', 'password1', 'Doctor', 1),
+(2, 'BobBrown', 'password2', 'Nurse', 2),
+(3, 'MaryGreen', 'password3', 'Admin', 3),
+(4, 'JohnDoe', 'password4', 'Patient', 1);
+
 -- Select all data from each table
 SELECT * FROM Departments;
 SELECT * FROM Patients;
 SELECT * FROM Staff;
 SELECT * FROM Appointments;
 SELECT * FROM Relationships;
+SELECT * FROM users;

@@ -1,301 +1,288 @@
-﻿_id,name,job_type,qualifications,department_id,schedule,salary
-136,Susan Hurt,Doctor,PhD,8,Off-Sunday,$294291.37
-131,Codi Chaplyn,Nurse,LPN,1,Full week,$69715.87
-244,Pembroke Piddlehinton,Nurse,CRNA,9,Full week,$221281.42
-248,Taylor Learmont,Doctor,DM,3,Off-Sunday,$99794.28
-163,Nona Montacute,Nurse,BSN,2,Full week,$58681.46
-117,Cherice Jakab,Doctor,DO,1,Full week,$102018.41
-113,Darcy Macklin,Nurse,BSN,3,Full week,$134554.61
-109,Dannel Findlow,Doctor,MBBS,4,On-call Sunday,$97021.27
-58,Ardra Archbould,Nurse,DNP,6,Full week,$338938.64
-216,Ches Ca,Nurse,NP,5,Full week,$292647.21
-190,Terencio Roly,Doctor,MBBS,4,On-call Sunday,$361000.64
-166,Freeland Scottini,Doctor,DM,3,Off-Sunday,$135310.85
-26,Kassandra Osmant,Nurse,BSN,8,Full week,$184673.93
-254,Beale Johnston,Nurse,NP,4,Full week,$136984.84
-98,Marita Arthur,Nurse,DNP,6,Full week,$340983.01
-220,Allayne Reams,Nurse,BSN,2,Full week,$132481.88
-196,Margalit Drover,Doctor,MD,7,Full week,$302200.18
-237,Bettine Caddies,Doctor,MBBS,4,On-call Sunday,$311884.72
-231,Milli Verling,Doctor,DM,10,Off-Sunday,$62812.76
-185,Liva Wimpress,Doctor,MBBS,7,Full week,$354340.25
-54,Jenny Tsarovic,Nurse,CNS,4,Off-Sunday,$131816.57
-178,Dreddy Konneke,Nurse,DNP,6,Full week,$64056.57
-139,Kelley Redhills,Doctor,MD,6,On-call Sunday,$68304.80
-57,Anabal Gresch,Doctor,MBBS,9,On-call Sunday,$221243.97
-166,Agna Thurlbourne,Doctor,DM,5,Off-Sunday,$207936.79
-113,Constancia Manifold,Nurse,CRNA,9,Full week,$77614.89
-4,Rhianon Bromont,Doctor,FACS,9,On-call Sunday,$384537.92
-76,Bryon Setchell,Doctor,DM,5,Off-Sunday,$337075.48
-277,Vonnie Markovich,Doctor,MD,2,Full week,$148383.71
-245,Lanny Ridsdale,Nurse,LPN,1,Full week,$228391.77
-83,Morten Aubery,Doctor,MD,3,Full week,$371810.61
-99,Wolfie MacMaykin,Doctor,DM,3,Off-Sunday,$181950.70
-108,Gay Costellow,Nurse,BSN,8,Full week,$251289.51
-101,My Longhorne,Doctor,DO,3,Full week,$241673.66
-289,Hanson Endicott,Doctor,DM,3,Off-Sunday,$169146.17
-199,Merlina Erat,Nurse,BSN,5,Full week,$155393.48
-150,Egbert Spratley,Nurse,NP,6,Full week,$382182.49
-60,Lon Rochford,Doctor,FRCP,6,Off-Sunday,$253103.26
-84,Clywd Brumfield,Nurse,CRNA,9,Full week,$182507.21
-224,Justinn Iacobini,Nurse,RN,4,Full week,$188445.41
-67,Shaun Champe,Doctor,FRCP,5,Off-Sunday,$302270.68
-20,Joy Swansbury,Doctor,FACS,1,Full week,$68660.26
-265,Tanya Skittreal,Doctor,DM,5,Off-Sunday,$225926.33
-80,Evangelia Heindle,Doctor,FACS,1,Full week,$240539.28
-275,Edin Clemmow,Doctor,PhD,8,Off-Sunday,$195532.14
-85,Jo Noble,Nurse,LPN,1,Full week,$259094.88
-23,Lanae Yegorshin,Doctor,DM,10,Off-Sunday,$226467.33
-11,Fitzgerald Etherson,Nurse,CRNA,9,Full week,$378856.23
-41,Wylma Kinnier,Doctor,MD,5,Full week,$275145.82
-77,Horten Mattheis,Doctor,FACS,9,Full week,$326452.65
-131,Amelie Lorroway,Nurse,CRNA,9,Full week,$337502.74
-26,Rollins Cottel,Nurse,DNP,6,Full week,$381338.10
-293,Hamid Menary,Doctor,FRCP,10,Off-Sunday,$219019.77
-299,Dulcea Lowdiane,Doctor,FACS,4,On-call Sunday,$303510.66
-30,Madeline Dufore,Nurse,RN,10,Full week,$144270.06
-278,Marya Sexton,Nurse,LPN,1,Full week,$196967.76
-18,Brigida Clarkson,Nurse,NP,4,Full week,$313530.43
-63,Avivah Searchfield,Nurse,NP,3,Full week,$237036.00
-283,Ezra Skuce,Nurse,DNP,6,Full week,$261542.32
-241,Thia Robuchon,Doctor,DO,6,Full week,$83004.82
-24,Peyton Osgorby,Nurse,CNS,8,Off-Sunday,$304602.98
-229,Brigham Hebborne,Nurse,RN,9,Full week,$132853.65
-140,Isidore Aspinal,Nurse,CNS,6,Off-Sunday,$102712.97
-281,Rooney Choppen,Doctor,DO,5,Full week,$130358.36
-196,Lorens Clutheram,Doctor,MD,10,On-call Sunday,$225324.26
-243,Vivienne Kinchley,Nurse,DNP,6,Full week,$191540.98
-223,Zachery Bowie,Nurse,CRNA,9,Full week,$221312.57
-257,Hertha Yeandel,Doctor,FACS,9,Full week,$179103.75
-271,Jolynn Fattori,Doctor,FRCP,7,Off-Sunday,$141194.78
-37,Doria Goreway,Doctor,DM,5,Off-Sunday,$241050.16
-177,Normand Manuel,Doctor,FACS,4,On-call Sunday,$290102.09
-107,Cullan Barwick,Nurse,RN,2,Full week,$117095.79
-269,Annabel O'Towey,Nurse,LPN,4,Full week,$55578.77
-177,Licha Willstrop,Nurse,DNP,6,Full week,$338571.75
-39,Winfield Kures,Doctor,DO,6,Full week,$290668.32
-275,Adan Somerlie,Nurse,BSN,4,Full week,$153772.72
-133,Tiffani Tansey,Doctor,DM,5,Off-Sunday,$257009.46
-95,Alessandra Clitherow,Nurse,CNS,1,Off-Sunday,$368848.65
-49,Antoinette Growy,Nurse,NP,7,Full week,$197276.46
-101,Danny Van Cassel,Nurse,RN,2,Full week,$351016.52
-105,Antonino Shatliff,Nurse,NP,4,Full week,$361355.20
-251,Chrissy Thebeau,Doctor,FRCP,2,Off-Sunday,$144473.38
-106,Aaren Delacote,Nurse,BSN,9,Full week,$189726.43
-108,Madelene Landell,Nurse,BSN,5,Full week,$140775.32
-171,Mace Swateridge,Nurse,CNS,5,Off-Sunday,$274665.86
-80,Camella Donaldson,Nurse,DNP,6,Full week,$301673.12
-175,Katha Wedderburn,Doctor,MD,2,Full week,$328609.87
-263,Noland Willarton,Doctor,PhD,8,Off-Sunday,$174384.90
-271,Meaghan Thake,Nurse,BSN,4,Full week,$68108.20
-256,Adlai Karoly,Doctor,DM,5,Off-Sunday,$67636.45
-4,Aurelie Swayne,Nurse,LPN,1,Full week,$201851.85
-241,Kaine Deval,Doctor,MBBS,4,On-call Sunday,$364234.67
-196,Yoshiko Surphliss,Nurse,CRNA,9,Full week,$300073.06
-263,Curtice Witchell,Nurse,CNS,10,Off-Sunday,$374275.28
-255,Ludvig Gundrey,Nurse,CNS,1,Off-Sunday,$209239.89
-109,Harriette Collick,Nurse,RN,6,Full week,$332153.44
-281,Andrus Povele,Doctor,DM,5,Off-Sunday,$281309.05
-33,Quentin Cicchillo,Doctor,MD,5,Full week,$244977.54
-106,Rosanne Auld,Doctor,FACS,4,On-call Sunday,$215679.14
-79,Rubina Lalonde,Doctor,MBBS,4,Full week,$51538.64
-48,Noak Leydon,Doctor,FACS,9,On-call Sunday,$168487.86
-259,Juline Skelly,Nurse,LPN,4,Full week,$138694.12
-248,Loria Nuth,Doctor,FRCP,3,Off-Sunday,$245259.42
-52,Bernarr Stormonth,Doctor,FRCP,4,Off-Sunday,$179536.72
-217,Krissy Rearden,Nurse,NP,8,Full week,$67816.38
-161,Thornie McGaraghan,Nurse,RN,7,Full week,$333278.22
-82,Haskel Davitashvili,Nurse,NP,7,Full week,$260936.24
-20,Lucie Ruggles,Nurse,LPN,1,Full week,$284068.97
-175,Myles Shortall,Doctor,FRCP,8,Off-Sunday,$176569.70
-170,Rockie Sharphouse,Doctor,MD,9,On-call Sunday,$263661.87
-46,Korney Koppe,Nurse,RN,4,Full week,$394442.05
-202,Yorke Dymick,Doctor,FACS,4,Full week,$174765.41
-63,Amery Haws,Doctor,FRCP,2,Off-Sunday,$235340.26
-161,Hally Fogden,Doctor,FACS,1,Full week,$164900.78
-232,Gray Lavery,Nurse,LPN,4,Full week,$341121.29
-297,Bronson Jumonet,Doctor,MBBS,2,On-call Sunday,$144605.54
-179,Ofilia Devitt,Doctor,FRCP,7,Off-Sunday,$189945.14
-87,Taylor Hinz,Doctor,DO,7,Full week,$143545.71
-110,Deloria Firth,Doctor,MD,2,On-call Sunday,$215884.05
-274,Berny McNeill,Doctor,DM,5,Off-Sunday,$269816.81
-73,Phebe Kordovani,Nurse,CRNA,9,Full week,$243253.07
-53,Averil Taylot,Nurse,DNP,6,Full week,$144325.08
-19,Alix Wordsworth,Nurse,DNP,6,Full week,$213327.16
-151,Kassie Rosenau,Nurse,LPN,4,Full week,$349912.01
-112,Bride Brookesbie,Doctor,DO,1,Full week,$183926.87
-154,Prudi Markie,Nurse,CNS,9,Off-Sunday,$173801.42
-165,Heidi Passie,Nurse,LPN,1,Full week,$315400.50
-77,Burtie Mannock,Doctor,MD,4,Full week,$319892.94
-229,Eldin Scrooby,Nurse,NP,3,Full week,$313188.08
-123,Franklin Buy,Nurse,BSN,8,Full week,$185773.59
-266,Cindie Wardington,Doctor,DO,3,Full week,$131573.50
-59,Eamon Kempson,Nurse,DNP,6,Full week,$353834.11
-182,Rosamond Gilbanks,Nurse,NP,4,Full week,$102254.40
-231,Redd Schubbert,Nurse,DNP,6,Full week,$214391.93
-197,Aubree Whisby,Nurse,DNP,6,Full week,$60571.91
-244,Arny Mitcham,Doctor,MD,1,On-call Sunday,$330549.54
-52,Reinhard Danis,Nurse,LPN,1,Full week,$197381.75
-190,Courtnay Bastow,Nurse,DNP,6,Full week,$290255.56
-9,Celestia Peacocke,Nurse,NP,6,Full week,$65781.88
-224,Corly Reignard,Doctor,DO,9,Full week,$314823.39
-36,Deena Poag,Nurse,RN,8,Full week,$54608.63
-78,Cord Ruddlesden,Doctor,DO,5,Full week,$69001.09
-120,Hollis Simnel,Nurse,LPN,4,Full week,$257612.93
-63,Mirabella Durrett,Doctor,FACS,1,Full week,$182210.16
-109,Avictor Gatling,Doctor,MD,6,On-call Sunday,$211508.92
-234,Goober Docksey,Doctor,DM,3,Off-Sunday,$385384.67
-122,Lona Echallier,Nurse,DNP,6,Full week,$84956.78
-193,Kippy Mila,Doctor,MD,7,On-call Sunday,$312721.41
-15,Marlo Bourges,Doctor,DM,10,Off-Sunday,$209703.80
-149,Brewer Hlavac,Nurse,CNS,10,Off-Sunday,$319245.12
-96,Lorelle Jukubczak,Doctor,PhD,7,Off-Sunday,$257725.39
-135,Clywd Blaschek,Nurse,LPN,1,Full week,$73243.94
-61,Olive Swapp,Doctor,DM,3,Off-Sunday,$381634.35
-245,Herman Dymocke,Nurse,BSN,4,Full week,$305440.03
-235,Krissie Jaggard,Doctor,DM,10,Off-Sunday,$122521.25
-247,Maynord Hefford,Nurse,NP,6,Full week,$102811.62
-257,Evey Bradnick,Nurse,RN,3,Full week,$240083.34
-228,Chrysa Winspare,Nurse,BSN,9,Full week,$135736.15
-262,Brigida Sanbrooke,Doctor,FRCP,8,Off-Sunday,$155493.30
-119,Binnie Duffield,Doctor,MBBS,7,Full week,$240206.92
-106,Rodolph Doxey,Nurse,CRNA,9,Full week,$145103.34
-204,Whitney Shervil,Doctor,MBBS,4,On-call Sunday,$367529.42
-83,Griswold Skalls,Nurse,CNS,4,Off-Sunday,$182779.37
-296,Drona Draijer,Nurse,CNS,7,Off-Sunday,$336815.72
-294,Fremont Stoner,Nurse,DNP,6,Full week,$168709.43
-265,Ado Ponte,Doctor,MD,8,On-call Sunday,$335577.19
-143,Othilia Balassi,Doctor,DM,3,Off-Sunday,$118293.48
-198,Augustine Rosenvasser,Doctor,MBBS,9,On-call Sunday,$254134.42
-26,Kara-lynn Blanque,Doctor,MD,10,On-call Sunday,$120866.17
-128,Eb Inchley,Nurse,CRNA,9,Full week,$306920.19
-217,Brooks Fawcett,Doctor,FRCP,3,Off-Sunday,$51730.75
-197,Illa Hasted,Nurse,BSN,10,Full week,$250025.52
-12,Katharina Gwinnel,Nurse,CRNA,9,Full week,$365421.91
-288,Maxie Issakov,Nurse,CNS,8,Off-Sunday,$263888.22
-232,Kelsey Fillis,Doctor,FRCP,10,Off-Sunday,$204379.37
-224,Wolf Legrice,Doctor,MD,8,Full week,$264977.54
-28,Hally Germann,Doctor,DM,5,Off-Sunday,$117280.45
-28,Alvy Yaakov,Doctor,PhD,7,Off-Sunday,$178256.71
-180,Dimitry Martini,Nurse,BSN,10,Full week,$83036.45
-104,Timi Willgoss,Doctor,FACS,4,Full week,$318969.37
-196,Sasha Rulten,Doctor,DO,8,Full week,$102197.98
-96,Toddy Ordelt,Doctor,FRCP,6,Off-Sunday,$235259.11
-138,Chrysa Brightling,Nurse,NP,9,Full week,$303869.36
-288,Aloysius Fellon,Doctor,PhD,7,Off-Sunday,$71899.57
-37,Jerrilee Fluger,Doctor,DO,4,Full week,$231629.63
-242,Lemar Griffiths,Doctor,DM,3,Off-Sunday,$147038.78
-280,Nannie Bourgourd,Doctor,FACS,1,On-call Sunday,$167977.99
-79,Chandra Ingolotti,Nurse,BSN,2,Full week,$340397.44
-9,Kerry Flament,Nurse,CNS,9,Off-Sunday,$54447.00
-199,La verne Salasar,Doctor,MBBS,5,Full week,$60504.57
-260,Averil Burnsyde,Nurse,DNP,6,Full week,$153948.04
-13,Abbi Brugmann,Nurse,CNS,9,Off-Sunday,$303132.40
-212,Bili Chopy,Doctor,DM,10,Off-Sunday,$389247.24
-127,Elton Rackam,Nurse,BSN,10,Full week,$65240.72
-206,Ruth Peggs,Doctor,MD,6,On-call Sunday,$108952.19
-70,Nina Von Brook,Nurse,RN,8,Full week,$174367.43
-266,Tiffy Leman,Nurse,CNS,5,Off-Sunday,$75369.73
-271,Armstrong Ary,Doctor,FRCP,8,Off-Sunday,$342905.92
-296,Hetty Gladdin,Nurse,CRNA,9,Full week,$171107.80
-219,Antonia Quarrington,Nurse,CNS,4,Off-Sunday,$59137.46
-278,Butch Czaja,Nurse,LPN,4,Full week,$107558.78
-260,Sharline Fibbings,Doctor,DO,6,Full week,$189770.10
-141,Christabel Vesty,Doctor,MD,9,Full week,$244776.96
-150,Constanta Sabie,Nurse,RN,4,Full week,$147788.68
-294,Elroy Lyfe,Nurse,CRNA,9,Full week,$360556.09
-73,Cos Thiolier,Doctor,MD,6,On-call Sunday,$314192.05
-292,Dougie Meggison,Nurse,NP,10,Full week,$288441.81
-144,Susanne Halse,Nurse,LPN,1,Full week,$322822.48
-214,Perle Dunk,Nurse,DNP,6,Full week,$321189.49
-73,Carlynn Gunner,Nurse,BSN,2,Full week,$238044.77
-35,Timoteo Bernholt,Nurse,NP,4,Full week,$178162.29
-259,Ike Bruneton,Doctor,MD,5,Full week,$102340.06
-143,Eustacia McMains,Nurse,RN,1,Full week,$380803.68
-86,Broddy Birdseye,Nurse,RN,8,Full week,$166203.89
-210,Nelli Kytter,Nurse,BSN,10,Full week,$134949.55
-172,Thorn Clerke,Nurse,RN,4,Full week,$145418.71
-80,Netta Boyan,Nurse,NP,4,Full week,$343615.84
-68,Jenine Goldie,Nurse,NP,10,Full week,$188478.78
-280,Nathan Heazel,Doctor,PhD,2,Off-Sunday,$252952.73
-18,Salim Antonoyev,Doctor,MD,4,Full week,$355226.14
-265,Ansel Pinnock,Doctor,DO,4,Full week,$190242.52
-188,Prisca Rowe,Nurse,CRNA,9,Full week,$177847.84
-199,Cordi Gillcrist,Nurse,DNP,6,Full week,$337789.82
-78,Andi Lubomirski,Nurse,CNS,10,Off-Sunday,$112077.58
-290,Benn Broomhead,Doctor,FRCP,7,Off-Sunday,$227179.84
-286,Berny Edgeller,Doctor,FRCP,2,Off-Sunday,$118893.46
-47,Maureene Speck,Nurse,CNS,7,Off-Sunday,$217380.58
-179,Malorie Hairon,Doctor,DM,3,Off-Sunday,$114569.37
-82,Ania Philipart,Nurse,DNP,6,Full week,$310470.91
-133,Annamaria Anders,Nurse,CRNA,9,Full week,$260499.51
-218,Tarah Rizzini,Nurse,LPN,1,Full week,$270439.11
-133,Melly Cartwight,Doctor,FACS,4,On-call Sunday,$96685.71
-145,Claudia Wiggam,Doctor,DO,2,Full week,$159826.45
-277,Alfonse Eminson,Nurse,CRNA,9,Full week,$66264.57
-72,Leonora Grunson,Doctor,DM,10,Off-Sunday,$99472.12
-229,Amber Meins,Nurse,DNP,6,Full week,$198906.17
-282,Carroll Solland,Doctor,MD,7,Full week,$359064.77
-193,Jefferson Gioani,Doctor,FACS,9,On-call Sunday,$50053.27
-141,Ermentrude Le Grys,Doctor,FACS,1,Full week,$194745.06
-75,Burr Monsey,Doctor,FRCP,5,Off-Sunday,$252927.81
-163,Sawyere Raincin,Nurse,NP,3,Full week,$234521.04
-130,Verney Athey,Nurse,CRNA,9,Full week,$77695.71
-204,Clarine Pirrone,Doctor,PhD,2,Off-Sunday,$87907.50
-96,Kirby O'Connolly,Nurse,LPN,4,Full week,$358533.14
-94,Sidonia Josselsohn,Doctor,FRCP,6,Off-Sunday,$160869.18
-195,Sonnie Navarre,Nurse,CRNA,9,Full week,$349121.40
-190,Grazia Tookey,Doctor,DM,5,Off-Sunday,$353919.14
-263,Isabeau Meachen,Nurse,BSN,9,Full week,$250546.16
-19,Kelsey Pury,Doctor,PhD,7,Off-Sunday,$253039.09
-45,Pennie Loveday,Doctor,DO,1,Full week,$66185.64
-67,Shandie Rubenovic,Doctor,MD,8,Full week,$60080.75
-41,Eyde Orans,Nurse,DNP,6,Full week,$352998.30
-265,Valentino Potapczuk,Doctor,FACS,4,On-call Sunday,$141024.27
-31,Trina Novotne,Nurse,CRNA,9,Full week,$137727.75
-227,Evvy Milvarnie,Doctor,PhD,2,Off-Sunday,$213171.56
-152,Sebastian Mcwhinnie,Nurse,NP,9,Full week,$124879.18
-9,Taryn Elston,Nurse,DNP,6,Full week,$197673.65
-4,Daniel Addey,Doctor,FRCP,1,Off-Sunday,$375650.84
-37,Odilia Shillaber,Doctor,FACS,1,Full week,$289800.58
-7,Dwight Kurten,Doctor,DO,10,Full week,$164574.41
-24,Venita Eschalette,Nurse,NP,7,Full week,$219063.06
-78,Magdalena Callaby,Doctor,DO,4,Full week,$294073.86
-271,Josie Asgodby,Doctor,DM,10,Off-Sunday,$337236.03
-19,Annice Rippon,Doctor,MD,8,On-call Sunday,$363898.16
-68,Terry Dimeloe,Nurse,DNP,6,Full week,$322655.44
-176,Karil Boskell,Nurse,DNP,6,Full week,$265120.75
-240,Mahala Sommerled,Doctor,FRCP,10,Off-Sunday,$204600.87
-245,Budd Gilhool,Doctor,MBBS,4,Full week,$254654.34
-89,Indira Willshaw,Nurse,DNP,6,Full week,$389843.21
-193,Gray Storie,Doctor,DO,2,Full week,$330674.11
-34,Beilul Ascroft,Doctor,MD,7,On-call Sunday,$196835.89
-257,Hunfredo Sandcroft,Doctor,DM,3,Off-Sunday,$302160.15
-48,Waring Million,Doctor,DM,5,Off-Sunday,$263174.95
-79,Susann Thews,Doctor,MBBS,1,On-call Sunday,$373387.31
-215,Violante Paton,Nurse,CRNA,9,Full week,$86569.45
-294,Kurt Duncan,Nurse,CRNA,9,Full week,$253838.46
-199,Gannon Ramble,Nurse,BSN,10,Full week,$385680.95
-79,Holt Dowyer,Nurse,CNS,10,Off-Sunday,$259771.14
-210,Hailee Lammin,Doctor,FRCP,7,Off-Sunday,$53306.17
-274,Felita Trevor,Nurse,NP,10,Full week,$238740.73
-249,Trumann Cotterel,Nurse,CNS,4,Off-Sunday,$396925.73
-123,Lorenza Halahan,Doctor,DO,5,Full week,$372410.26
-280,Ram Sapp,Nurse,BSN,9,Full week,$322632.22
-38,Aldrich Jime,Doctor,FRCP,6,Off-Sunday,$108124.92
-73,Delila De Rye Barrett,Doctor,FRCP,3,Off-Sunday,$348730.60
-250,Dehlia McGaughie,Nurse,LPN,1,Full week,$91375.62
-273,Dorian Van der Velden,Doctor,MD,9,Full week,$346262.67
-112,Elijah De Meyer,Doctor,FRCP,9,Off-Sunday,$381973.17
-263,Ramona Blenkinsopp,Nurse,CNS,9,Off-Sunday,$165920.44
-20,Ash Henriksson,Nurse,BSN,9,Full week,$59697.42
-158,Grier Asprey,Doctor,MBBS,7,On-call Sunday,$259177.97
-20,Mikol Spong,Nurse,RN,7,Full week,$289978.41
-260,Sybille Cohn,Doctor,DO,9,Full week,$129237.52
-198,Tallulah Raulin,Nurse,DNP,6,Full week,$63294.81
-58,Fleurette Cattemull,Doctor,DM,10,Off-Sunday,$278676.19
-136,Adan Olpin,Doctor,FACS,4,On-call Sunday,$68918.44
-206,Celestina Geaves,Nurse,BSN,6,Full week,$231959.86
-52,Cammi Bruyns,Nurse,CRNA,9,Full week,$52515.78
-213,Pearle Tomaskov,Doctor,MD,7,On-call Sunday,$110420.04
-219,Paloma Sheekey,Doctor,MD,8,Full week,$79121.95
+_id,name,job_type,qualifications,department_id,schedule,salary
+1,Curtis Domotor,Doctor,DM,3,Off-Sunday,$344430.21
+2,Frank BURWIN,Nurse,CRNA,9,Full week,$377186.09
+3,Ernestus Myderscough,Doctor,DO,1,Full week,$91375.65
+4,Granthem Willoughway,Doctor,MD,5,On-call Sunday,$337409.32
+5,Minda McColl,Doctor,DO,9,Full week,$275949.88
+6,Kylynn Holyland,Nurse,CRNA,9,Full week,$113366.80
+7,Nikolia Richel,Doctor,MBBS,7,Full week,$298788.12
+8,Carol Shegog,Doctor,FRCP,9,Off-Sunday,$156213.30
+9,Annabal Crockett,Nurse,LPN,1,Full week,$331533.11
+10,Philomena Myford,Nurse,NP,4,Full week,$106379.59
+11,Moshe Niece,Nurse,CNS,5,Off-Sunday,$198814.53
+12,Kinnie Tranter,Nurse,LPN,1,Full week,$335929.51
+13,Marcelle Melrose,Nurse,BSN,4,Full week,$348696.69
+14,Loreen Brennenstuhl,Nurse,CNS,5,Off-Sunday,$396283.54
+15,Elenore Danbye,Nurse,DNP,6,Full week,$395225.98
+16,Hughie Mulroy,Doctor,FACS,9,Full week,$237200.23
+17,Veronika Moulding,Doctor,PhD,8,Off-Sunday,$136150.29
+18,Robbin Gennerich,Nurse,CNS,6,Off-Sunday,$116176.50
+19,Debora Menel,Doctor,PhD,2,Off-Sunday,$82307.91
+20,Chaim Iowarch,Nurse,NP,9,Full week,$65075.01
+21,Shana Campany,Doctor,MBBS,1,On-call Sunday,$338785.21
+22,Vinny Shatford,Doctor,DO,5,Full week,$217643.41
+23,Athena Lineen,Doctor,FRCP,7,Off-Sunday,$284609.59
+24,Essa Annion,Nurse,DNP,6,Full week,$79738.33
+25,Carola Mound,Doctor,MBBS,3,Full week,$74017.27
+26,Ingaborg Brookwell,Nurse,CRNA,9,Full week,$128265.06
+27,Bran Seeley,Nurse,DNP,6,Full week,$183744.18
+28,Evan Itzkovwich,Nurse,CRNA,9,Full week,$119126.36
+29,Delmer Kighly,Nurse,BSN,4,Full week,$317470.49
+30,Killy McCluney,Nurse,NP,8,Full week,$101782.89
+31,Tommie Vaskin,Doctor,MD,2,Full week,$238837.19
+32,Danny Rodders,Nurse,NP,2,Full week,$365284.50
+33,Luella Dubois,Nurse,BSN,2,Full week,$394708.58
+34,Lazarus McComb,Nurse,DNP,6,Full week,$81042.06
+35,Vergil Clemoes,Doctor,FRCP,9,Off-Sunday,$129826.30
+36,Beau Edsell,Nurse,NP,4,Full week,$388682.48
+37,Jerome Plett,Nurse,CNS,4,Off-Sunday,$126446.64
+38,Ingaborg Trevan,Doctor,MBBS,1,Full week,$306125.26
+39,Nat Jameson,Nurse,CRNA,9,Full week,$199103.78
+40,Daisi Loadsman,Doctor,MD,6,Full week,$66178.61
+41,Jordan Lyptrit,Nurse,BSN,4,Full week,$237572.44
+42,Rozanne Mockler,Nurse,CNS,1,Off-Sunday,$376693.69
+43,Ellyn Truter,Nurse,NP,9,Full week,$148876.70
+45,Bastian Breckin,Doctor,MBBS,9,Full week,$180944.69
+46,Wilmar Brech,Doctor,DO,10,Full week,$162696.74
+47,Hester Maude,Doctor,DM,10,Off-Sunday,$251559.33
+48,Saudra Landsberg,Doctor,MBBS,6,Full week,$188898.83
+49,Otis Binns,Doctor,MBBS,6,Full week,$314525.40
+50,Konstance Clougher,Doctor,MD,6,Full week,$164943.55
+51,Dasya Churm,Nurse,RN,9,Full week,$344164.19
+52,Chastity Yakobowitch,Nurse,CRNA,9,Full week,$175989.43
+53,Anthe Fairholm,Doctor,PhD,7,Off-Sunday,$351174.75
+54,Tera Duiguid,Nurse,CNS,3,Off-Sunday,$185065.50
+55,Sandye Balnaves,Nurse,BSN,2,Full week,$88486.56
+56,Sargent Heinlein,Doctor,DM,10,Off-Sunday,$299253.05
+57,Hurleigh Reichelt,Nurse,BSN,7,Full week,$352191.72
+58,Petra Bernard,Doctor,DM,10,Off-Sunday,$69494.34
+59,Farrand Rosberg,Doctor,MBBS,8,Full week,$126296.29
+60,Martynne Asplin,Nurse,RN,8,Full week,$261316.00
+61,Eleni Simoncello,Doctor,DO,4,Full week,$262085.50
+62,Bevan Pinkard,Doctor,FRCP,3,Off-Sunday,$349991.43
+63,Mile Bennet,Doctor,DM,10,Off-Sunday,$183793.82
+64,Ortensia Childers,Doctor,DO,2,Full week,$69044.63
+65,Maximilien Oliveras,Doctor,PhD,8,Off-Sunday,$53685.20
+66,Michelle Boow,Nurse,CNS,5,Off-Sunday,$187402.71
+67,Nickolas Towson,Nurse,CRNA,9,Full week,$112923.64
+68,Roddie Beaby,Doctor,MD,2,Full week,$50401.14
+69,Gene Matusson,Doctor,MD,8,Full week,$89526.42
+70,Sharl Lambart,Nurse,NP,4,Full week,$365134.38
+71,Weber Mitskevich,Nurse,DNP,6,Full week,$53160.16
+72,Merl Lande,Nurse,NP,4,Full week,$140741.82
+73,Gussy Cato,Doctor,MD,2,On-call Sunday,$389017.10
+74,Zackariah Smaile,Doctor,MBBS,2,On-call Sunday,$61668.70
+75,Victor Jiles,Doctor,PhD,2,Off-Sunday,$203157.02
+76,Merrill Gossan,Doctor,MD,3,Full week,$58958.53
+77,Walther Woollaston,Doctor,PhD,7,Off-Sunday,$208335.91
+78,Dewitt Salleir,Nurse,DNP,6,Full week,$341199.76
+79,Kelsey Moreing,Nurse,CRNA,9,Full week,$173304.36
+80,Alexa Pottery,Nurse,BSN,5,Full week,$205847.42
+81,Jilli Simondson,Doctor,FRCP,7,Off-Sunday,$345195.57
+82,Jessee Bunton,Doctor,PhD,2,Off-Sunday,$313081.21
+83,Jody Whalebelly,Doctor,MD,6,On-call Sunday,$242931.33
+84,Bobbe Tesimon,Doctor,DO,7,Full week,$60366.01
+85,Marshal Sole,Doctor,DO,6,Full week,$128208.31
+86,Farrah Fatharly,Doctor,DO,7,Full week,$315360.89
+87,Eugine Schapero,Nurse,CNS,7,Off-Sunday,$59472.00
+88,Catlee Corzor,Doctor,PhD,2,Off-Sunday,$163862.94
+89,Ethyl Schuh,Doctor,FACS,1,Full week,$102793.04
+91,Ericka Mickleburgh,Doctor,MBBS,8,Full week,$374454.26
+92,Mirabelle Curnnokk,Nurse,RN,5,Full week,$159277.14
+93,Cassandry Capelow,Nurse,DNP,6,Full week,$275435.23
+94,Byrom Kippin,Doctor,PhD,7,Off-Sunday,$150050.05
+95,Dewey Maslen,Nurse,RN,1,Full week,$273568.97
+96,Katrinka Desseine,Nurse,RN,4,Full week,$195718.99
+97,Lutero Butchart,Nurse,NP,1,Full week,$232264.81
+98,Parnell Clewer,Nurse,CNS,6,Off-Sunday,$118194.58
+99,Crystal Cronin,Doctor,MBBS,2,On-call Sunday,$188259.01
+100,Othelia Alesi,Doctor,DO,5,Full week,$184762.35
+101,Ranee Melbourn,Nurse,NP,3,Full week,$119941.17
+102,Katheryn Scocroft,Nurse,CRNA,9,Full week,$182561.74
+103,Ariadne Brocklehurst,Nurse,DNP,6,Full week,$291153.26
+104,Horatio McCoy,Doctor,MD,9,Full week,$160745.49
+105,Jere Fearon,Nurse,RN,8,Full week,$347410.77
+106,Gare Golson,Nurse,LPN,4,Full week,$282383.41
+107,Yevette Kermannes,Doctor,FRCP,6,Off-Sunday,$98187.46
+108,Calley Waliszewski,Doctor,PhD,7,Off-Sunday,$241322.01
+109,Rafael De Souza,Nurse,LPN,4,Full week,$393151.82
+110,Milena Barrows,Nurse,RN,8,Full week,$334549.40
+111,Elsi Dace,Doctor,FRCP,10,Off-Sunday,$302657.46
+112,Fabio Tapply,Doctor,DM,3,Off-Sunday,$227190.40
+113,Tiffie Burstowe,Doctor,FRCP,4,Off-Sunday,$245851.14
+114,Sim Vegas,Nurse,NP,10,Full week,$297633.65
+115,Reinaldo Dumbar,Doctor,MBBS,8,On-call Sunday,$76075.85
+116,Celestyna Inge,Doctor,FRCP,10,Off-Sunday,$322865.65
+117,Alli Buxam,Nurse,CNS,7,Off-Sunday,$242080.32
+118,Lexi Vogele,Nurse,CNS,8,Off-Sunday,$373510.26
+119,Aleda Frantzen,Nurse,BSN,9,Full week,$339686.84
+120,Zorana Tresise,Doctor,MBBS,4,Full week,$310145.85
+121,Sheppard Dewi,Nurse,NP,10,Full week,$118310.82
+122,Dale Beatson,Doctor,MD,6,On-call Sunday,$357355.52
+123,Dennie MacCawley,Doctor,DM,3,Off-Sunday,$52406.76
+124,Carleen Callington,Doctor,DM,5,Off-Sunday,$90868.79
+125,Jacquette Chucks,Nurse,LPN,4,Full week,$113449.61
+127,Eilis Orable,Nurse,LPN,1,Full week,$140391.42
+128,Moyra Exton,Doctor,DO,1,Full week,$368316.87
+129,Urban Mattevi,Nurse,NP,3,Full week,$193773.30
+130,Tabbi Bolt,Doctor,FRCP,9,Off-Sunday,$69568.46
+131,Odell Waby,Doctor,FACS,1,Full week,$157639.37
+132,Luise Nacey,Doctor,MBBS,8,On-call Sunday,$96333.88
+133,Jeff Rebillard,Doctor,DM,3,Off-Sunday,$333151.60
+135,Emmalynn Klimmek,Doctor,FACS,4,Full week,$163657.80
+136,Rory Neville,Nurse,CNS,3,Off-Sunday,$315055.95
+137,Davida Wordsworth,Doctor,MD,1,On-call Sunday,$148087.93
+138,Willi Pfleger,Nurse,CNS,1,Off-Sunday,$323403.87
+139,Aggi Dellenty,Nurse,BSN,7,Full week,$235166.76
+140,Glyn Smail,Doctor,FACS,4,Full week,$343981.73
+141,Jonathan Trainor,Nurse,CNS,6,Off-Sunday,$281064.07
+142,Nickolaus Mulmuray,Doctor,PhD,2,Off-Sunday,$134229.38
+143,Mirilla Dilloway,Doctor,FRCP,7,Off-Sunday,$135860.10
+144,Kermy Peto,Doctor,PhD,7,Off-Sunday,$158416.23
+145,Jillana Huetson,Nurse,BSN,3,Full week,$91911.26
+146,Raina Aasaf,Nurse,CRNA,9,Full week,$271623.81
+148,Ricoriki Wreakes,Nurse,BSN,2,Full week,$276708.49
+149,Corny Aleswell,Nurse,BSN,10,Full week,$304805.43
+150,Bobbie Loney,Nurse,NP,4,Full week,$385871.50
+151,Mozes Alpin,Doctor,FACS,9,Full week,$209645.12
+152,Orly Blackler,Doctor,DM,10,Off-Sunday,$173530.37
+153,Giacobo Eastcourt,Doctor,FACS,4,On-call Sunday,$190329.08
+154,Guss Staff,Nurse,NP,8,Full week,$67405.53
+155,Silva Graith,Doctor,MD,1,Full week,$219606.40
+156,Fritz Brazur,Nurse,RN,6,Full week,$375127.50
+157,Helene Gowanson,Nurse,LPN,4,Full week,$53966.22
+158,Lamont Cavalier,Doctor,DM,10,Off-Sunday,$173350.75
+159,Myranda Lumley,Doctor,FACS,1,On-call Sunday,$149524.87
+160,Lowell Batchan,Nurse,LPN,4,Full week,$360795.85
+161,Fawne Biskup,Nurse,BSN,8,Full week,$193325.91
+162,Natalie Godin,Nurse,NP,5,Full week,$198322.66
+163,Jude Fawltey,Nurse,CRNA,9,Full week,$113125.84
+164,Lyman Murton,Nurse,CNS,2,Off-Sunday,$287165.76
+165,Raphaela Thinn,Doctor,MD,9,On-call Sunday,$171193.89
+166,Merill Agiolfinger,Nurse,BSN,7,Full week,$326121.27
+168,Kaylil Rousel,Nurse,CNS,3,Off-Sunday,$205374.19
+169,Bogart Temblett,Doctor,MD,9,On-call Sunday,$136297.87
+170,Frans Mingey,Doctor,MD,2,On-call Sunday,$63480.76
+171,Gayel Gyford,Nurse,RN,9,Full week,$241645.14
+172,Dolley Brimmacombe,Nurse,LPN,4,Full week,$202141.31
+173,Hugh Relf,Doctor,FRCP,1,Off-Sunday,$217952.91
+174,Freedman Mougel,Nurse,LPN,4,Full week,$69942.20
+175,Catha Cudd,Doctor,MBBS,7,On-call Sunday,$112706.02
+176,Ianthe Duchan,Nurse,RN,1,Full week,$365405.27
+177,Carroll Fellis,Nurse,CNS,9,Off-Sunday,$193240.39
+178,Dode Dutchburn,Nurse,DNP,6,Full week,$314013.26
+179,Mack Rubinov,Nurse,CNS,10,Off-Sunday,$176850.67
+180,Haywood Brace,Doctor,DM,10,Off-Sunday,$284858.86
+182,Jena Stoggles,Nurse,DNP,6,Full week,$167243.80
+183,Nester Coltart,Nurse,LPN,1,Full week,$392070.51
+184,Peg McGinly,Doctor,DO,1,Full week,$281093.73
+185,Almire Leebetter,Nurse,CNS,1,Off-Sunday,$347252.78
+186,Hoyt Clare,Doctor,MD,10,Full week,$315668.81
+187,Cathrine Deguara,Doctor,MD,7,On-call Sunday,$125469.01
+188,Ossie Craigmyle,Nurse,NP,8,Full week,$312348.11
+189,Sheila-kathryn Harley,Nurse,RN,7,Full week,$250008.70
+190,Lynnett Urlin,Nurse,CRNA,9,Full week,$188941.17
+191,Bidget Scrivener,Nurse,RN,4,Full week,$260742.55
+192,Daffi Mableson,Doctor,FRCP,8,Off-Sunday,$225972.79
+193,Gusti Steynor,Nurse,DNP,6,Full week,$149794.77
+194,Zonnya Carrabot,Nurse,RN,4,Full week,$338388.15
+195,Cori Widdison,Nurse,RN,4,Full week,$391911.15
+196,Benoite Speek,Doctor,DO,7,Full week,$309189.08
+197,Bink Swinyard,Nurse,RN,6,Full week,$205603.18
+198,Aggie Chrystie,Doctor,PhD,2,Off-Sunday,$341965.36
+199,Janis Crippin,Nurse,LPN,1,Full week,$392412.45
+200,Lorelle Bourcq,Nurse,RN,3,Full week,$333169.23
+202,Florian Truman,Doctor,FACS,9,On-call Sunday,$88816.28
+203,Ebeneser Turle,Doctor,DO,7,Full week,$115243.09
+204,Cynthy Beagles,Nurse,NP,1,Full week,$89869.37
+205,Jeremy Perceval,Nurse,BSN,3,Full week,$328520.57
+206,Sari Delacote,Nurse,NP,7,Full week,$190299.79
+207,Loise Critten,Nurse,CNS,1,Off-Sunday,$98528.52
+210,Kev Kinnear,Nurse,DNP,6,Full week,$275195.32
+211,Douglas Semper,Doctor,MBBS,1,Full week,$256129.19
+212,Goldarina Fresson,Nurse,DNP,6,Full week,$397455.59
+213,Stuart Vears,Nurse,CRNA,9,Full week,$55684.86
+214,Ansell Jess,Nurse,DNP,6,Full week,$317621.59
+215,Griselda Freeth,Doctor,FRCP,10,Off-Sunday,$324984.51
+216,Ronny Payton,Nurse,BSN,6,Full week,$145373.98
+217,Roddie Jouaneton,Doctor,MD,10,On-call Sunday,$178072.16
+218,Kele Ashbey,Doctor,DO,1,Full week,$56320.06
+219,Dal Haddrill,Nurse,RN,4,Full week,$56485.31
+220,Reidar Elsie,Doctor,MBBS,6,On-call Sunday,$123386.96
+221,Gabrielle Corington,Doctor,FRCP,6,Off-Sunday,$162796.87
+222,Wanids Hendin,Doctor,MD,10,Full week,$322372.02
+223,Kailey Dargavel,Doctor,DM,5,Off-Sunday,$366798.98
+224,Gustavo Gatesman,Nurse,CRNA,9,Full week,$115228.63
+225,Wesley Berford,Doctor,MD,5,Full week,$113647.30
+226,Eldin Wapple,Doctor,FRCP,3,Off-Sunday,$159527.27
+227,Gaylene Bredgeland,Nurse,RN,1,Full week,$372075.15
+228,Gustie Gatrell,Doctor,DM,3,Off-Sunday,$244862.38
+229,Burlie Ellsworthe,Doctor,FACS,1,On-call Sunday,$164614.27
+230,Mile Tennet,Nurse,RN,3,Full week,$176363.11
+231,Stanly Jeune,Doctor,DM,5,Off-Sunday,$335055.10
+232,Hugibert Wallentin,Nurse,LPN,1,Full week,$68309.86
+233,Ezechiel Mecco,Doctor,MBBS,5,Full week,$119992.89
+234,Aloisia Gagin,Nurse,DNP,6,Full week,$100446.95
+235,Rozalin Elger,Nurse,CRNA,9,Full week,$124219.11
+236,Carly Antognelli,Doctor,MD,9,On-call Sunday,$359362.49
+237,Mikaela McCoy,Doctor,FRCP,7,Off-Sunday,$117153.11
+238,Joanna Bruhnke,Nurse,CRNA,9,Full week,$274877.71
+239,Allianora Gladdis,Doctor,FRCP,6,Off-Sunday,$121171.68
+240,Alex Fortey,Nurse,DNP,6,Full week,$71499.41
+241,Baillie Walentynowicz,Nurse,LPN,4,Full week,$372137.68
+242,Brenn Extance,Nurse,CNS,9,Off-Sunday,$257326.66
+243,Florance Hulmes,Nurse,NP,8,Full week,$153751.18
+244,Prince Burle,Doctor,MD,1,Full week,$185528.92
+245,Twyla Thrustle,Doctor,DM,5,Off-Sunday,$222590.72
+246,Raven Littledyke,Doctor,MD,5,On-call Sunday,$236338.35
+247,Wilfred Blanchflower,Doctor,DO,9,Full week,$246255.51
+248,Ernest Warstall,Nurse,BSN,7,Full week,$321452.70
+249,Ottilie Rochewell,Nurse,RN,8,Full week,$340429.78
+250,Gui Philippeaux,Doctor,DO,7,Full week,$52302.40
+251,Serene Glasper,Doctor,FRCP,5,Off-Sunday,$171854.06
+252,Atalanta Alti,Nurse,NP,6,Full week,$325272.53
+253,Marion Swaile,Nurse,BSN,2,Full week,$153317.00
+254,Denni Maughan,Nurse,NP,1,Full week,$73545.90
+255,Alana Schutze,Nurse,DNP,6,Full week,$274889.21
+256,Bondon Buddle,Doctor,DM,3,Off-Sunday,$276944.06
+257,Inga Seefeldt,Nurse,BSN,3,Full week,$167774.51
+258,Arman Moller,Nurse,CRNA,9,Full week,$354192.47
+259,Nedda Pablos,Doctor,MD,10,On-call Sunday,$129118.96
+260,Ranice Defty,Nurse,BSN,6,Full week,$65802.05
+261,Cacilie Sheard,Nurse,LPN,4,Full week,$157641.41
+262,Matthias Fernier,Nurse,CNS,4,Off-Sunday,$109058.37
+263,Remington Jolley,Nurse,CNS,9,Off-Sunday,$294234.66
+264,Ulysses Macauley,Doctor,FACS,4,On-call Sunday,$228129.96
+265,Reggi Canet,Doctor,PhD,2,Off-Sunday,$268914.68
+266,Greg Lodwick,Doctor,DO,10,Full week,$200093.64
+267,Hyacinthia Greenhead,Nurse,DNP,6,Full week,$253047.16
+269,Sibley Bainbridge,Doctor,MD,6,On-call Sunday,$215194.61
+270,Keenan Herety,Doctor,MD,7,Full week,$384678.83
+271,Nicolai Acors,Nurse,CRNA,9,Full week,$249057.66
+273,Ertha Latchmore,Nurse,DNP,6,Full week,$100685.97
+274,Bliss Wattins,Doctor,PhD,8,Off-Sunday,$287975.40
+275,Elias Spaducci,Doctor,MD,7,On-call Sunday,$111784.06
+277,Evy Clorley,Doctor,MBBS,3,On-call Sunday,$62330.15
+278,Jaquenetta Sauvage,Nurse,BSN,8,Full week,$364537.67
+279,Trevar Karpe,Doctor,MD,5,Full week,$60647.88
+280,Ailina Butterfill,Doctor,FRCP,8,Off-Sunday,$184554.43
+281,Querida Suthworth,Nurse,BSN,4,Full week,$251974.67
+282,Phyllida Cupitt,Doctor,DO,2,Full week,$342794.93
+283,Woodrow Rudolf,Nurse,DNP,6,Full week,$222681.87
+284,Parsifal Pudney,Doctor,DO,1,Full week,$141845.72
+285,Iolanthe Kynd,Nurse,RN,5,Full week,$218599.02
+286,Cindi Barles,Doctor,FRCP,10,Off-Sunday,$283452.73
+287,Dion Dominelli,Doctor,DO,2,Full week,$165425.86
+288,Brian Ronchi,Nurse,CRNA,9,Full week,$119386.72
+289,Pauletta Giacobo,Doctor,DO,7,Full week,$78291.12
+290,Desdemona Larmett,Doctor,FRCP,8,Off-Sunday,$298323.30
+291,Obidiah Siderfin,Nurse,CRNA,9,Full week,$171467.50
+292,Burlie Stouther,Doctor,DO,6,Full week,$388219.52
+293,Rhett Houseman,Doctor,FACS,4,On-call Sunday,$120983.41
+294,Konstantin Gullan,Doctor,FRCP,3,Off-Sunday,$87401.55
+295,Christiane Lahive,Nurse,DNP,6,Full week,$267684.59
+296,Bastien Povlsen,Doctor,MBBS,6,On-call Sunday,$250667.82
+297,Ailene Blackhurst,Nurse,DNP,6,Full week,$154048.72
+298,Maudie Arboine,Doctor,MBBS,5,Full week,$337411.50
+299,Rosana Dorman,Doctor,PhD,2,Off-Sunday,$180718.78
+300,Leilah Coughtrey,Nurse,CNS,10,Off-Sunday,$387875.68
