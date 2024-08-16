@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const morgan = require("morgan");
 const usersRoutes = require('./routes/UsersRoutes');
+const patientsRoutes = require('./routes/PatientsRoutes');
 const errorMiddleware = require('./middleware/errorMiddleware');
 
 // Create an Express application
@@ -17,6 +18,7 @@ app.use(cors()); // Enable CORS for all routes
 app.use(morgan("dev")); // Log HTTP requests to the console
 app.use(bodyParser.json()); // Parse JSON request bodies
 app.use('/users', usersRoutes);
+app.use('/patients', patientsRoutes);
 app.use(errorMiddleware);
 
 
