@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS Appointments;
 DROP TABLE IF EXISTS Staff;
 DROP TABLE IF EXISTS Patients;
 DROP TABLE IF EXISTS Departments;
+DROP TABLE IF EXISTS Users;
 
 -- Create Departments table first
 CREATE TABLE Departments (
@@ -69,7 +70,7 @@ INSERT INTO Departments (name) VALUES
   -- id: { type: Number, required: true },
 
 -- Create User table
-CREATE TABLE users (
+CREATE TABLE Users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   username TEXT,
   password TEXT,
@@ -98,7 +99,7 @@ INSERT INTO Relationships (staff_id, manager_id) VALUES
 (2, 1),  -- Nurse Bob Brown is managed by Dr. Alice Johnson
 (3, 1);  -- Mary Green (Admin) is managed by Dr. Alice Johnson
 
-INSERT INTO users (id, username, password, role, user_id) VALUES
+INSERT INTO Users (id, username, password, role, user_id) VALUES
 (1, 'AliceJohnson', 'password1', 'Doctor', 1),
 (2, 'BobBrown', 'password2', 'Nurse', 2),
 (3, 'MaryGreen', 'password3', 'Admin', 3),
@@ -110,4 +111,4 @@ SELECT * FROM Patients;
 SELECT * FROM Staff;
 SELECT * FROM Appointments;
 SELECT * FROM Relationships;
-SELECT * FROM users;
+SELECT * FROM Users;

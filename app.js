@@ -10,6 +10,13 @@ const usersRoutes = require('./routes/UsersRoutes');
 const patientsRoutes = require('./routes/PatientsRoutes');
 const errorMiddleware = require('./middleware/errorMiddleware');
 
+// MongoDB import Routes 
+const doctorNotesRoutes = require('./routes/doctorNotesRoutes');
+const appointmentNotesRoutes = require('./routes/appointmentNotes');
+const staffDocumentsRoutes = require('./routes/staffDocuments');
+const patientsAllergiesRoutes = require('./routes/patientsAllergies');
+const treatmentHistoryRoutes = require('./routes/treatmentHistory');
+
 // Create an Express application
 const app = express();
 
@@ -19,7 +26,16 @@ app.use(morgan("dev")); // Log HTTP requests to the console
 app.use(bodyParser.json()); // Parse JSON request bodies
 app.use('/users', usersRoutes);
 app.use('/patients', patientsRoutes);
+// MongoDB 
+app.use(express.json());
+app.use('/doctor-notes', doctorNotesRoutes);
+app.use('/appointment-notes', appointmentNotesRoutes);
+app.use('/staff-documents', staffDocumentsRoutes);
+app.use('/patients-allergies', patientsAllergiesRoutes);
+app.use('/treatment-history', treatmentHistoryRoutes);
+
 app.use(errorMiddleware);
+
 
 
 // Import your database connections from the config folder
