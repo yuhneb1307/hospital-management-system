@@ -61,7 +61,7 @@ mysqlConnection.connect((err) => {
   app.get('/', function(req, res){ 
     res.render('index');
  });
-
+ 
   // Handle 404 errors
   app.use((req, res, next) => {
     res.status(404).json({ message: "Resource not found" });
