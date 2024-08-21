@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const patientsController = require("../controllers/patientsController.js");
+router.use(express.static('public'));
 
 // Routes
 router.get("/", (req, res) => {
