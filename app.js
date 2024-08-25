@@ -26,13 +26,16 @@ app.use(morgan("dev")); // Log HTTP requests to the console
 app.use(bodyParser.json()); // Parse JSON request bodies
 app.use('/users', usersRoutes);
 app.use('/patients', patientsRoutes);
+
 // MongoDB 
-app.use(express.json());
 app.use('/doctor-notes', doctorNotesRoutes);
 app.use('/appointment-notes', appointmentNotesRoutes);
 app.use('/staff-documents', staffDocumentsRoutes);
 app.use('/patients-allergies', patientsAllergiesRoutes);
 app.use('/treatment-history', treatmentHistoryRoutes);
+
+
+app.use(express.json());
 
 app.use(errorMiddleware);
 

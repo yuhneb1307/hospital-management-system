@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const doctor_notes = require('../models/doctor_notes');
+const doctor_notes = require('../models/doctor_notes'); // Import the model
 
-// Get all doctor notes
+// GET all doctor notes
 router.get('/', async (req, res) => {
   try {
     const notes = await doctor_notes.find();
@@ -12,24 +12,58 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Create a new doctor note
+// POST /doctor-notes
 router.post('/', async (req, res) => {
-  const note = new doctor_notes({
-    patient_id: req.body.patient_id,
-    observations: req.body.observations,
-    diagnosis: req.body.diagnosis,
-    treatment_plan: req.body.treatment_plan,
-    related_appointment_notes: req.body.related_appointment_notes
-  });
-
   try {
-    const newNote = await note.save();
-    res.status(201).json(newNote);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
+    const newNote = new doctor_notes(req.body);
+    const savedNote = await newNote.save();
+    res.status(201).json(savedNote);
+  } catch (error) {
+    res.status(400).json({ message: 'Error adding doctor note', error });
   }
 });
 
-// Other routes (get one note, update, delete) can be added similarly
+// GET /doctor-notes/:id - Get a doctor note by ID
+router.get('/:id', async (req, res) => {
+  try {
+    const note = await doctor_notes.findById(req.params.id);
+    if (!note) {
+      return res.status(404).json({ message: 'Doctor note not found' });
+    }
+    res.status(200).json(note);
+  } catch (error) {
+    res.status(400).json({ message: 'Error fetching doctor note', error });
+  }
+});
+
+// PUT /doctor-notes/:id
+router.put('/:id', async (req, res) => {
+  try {
+    const updatedNote = await doctor_notes.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    if (!updatedNote) {
+      return res.status(404).json({ message: 'Doctor note not found' });
+    }
+    res.status(200).json(updatedNote);
+  } catch (error) {
+    res.status(400).json({ message: 'Error updating doctor note', error });
+  }
+});
+
+// DELETE /doctor-notes/:id
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedNote = await doctor_notes.findByIdAndDelete(req.params.id);
+    if (!deletedNote) {
+      return res.status(404).json({ message: 'Doctor note not found' });
+    }
+    res.status(200).json({ message: 'Doctor note deleted' });
+  } catch (error) {
+    res.status(400).json({ message: 'Error deleting doctor note', error });
+  }
+});
 
 module.exports = router;
