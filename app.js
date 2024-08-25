@@ -19,6 +19,10 @@ const treatmentHistoryRoutes = require('./routes/treatmentHistory');
 
 // Create an Express application
 const app = express();
+app.set('views', './views');
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
+
 
 // Middleware setup
 app.use(cors()); // Enable CORS for all routes
@@ -57,10 +61,10 @@ mysqlConnection.connect((err) => {
   // Place route definitions here after MySQL connection is established
 
   // Basic route for testing the server
-  app.get("/", (req, res) => {
-    res.send("Hospital Management System API is running.");
-  });
-
+  app.get('/', function(req, res){ 
+    res.render('index');
+ });
+ 
   // Handle 404 errors
   app.use((req, res, next) => {
     res.status(404).json({ message: "Resource not found" });

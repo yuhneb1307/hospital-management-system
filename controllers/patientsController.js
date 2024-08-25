@@ -1,10 +1,10 @@
 const Patients = require("../models/patients");
 
-exports.getAllPatients = async (req, res) => {
+exports.getAllPatients = (callback) => {
   // Logic to get all patients
   Patients.getAllPatients((err, patients) => {
     if (err) throw err;
-    res.json(patients);
+    callback(patients);
   });
 };
 

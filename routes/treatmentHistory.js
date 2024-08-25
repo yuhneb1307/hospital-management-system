@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const treatment_history = require('../models/treatment_history'); // Import the model
+const app = express();
 
 // GET all treatment histories
 router.get('/', async (req, res) => {
