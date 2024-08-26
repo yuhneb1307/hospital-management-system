@@ -62,7 +62,7 @@ mysqlConnection.connect((err) => {
 
   // Basic route for testing the server
   app.get('/', function(req, res){ 
-    res.render('index');
+    res.render('login');
  });
  
   // Handle 404 errors
