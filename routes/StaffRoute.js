@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const patientsController = require("../controllers/patientsController.js");
+const staffController = require("../controllers/staffsController.js");
 router.use(express.static('public'));
 
 // Routes
@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 });
 
 // READ
-router.get("/search", patientsController.getPatientById);
+// router.get("/search", patientsController.getPatientById);
 router.get("/", patientsController.getAllPatients);
 router.get("/search/:data", patientsController.getPatientById);
 router.get("/sort/:data/:order", patientsController.getPatientByDataOrder);

@@ -1,4 +1,4 @@
-const Patients = require("../models/patients");
+const Staffs = require("../models/staffs");
 
 // READ
 exports.getAllPatients = async (req, res) => {

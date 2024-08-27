@@ -10,13 +10,6 @@ const usersRoutes = require('./routes/UsersRoutes');
 const patientsRoutes = require('./routes/PatientsRoutes');
 const errorMiddleware = require('./middleware/errorMiddleware');
 
-// MongoDB import Routes 
-const doctorNotesRoutes = require('./routes/doctorNotesRoutes');
-const appointmentNotesRoutes = require('./routes/appointmentNotes');
-const staffDocumentsRoutes = require('./routes/staffDocuments');
-const patientsAllergiesRoutes = require('./routes/patientsAllergies');
-const treatmentHistoryRoutes = require('./routes/treatmentHistory');
-
 // Create an Express application
 const app = express();
 app.set('views', './views');
@@ -28,6 +21,14 @@ app.set('view engine', 'ejs');
 app.use(cors()); // Enable CORS for all routes
 app.use(morgan("dev")); // Log HTTP requests to the console
 app.use(bodyParser.json()); // Parse JSON request bodies
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+app.use("/users", usersRoutes);
+app.use("/patients", patientsRoutes);
 app.use('/users', usersRoutes);
 app.use('/patients', patientsRoutes);
 
@@ -38,11 +39,7 @@ app.use('/staff-documents', staffDocumentsRoutes);
 app.use('/patients-allergies', patientsAllergiesRoutes);
 app.use('/treatment-history', treatmentHistoryRoutes);
 
-
-app.use(express.json());
-
 app.use(errorMiddleware);
-
 
 
 // Import your database connections from the config folder
@@ -79,7 +76,7 @@ mysqlConnection.connect((err) => {
   // Start the server after routes are defined
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running at http://localhost:${PORT}`);
   });
 });
 
