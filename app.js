@@ -28,12 +28,6 @@ app.set('view engine', 'ejs');
 app.use(cors()); // Enable CORS for all routes
 app.use(morgan("dev")); // Log HTTP requests to the console
 app.use(bodyParser.json()); // Parse JSON request bodies
-app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
 app.use('/users', usersRoutes);
 app.use('/patients', patientsRoutes);
 
@@ -68,6 +62,7 @@ mysqlConnection.connect((err) => {
 
   // Basic route for testing the server
   app.get('/', function(req, res){ 
+    res.render('index');
  });
  
   // Handle 404 errors
@@ -84,6 +79,7 @@ mysqlConnection.connect((err) => {
   // Start the server after routes are defined
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
   });
 });
 
