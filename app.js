@@ -60,11 +60,16 @@ mysqlConnection.connect((err) => {
 
   // Place route definitions here after MySQL connection is established
 
-  // Basic route for testing the server
-  app.get('/', function(req, res){ 
-    res.render('index');
- });
- 
+  // Default route require login
+  app.get('/', function (req, res) {
+    res.render('login');
+  });
+
+  // Register route
+  app.get('/register', function (req, res) {
+    res.render('register');
+  });
+
   // Handle 404 errors
   app.use((req, res, next) => {
     res.status(404).json({ message: "Resource not found" });
