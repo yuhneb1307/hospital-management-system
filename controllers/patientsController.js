@@ -9,12 +9,10 @@ exports.getAllPatients = (callback) => {
   });
 };
 
-exports.getPatientById = async (req, res) => {
-  const id = req.body.id;
-
+exports.getPatientById = (id, callback) => {
   Patients.getPatientById(id, (err, patients) => {
     if (err) throw err;
-    res.json(patients);
+    callback(patients);
   });
 };
 

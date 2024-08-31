@@ -1,66 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pation Information</title>
+    <title>Patient Information</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="patient_infor.css">
+    <style>
+        .appointment-tab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 320px;
+            /* Fixed width for the card */
+            max-height: 400px;
+            /* Set a max height */
+            overflow-y: auto;
+            /* Add vertical scrollbar if content overflows */
+            z-index: 1050;
+            /* Ensures the tab is on top of other content */
+        }
+
+        .appointment-tab .list-group-item {
+            font-size: 14px;
+            /* Adjust font size */
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <!-- Navi container -->
-        <div class="nav container">
-            <!-- Menu Icon -->
-            <i class='bx bx-menu' id="menu-icon"></i>
-            <!-- Logo -->
-            <a href="#" class="logo"><i class='bx bxs-home'></i></a>
-            <!-- Nav List -->
-            <ul class="navbar">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about" class="active">Patient List</a></li>
-                <li><a href="#cars">Staff List</a></li>
-                <li><a href="#contact">Appointment List</a></li>
-            </ul>
-            <!-- Search Icon -->
-            <i class='bx bx-search-alt' id="search-icon"></i>
-            <!-- Search Box -->
-            <div class="search-box container">
-                <input type="search" name="" id="" placeholder="Seach here...">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Hospital Management</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Patient List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Staff List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Appointment List</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
-    <div class="container patient-infor">
-        <div class="patient-card">
-            <div class="info">
-                <div class="name">Name: Huy Tran</div>
-                <div class="id">ID: 123</div>
-                <div class="dob">DOB: 13/07/2001</div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Patient Information Section -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Patient Information</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="card-text"><strong>Name:</strong>
+                                    <%= patient.name %>
+                                </p>
+                                <p class="card-text"><strong>ID:</strong>
+                                    <%= patient.id %>
+                                </p>
+                                <p class="card-text"><strong>Date of Birth:</strong>
+                                    <%= patient.age %>
+                                </p>
+                            </div>
+                            <div class="col-6">
+                                <p class="card-text"><strong>Contact Details:</strong>
+                                    <%= patient.contact_details %>
+                                </p>
+                                <p class="card-text"><strong>Allergies:</strong>
+                                    <%= patient.allergies %>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center mt-3">
+                            <a href="edit-patient-info.html" class="btn btn-primary me-2">Edit Information</a>
+                            <a href="create-appointment.html" class="btn btn-success">Create Appointment</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="sub-infor">
-                <div class="contact">Phone Number: 0824117333</div>
-                <div class="address">Address: 28 Dinh Tien Hoang</div>
-                <div class="allergies">Allergies: Peanut</div>
+        </div>
+
+        <!-- Appointment History Section -->
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Appointment History</h5>
+                        <div class="list-group">
+                            <!-- First Appointment -->
+
+                            <% appointment_notes.forEach(function(note){ %>
+                                <a href="#" class="list-group-item list-group-item-action mb-3">
+                                    <strong>Date:</strong> <%= note.created_at %><br>
+                                    <strong>Observation:</strong> <%= note.observations %><br>
+                                    <strong>Doctor's Note (Dr. John Smith):</strong> Patient presented with symptoms of
+                                    a cold, advised rest and hydration.<br>
+                                    <strong>Doctor's Note (Dr. Emily Davis):</strong> Suggested over-the-counter
+                                    medication for symptom relief.
+                                </a>
+                                <% })%>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container history">
-        <div class="history-record row">
-            <div class="date col">2023-12-10</div>
-            <div class="time col">3:16:02</div>
-            <div class="staff-name col">Quy Nguyen</div>
-        </div>
-        <div class="note ">
-            <div class="note-before">
-                Note Before: Unsp fx the low end r rad, 7thH	
-            </div>
-            <div class="note-during">
-                Note During: Revision of Drainage Device in Thoracic Vertebral Joint, Percutaneous Endoscopic Approach
-            </div>
-            <div class="note-after">
-                Note After: Stress fracture, right finger(s), subs for fx w nonunion
+
+    <!-- Appointment Tab -->
+    <div class="card appointment-tab">
+        <div class="card-body">
+            <h5 class="card-title">Upcoming Appointments</h5>
+            <div class="list-group">
+                <!-- First Upcoming Appointment -->
+                <a href="#" class="list-group-item list-group-item-action mb-3">
+                    <strong>Date:</strong> 2023-12-10<br>
+                    <strong>Doctor:</strong> Dr. John Smith<br>
+                    <strong>Department:</strong> General Medicine<br>
+                    <strong>Status:</strong> Upcoming
+                </a>
+                <!-- Second Upcoming Appointment -->
+                <a href="#" class="list-group-item list-group-item-action mb-3">
+                    <strong>Date:</strong> 2024-01-15<br>
+                    <strong>Doctor:</strong> Dr. Emily Davis<br>
+                    <strong>Department:</strong> Cardiology<br>
+                    <strong>Status:</strong> Upcoming
+                </a>
+                <!-- Third Upcoming Appointment -->
+                <a href="#" class="list-group-item list-group-item-action">
+                    <strong>Date:</strong> 2024-02-20<br>
+                    <strong>Doctor:</strong> Dr. Michael Lee<br>
+                    <strong>Department:</strong> Orthopedics<br>
+                    <strong>Status:</strong> Upcoming
+                </a>
             </div>
         </div>
     </div>
 </body>
+
 </html>
