@@ -44,20 +44,23 @@
   <div class="container mt-5">
     <div class="row">
       <% patients.forEach(function(patient){ %>
-        <a href="/patients/<%= patient.id %>" class="col patient-card">
+        <a href="/patients/<%= patient.id %>" class="col-12 col-md-6 col-lg-2 patient-card mb-4">
           <div class="info">
             <div class="name"> Name:
-              <%= patient.name %>
+              <%= patient.first_name %> <%= patient.last_name %>
             </div>
-            <div class="dob"> Age:
-              <%= patient.age %>
+            <div class="dob"> Date Of Birth:
+              <%= patient.date_of_birth %>
             </div>
-            <div class="contact"> Address:
-              <%= patient.contact_details %>
+            <div class="address"> Address:
+              <%= patient.address %>
+            </div>
+            <div class="phone_number"> Phone Number:
+              <%= patient.phone %>
             </div>
           </div>
         </a>
-        <% }) %>
+      <% }) %>
     </div>
   </div>
 </body>
