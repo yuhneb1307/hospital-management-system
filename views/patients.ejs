@@ -10,36 +10,42 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <header>
-  <!-- Navi container -->
-  <div class="nav container">
-    <!-- Menu Icon -->
-    <i class='bx bx-menu' id="menu-icon"></i>
-    <!-- Logo -->
-    <a href="#" class="logo"><i class='bx bxs-home'></i></a>
-    <!-- Nav List -->
-    <ul class="navbar">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about" class="active">Patient List</a></li>
-      <li><a href="#cars">Staff List</a></li>
-      <li><a href="#contact">Appointment List</a></li>
-    </ul>
-    <!-- Search Icon -->
-    <i class='bx bx-search-alt' id="search-icon"></i>
-    <!-- Search Box -->
-    <div class="search-box container">
-      <input type="search" name="" id="" placeholder="Seach here...">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Hospital Management</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Patient List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Staff List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Appointment List</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </nav>
 </header>
+
 
 <body>
   <div class="container-fluid p-5 text-center main">
-    <h1>List Of Patient</h1>
+    <h1>List Of Patients</h1>
   </div>
   <div class="container mt-5">
     <div class="row">
       <% patients.forEach(function(patient){ %>
-        <a href="" class="col patient-card">
+        <a href="/patients/<%= patient.id %>" class="col patient-card">
           <div class="info">
             <div class="name"> Name:
               <%= patient.name %>
@@ -52,7 +58,7 @@
             </div>
           </div>
         </a>
-        <% })%>
+        <% }) %>
     </div>
   </div>
 </body>
