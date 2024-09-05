@@ -1,6 +1,6 @@
 let loginForm = document.getElementById("loginForm");
 let role = document.getElementById("role");
-let username = document.getElementById("username");
+let email = document.getElementById("email");
 let password = document.getElementById("password");
 let loginButton = document.getElementById("loginButton");
 
@@ -17,7 +17,7 @@ loginButton.addEventListener("click", (e) => {
   e.preventDefault();
   //   fetchData();
   const formData = {
-    username: username.value,
+    email: email.value,
     password: password.value,
   };
   const apiUrl = "http://localhost:3000/" + role.value + "/login";
@@ -40,7 +40,9 @@ loginButton.addEventListener("click", (e) => {
       // Process the newly created user data
       if (userData.length == 1) {
         localStorage.setItem("userData", JSON.stringify(userData));
-        window.location.assign("http://localhost:3000/patient");
+        window.location.assign(
+          "http://localhost:3000/patients/" + userData[0].id
+        );
       }
     })
     .catch((error) => {
@@ -50,7 +52,7 @@ loginButton.addEventListener("click", (e) => {
 
 //Async await
 // async function fetchData() {
-//   const postData = { username: username.value, password: password.value };
+//   const postData = { email: email.value, password: password.value };
 //   const response = await fetch("http://localhost:3000/" + role.value + "/login", {
 //     method: "post",
 //     body: JSON.stringify(postData),

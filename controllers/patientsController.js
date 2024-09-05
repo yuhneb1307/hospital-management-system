@@ -29,9 +29,9 @@ exports.getPatientByDataOrder = async (req, res) => {
 
 exports.checkLogIn = async (req, res) => {
   const password = req.body.password;
-  const username = req.body.username;
+  const email = req.body.email;
 
-  Patients.checkLogIn(username, password, (err, patients) => {
+  Patients.checkLogIn(email, password, (err, patients) => {
     if (err) throw err;
     res.json(patients);
   });
