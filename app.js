@@ -8,6 +8,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 // const usersRoutes = require('./routes/UsersRoutes');
 const patientsRoutes = require("./routes/PatientsRoutes");
+const staffsRoutes = require("./routes/StaffRoute");
 const errorMiddleware = require("./middleware/errorMiddleware");
 
 // MongoDB import Routes
@@ -28,6 +29,7 @@ app.use(morgan("dev")); // Log HTTP requests to the console
 app.use(bodyParser.json()); // Parse JSON request bodies
 // app.use('/users', usersRoutes);
 app.use("/patients", patientsRoutes);
+app.use("/staffs", staffsRoutes);
 
 // MongoDB
 app.use("/appointments", appointmentsRoutes);

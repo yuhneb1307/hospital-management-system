@@ -5,24 +5,24 @@ router.use(express.static('public'));
 
 // Routes
 router.get("/", (req, res) => {
-    patientsController.getAllPatients((patients) => {
+    staffController.getAllStaffs((patients) => {
         res.render('patients', {patients})
     })
 });
 
 // READ
-// router.get("/search", patientsController.getPatientById);
-router.get("/", patientsController.getAllPatients);
-router.get("/search/:data", patientsController.getPatientById);
-router.get("/sort/:data/:order", patientsController.getPatientByDataOrder);
-router.get("/search/allergy", patientsController.getPatientById);
+// router.get("/search", staffController.getStaffById);
+router.get("/", staffController.getAllStaffs);
+router.get("/search/:data", staffController.getStaffById);
+router.get("/sort/:data/:order", staffController.getStaffByDataOrder);
+router.get("/search/allergy", staffController.getStaffById);
 
 // CREATE
-router.post("/", patientsController.createPatient);
+router.post("/", staffController.createStaff);
 
 //UPDATE
-router.post("/update", patientsController.updatePatient);
+router.post("/update", staffController.updateStaff);
 // DELETE
-router.delete("/", patientsController.deletePatient);
+router.delete("/", staffController.deleteStaff);
 
 module.exports = router;

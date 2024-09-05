@@ -30,7 +30,7 @@ addressDiv.innerHTML = "Address: " + userData.address;
 const apiUrl = "http://localhost:3000/patient/";
 
 fetch(apiUrl, {
-  method: "POST",
+  method: "GET",
   headers: {
     "Content-Type": "application/json",
   },

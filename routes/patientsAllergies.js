@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const patients_allergies = require('../models/patients_allergies'); // Import the model
+const patients_allergies = require('../models/allergy'); // Import the model
 
 // GET all patients' allergies
 router.get('/', async (req, res) => {
