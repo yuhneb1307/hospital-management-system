@@ -122,13 +122,8 @@
 
                 <% appointment_notes.forEach(function(note){ %>
                 <a href="#" class="list-group-item list-group-item-action mb-3">
-                  <strong>Date:</strong> <%= note.created_at %><br />
-                  <strong>Observation:</strong> <%= note.observations %><br />
-                  <strong>Doctor's Note (Dr. John Smith):</strong> Patient
-                  presented with symptoms of a cold, advised rest and
-                  hydration.<br />
-                  <strong>Doctor's Note (Dr. Emily Davis):</strong> Suggested
-                  over-the-counter medication for symptom relief.
+                  <strong>Date:</strong> <%= note.date_of_appointment %><br />
+                  <strong>Observation:</strong> <%= note.observation %><br />
                 </a>
                 <% })%>
               </div>
