@@ -1,0 +1,90 @@
+﻿_id,first_name,last_name,role,department_id,schedule,salary,managed_by,email,gender,password
+1,Chariot,Frankis,Doctor,9,Off-Sunday,255279.32,null,cfrankis0@moonfruit.com,Male,xL5urVS
+4,Jens,Adey,Doctor,6,On-call Sunday,143835.77,null,jadey1@webmd.com,Female,lW5\7o
+8,Mora,Laister,Doctor,4,Full week,399890.09,null,mlaister2@people.com.cn,Female,wJ9vHsr8y
+9,Arnuad,Allridge,Doctor,1,Full week,290135.61,null,aallridge3@wikimedia.org,Female,fG8N*u)Y
+13,Shay,Bolter,Doctor,10,Full week,150831.42,9,sbolter4@addthis.com,Male,tX5|PA(
+16,Bobbe,Agates,Doctor,9,On-call Sunday,151884.83,4,bagates5@plala.or.jp,Male,"uN9iuI%,"
+19,Vanya,Pargeter,Doctor,8,Full week,125417.81,8,vpargeter6@flickr.com,Other,oP0F@e?y
+24,Atlanta,Bowerman,Doctor,3,Full week,374332.76,8,abowerman7@jiathis.com,Female,uM8nAk
+26,Alethea,Clinch,Doctor,3,Full week,149756.51,8,aclinch8@godaddy.com,Female,eG1~`gkUG7
+33,Niven,Fairnington,Doctor,8,Full week,327383.23,9,nfairnington9@unc.edu,Other,oV5i5m/cI
+38,Chrissy,Summerson,Doctor,1,Full week,281663.79,1,csummersona@java.com,Male,tD8H4pDc8E}
+39,Stace,Dolton,Doctor,8,On-call Sunday,261700.14,9,sdoltonb@cornell.edu,Male,"pB4K""uy5"
+43,Merle,Cregin,Doctor,7,Full week,288115.4,9,mcreginc@oakley.com,Male,oJ6SQV#qF(yg
+51,Alicea,Steynor,Doctor,5,Off-Sunday,373516.31,9,asteynord@tinyurl.com,Male,qV24C`
+57,Lettie,Tempest,Doctor,4,Full week,244687.05,4,ltempeste@usgs.gov,Female,"uM0U\""(%>9EJ"
+60,Rikki,Lauxmann,Doctor,7,Full week,368742.98,1,rlauxmannf@de.vu,Female,tY9lAY&qNT(
+61,Dud,Airs,Doctor,2,On-call Sunday,280518.89,1,dairsg@ftc.gov,Male,hL1sgH
+67,Graham,Shelp,Doctor,6,On-call Sunday,279814.93,4,gshelph@businessinsider.com,Female,iI91e4
+79,Felic,Huncoot,Doctor,7,On-call Sunday,361318.81,4,fhuncooti@drupal.org,Female,mY7!LKCA2
+81,Mendie,Surtees,Doctor,8,Off-Sunday,386121.77,4,msurteesj@theguardian.com,Other,aK510.
+82,Prinz,Corradengo,Doctor,10,On-call Sunday,152559.31,1,pcorradengok@cbslocal.com,Female,rQ7J.S!
+86,Vachel,Noni,Doctor,10,Full week,392024.99,8,vnonil@purevolume.com,Other,aB3+H}dD0WW
+91,Ethelbert,Othick,Doctor,8,On-call Sunday,92191.77,1,eothickm@blog.com,Male,"cL5TT#(WT,)"
+96,Bettina,Lansly,Doctor,7,Full week,178817.51,9,blanslyn@youtu.be,Male,uC8h`l#w||T|
+108,Freedman,Beste,Doctor,9,On-call Sunday,229096.51,8,fbesteo@ihg.com,Female,zU0TwGURa
+109,Kimbell,Ostler,Doctor,6,Full week,134334.83,8,kostlerp@admin.ch,Male,aV1fuq
+110,Gillian,Lodden,Doctor,10,On-call Sunday,77887.14,8,gloddenq@paginegialle.it,Female,fH5i4U?
+112,Wally,Louis,Doctor,9,Full week,79044.78,9,wlouisr@who.int,Male,"gZ6D,Ex/"
+117,Otis,Waring,Doctor,5,Full week,221813.49,4,owarings@sciencedaily.com,Female,gA7Qoj_$
+118,Gilly,McGrirl,Doctor,9,Full week,322209.78,9,gmcgrirlt@pbs.org,Male,"hT4""J2+KvA?1"
+119,Timothee,Antoons,Doctor,4,On-call Sunday,299530.76,9,tantoonsu@aol.com,Male,jK2cVMg7Y
+122,Finley,Civitillo,Doctor,2,Full week,265107.46,9,fcivitillov@newsvine.com,Other,pY1hphtoBa
+131,Cherida,Conws,Doctor,9,Full week,181239.14,1,cconwsw@usnews.com,Female,zT4/G)w<
+132,Demott,Glazyer,Doctor,7,Full week,142727.67,8,dglazyerx@deliciousdays.com,Female,xW4W2Q_h3mo7
+138,Angele,Goldes,Doctor,7,Off-Sunday,109443.22,8,agoldesy@ca.gov,Male,aA8H7h1FCPO
+139,Fidole,McKim,Doctor,5,On-call Sunday,335291.73,8,fmckimz@ucsd.edu,Female,qE2SP$'Y$
+144,Sheffy,Breagan,Doctor,1,Off-Sunday,301296.19,4,sbreagan10@ucoz.com,Male,uU9(OgDD>J1@
+145,Tomi,Double,Doctor,10,On-call Sunday,51731.39,4,tdouble11@google.com.hk,Male,oN1jd05#ExH\
+151,Agathe,Merring,Doctor,10,Full week,239215.61,4,amerring12@umich.edu,Other,kH9ROUZ.?R
+152,Gilberta,Comford,Doctor,5,Off-Sunday,398982.03,1,gcomford13@wufoo.com,Other,vI9aG&W
+155,Marten,Rough,Doctor,9,Full week,197673.2,9,mrough14@cam.ac.uk,Other,wB1|3labR|
+158,Thurstan,Phippard,Doctor,1,On-call Sunday,371515.56,8,tphippard15@wordpress.org,Female,aE1jP%DXHz
+162,Orren,Mountain,Doctor,3,Full week,334691.97,1,omountain16@ocn.ne.jp,Male,"xP6%7c,m`CEh"
+166,Kermie,Rout,Doctor,3,On-call Sunday,322544.64,1,krout17@ucsd.edu,Other,mI5zX=to&
+167,Moira,Birkenhead,Doctor,2,Full week,283822.87,8,mbirkenhead18@discuz.net,Male,kK4m|XZI(
+174,Mirna,Boow,Doctor,7,Full week,108923.74,9,mboow19@redcross.org,Female,yO545`=b
+175,Raynell,Ohm,Doctor,10,Full week,63018.46,9,rohm1a@mozilla.com,Other,zC8Vw=pd
+178,Mada,Gouny,Doctor,5,Off-Sunday,199402.88,8,mgouny1b@census.gov,Other,yS3Jzt~F$
+182,Gerick,Dawbury,Doctor,8,Full week,292608.26,1,gdawbury1c@furl.net,Male,eW7igOJjbvS
+184,Norman,Sargint,Doctor,1,Full week,52865.96,8,nsargint1d@networksolutions.com,Other,pG6FLa~Fx
+192,Loreen,Davsley,Doctor,5,Full week,329449.91,4,ldavsley1e@shinystat.com,Female,aK0R5ds9jot
+195,Adelbert,Renals,Doctor,8,On-call Sunday,293100.23,1,arenals1f@wsj.com,Female,vQ6E{In
+201,Ulrikaumeko,Giannazzo,Doctor,7,Full week,157348.08,4,ugiannazzo1g@salon.com,Female,aP6|Gy
+210,Juana,Dionisetto,Doctor,9,Full week,79351.01,9,jdionisetto1h@usnews.com,Female,gG1xCqeE84sN
+212,Oates,Steinhammer,Doctor,4,Full week,98953.71,8,osteinhammer1i@furl.net,Female,fL7i4>>1LLt
+213,Merl,Beeze,Doctor,7,Full week,394127.76,4,mbeeze1j@addthis.com,Other,"zB8~t\L""f"
+217,Camel,Schrei,Doctor,7,On-call Sunday,394901.18,9,cschrei1k@symantec.com,Female,cW8~'6t.{
+219,Ralf,McGilbon,Doctor,2,Full week,178464.22,1,rmcgilbon1l@hostgator.com,Female,aY92rQ3
+223,Cinderella,O'Dunneen,Doctor,2,On-call Sunday,232568.54,8,codunneen1m@squarespace.com,Male,pS211&0l*V
+225,Manuel,Widdison,Doctor,8,On-call Sunday,309674.98,1,mwiddison1n@virginia.edu,Female,hY17=by'
+229,Agosto,Mosdall,Doctor,1,Full week,136785.55,8,amosdall1o@soundcloud.com,Female,rN6'S|Cc#D_
+233,Kassia,Jonathon,Doctor,7,Full week,155950.48,9,kjonathon1p@baidu.com,Female,qJ9>8(S5
+235,Spencer,Gainforth,Doctor,8,Off-Sunday,264433.32,8,sgainforth1q@ted.com,Female,cJ1y1yo
+238,Kelila,Blackaller,Doctor,5,On-call Sunday,238829.66,4,kblackaller1r@google.com.au,Female,kP4You
+241,Warren,Freegard,Doctor,3,Full week,108305.97,9,wfreegard1s@shutterfly.com,Female,pA9Q{.x
+246,Grete,Behning,Doctor,5,Full week,339498.02,1,gbehning1t@opera.com,Other,oR7IQ'af
+248,Robby,Pestell,Doctor,1,On-call Sunday,170552.07,9,rpestell1u@engadget.com,Female,xL2</+Un
+250,Laural,Dreamer,Doctor,7,Off-Sunday,228526.21,9,ldreamer1v@earthlink.net,Male,hE8b&~OI_)
+252,Moshe,Grut,Doctor,6,On-call Sunday,101328.34,4,mgrut1w@bloomberg.com,Male,eF8h*H
+253,Evonne,Whittuck,Doctor,6,On-call Sunday,279349.99,4,ewhittuck1x@mtv.com,Other,tL3c&J>(Uuz
+256,Minny,Jales,Doctor,9,Full week,379824.74,8,mjales1y@godaddy.com,Other,jF0XmT
+258,Dougy,Hartfleet,Doctor,6,Full week,355546.5,4,dhartfleet1z@fotki.com,Male,hJ8xI~
+261,Octavia,Marchand,Doctor,10,Full week,286536.45,4,omarchand20@nba.com,Male,sY7g_M
+262,Pearline,Rapley,Doctor,10,Full week,186107.51,1,prapley21@apache.org,Male,xM5N6A
+264,Jamesy,Tingey,Doctor,9,Full week,227134.22,8,jtingey22@t-online.de,Female,"xM1ea,F9v<WO"
+267,Barrie,Frickey,Doctor,3,Off-Sunday,323667.36,9,bfrickey23@bbb.org,Female,jY34k{J
+269,Consolata,Agnolo,Doctor,6,On-call Sunday,372657.86,9,cagnolo24@addtoany.com,Female,iE9#!`7??
+270,Lil,Avon,Doctor,2,Off-Sunday,324032.05,8,lavon25@discovery.com,Male,"mP24f""A"
+271,Alejandrina,Lehr,Doctor,5,On-call Sunday,222674.65,1,alehr26@dmoz.org,Female,nA4MNs@vA04`
+273,Hana,Moncrefe,Doctor,7,Off-Sunday,391621.21,8,hmoncrefe27@npr.org,Male,bH5ti.
+274,Jerrilee,Kettle,Doctor,4,Off-Sunday,337131.58,1,jkettle28@sbwire.com,Female,bC1t>{X
+275,Hasty,Fletcher,Doctor,7,Off-Sunday,274940.45,9,hfletcher29@quantcast.com,Other,vA7Bp+%
+276,Heather,O'Carroll,Doctor,3,Full week,325083.1,1,hocarroll2a@soup.io,Male,"vB0tk<Z1#+v"""
+277,Chelsie,Noriega,Doctor,6,Full week,345452.7,8,cnoriega2b@sun.com,Female,hB0P)BjB|
+286,Caro,Ternott,Doctor,1,On-call Sunday,283565.62,1,cternott2c@fastcompany.com,Male,uJ1Oj(aG1#5|
+292,Johny,Bugden,Doctor,9,Off-Sunday,382112.83,8,jbugden2d@youku.com,Female,qM1Wdofu
+293,Katharyn,Embra,Doctor,4,On-call Sunday,301678.95,1,kembra2e@icq.com,Female,tS9#_8XU_
+298,Mayer,Padrick,Doctor,3,On-call Sunday,91202.19,4,mpadrick2f@businesswire.com,Female,pV8kri$X
+299,Lethia,Proven,Doctor,4,On-call Sunday,193440.51,9,lproven2g@ask.com,Female,bS6DZ0Ae

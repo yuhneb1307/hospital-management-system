@@ -1,73 +1,131 @@
 const mysql = require("mysql2");
 const fs = require("fs");
-const { parse } = require("csv-parse");
+const fastcsv = require("fast-csv");
 
-// update below connection config to match your system
-const conn = mysql.createConnection({
+// update below conection config to match your system
+const con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "123456",
-  database: "Hospitals",
+  database: "dataproject",
 });
 
-conn.connect(function (err) {
-  if (err) {
-    throw err;
-  }
-  console.log("Connected to DB!");
+let departmentStream = fs.createReadStream("Department.csv");
+let departmentCSVData = [];
+let departmentData = fastcsv
+  .parse()
+  .on("data", function (data) {
+    departmentCSVData.push(data);
 
-  // read and insert all cities
-  fs.createReadStream("./Patients.csv")
-    .pipe(parse({ delimiter: ",", from_line: 2 }))
-    .on("data", function (row) {
-      conn.query(
-        "INSERT INTO patients(_id,name,age,gender,contact_details,allergies,treatment_history) VALUES(?, ?, ?, ?, ?, ?, ?)",
-        [row[0], row[1], row[2], row[3], row[4], row[5], row[6]]
-      );
-    })
-    .on("end", function () {
-      console.log("Finished reading cities.csv and writing cities table");
-    })
-    .on("error", function (error) {
-      console.log(error.message);
+    // console.log(departmentCSVData);
+  })
+  .on("end", function () {
+    // remove the first line: header
+    departmentCSVData.shift();
+
+    // connect to the MySQL database
+    con.connect((error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        let query =
+          "INSERT INTO departments (id,name) VALUES ?";
+        con.query(query, [departmentCSVData], (error, response) => {
+          console.log(error || response);
+        });
+      }
     });
+    // save departmentCSVData
+  });
 
-//   const max_records = 100_000;
-//   // number of random records to create
-//   // you can decrease/increase this number as needed
-//   conn.beginTransaction((err) => {
-//     for (let i = 0; i < max_records; i++) {
-//       let fname = first_names[Math.floor(Math.random() * first_name_max)];
-//       let lname = last_names[Math.floor(Math.random() * last_name_max)];
+departmentStream.pipe(departmentData);
 
-//       let year = 1920 + Math.floor(Math.random() * 100); // 1920 to 2020
-//       let month = 1 + Math.floor(Math.random() * 12); // 1 to 12
-//       let day = 1 + Math.floor(Math.random() * 31); // 1 to 31
+let patientStream = fs.createReadStream("Patients.csv");
+let patientCSVData = [];
+let patientData = fastcsv
+  .parse()
+  .on("data", function (data) {
+    patientCSVData.push(data);
 
-//       // special cases
-//       if (month == 2 && day > 28) {
-//         day = 28;
-//       }
-//       if ([4, 6, 9, 11].includes(month) && day > 30) {
-//         day = 30;
-//       }
+    // console.log(patientCSVData);
+  })
+  .on("end", function () {
+    // remove the first line: header
+    patientCSVData.shift();
 
-//       let birth = `${year}-${month}-${day}`;
+    // connect to the MySQL database
+    con.connect((error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        let query =
+          "INSERT INTO patients (id,first_name,last_name,password,email,date_of_birth,gender,phone,address,doctor_id) VALUES ?";
+        con.query(query, [patientCSVData], (error, response) => {
+          console.log(error || response);
+        });
+      }
+    });
+    // save patientCSVData
+  });
 
-//       let birth_location = 1 + Math.floor(Math.random() * localtion_max);
-//       let current_location = 1 + Math.floor(Math.random() * localtion_max);
+patientStream.pipe(patientData);
 
-//       conn.query(
-//         "INSERT INTO people(first_name, last_name, birth_date, birth_location, current_location) VALUES(?, ?, ?, ?, ?)",
-//         [fname, lname, birth, birth_location, current_location]
-//       );
-//     }
-//     conn.commit((err) => {
-//       if (err) {
-//         conn.rollback();
-//       }
-//       console.log("Finished writing people table");
-//       conn.end((err) => console.log("Eixting..."));
-//     });
-//   });
-});
+let doctorStream = fs.createReadStream("Doctor.csv");
+let doctorCSVData = [];
+let doctorData = fastcsv
+  .parse()
+  .on("data", function (data) {
+    doctorCSVData.push(data);
+
+    // console.log(doctorCSVData);
+  })
+  .on("end", function () {
+    // remove the first line: header
+    doctorCSVData.shift();
+
+    // connect to the MySQL database
+    con.connect((error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        let query =
+          "INSERT INTO staff (id,first_name,last_name,role,department_id,schedule,salary,managed_by,email,gender,password) VALUES ?";
+        con.query(query, [doctorCSVData], (error, response) => {
+          console.log(error || response);
+        });
+      }
+    });
+    // save doctorCSVData
+  });
+
+doctorStream.pipe(doctorData);
+
+let nurseStream = fs.createReadStream("Nurse.csv");
+let nurseCSVData = [];
+let nurseData = fastcsv
+  .parse()
+  .on("data", function (data) {
+    nurseCSVData.push(data);
+
+    // console.log(nurseCSVData);
+  })
+  .on("end", function () {
+    // remove the first line: header
+    nurseCSVData.shift();
+
+    // connect to the MySQL database
+    con.connect((error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        let query =
+          "INSERT INTO staff (id,first_name,last_name,role,department_id,schedule,salary,managed_by,email,gender,password) VALUES ?";
+        con.query(query, [nurseCSVData], (error, response) => {
+          console.log(error || response);
+        });
+      }
+    });
+    // save nurseCSVData
+  });
+
+nurseStream.pipe(nurseData);

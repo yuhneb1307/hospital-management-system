@@ -1,0 +1,1001 @@
+_id,patient_id,allergy_name,reation,severity,discovered_date
+1,1,soy,swelling,I,2000-08-28
+2,2,soy,watery eyes,II,2002-09-07
+3,3,none,runny nose,I,2000-12-15
+4,4,none,sneezing,IV,2013-08-21
+5,5,none,diarrhea,III,2007-08-23
+6,6,sesame,headache,I,2023-08-28
+7,7,eggs,shortness of breath,III,2005-07-24
+8,8,sesame,itchy skin,IV,2022-02-22
+9,9,shellfish,watery eyes,IV,2000-12-12
+10,10,shellfish,sneezing,III,2015-10-27
+11,11,wheat,nausea,II,2009-04-10
+12,12,peanuts,vomiting,III,2024-06-15
+13,13,peanuts,swelling,I,2015-11-29
+14,14,none,watery eyes,I,2001-02-27
+15,15,dairy,runny nose,II,2015-10-05
+16,16,fish,sneezing,III,2002-11-03
+17,17,none,wheezing,II,2009-02-07
+18,18,none,shortness of breath,II,2024-03-16
+19,19,shellfish,runny nose,I,2022-06-05
+20,20,none,runny nose,III,2010-08-15
+21,21,shellfish,sneezing,II,2008-03-22
+22,22,none,dizziness,II,2008-10-19
+23,23,eggs,nausea,I,2013-10-06
+24,24,none,sneezing,I,2021-10-10
+25,25,none,vomiting,I,2010-01-17
+26,26,fish,hives,III,2018-06-12
+27,27,none,wheezing,III,2008-10-01
+28,28,fish,swelling,III,2022-01-23
+29,29,none,vomiting,I,2017-05-21
+30,30,shellfish,fatigue,I,2002-06-28
+31,31,eggs,itchy skin,II,2018-02-19
+32,32,none,watery eyes,III,2021-04-30
+33,33,dairy,diarrhea,III,2010-08-15
+34,34,tree nuts,runny nose,II,2013-09-19
+35,35,eggs,sneezing,II,2003-01-02
+36,36,soy,hives,IV,2003-12-15
+37,37,none,itchy skin,IV,2017-01-21
+38,38,fish,sneezing,II,2009-01-16
+39,39,sesame,shortness of breath,III,2023-12-01
+40,40,peanuts,dizziness,II,2010-02-06
+41,41,none,headache,I,2024-08-04
+42,42,wheat,itchy skin,I,2018-06-22
+43,43,fish,sneezing,II,2023-12-05
+44,44,sesame,swelling,IV,2008-04-22
+45,45,peanuts,hives,I,2019-09-30
+46,46,none,diarrhea,I,2006-07-20
+47,47,none,vomiting,II,2003-12-31
+48,48,eggs,runny nose,II,2008-09-17
+49,49,none,runny nose,I,2010-06-08
+50,50,none,diarrhea,II,2024-02-13
+51,51,dairy,dizziness,I,2018-10-28
+52,52,fish,vomiting,II,2012-05-30
+53,53,none,runny nose,IV,2003-01-16
+54,54,wheat,diarrhea,IV,2001-01-11
+55,55,none,shortness of breath,IV,2004-04-16
+56,56,soy,runny nose,I,2022-11-22
+57,57,none,shortness of breath,II,2020-04-25
+58,58,none,nausea,II,2005-05-16
+59,59,peanuts,watery eyes,II,2002-08-25
+60,60,soy,vomiting,IV,2008-02-13
+61,61,wheat,dizziness,III,2010-07-10
+62,62,peanuts,wheezing,III,2022-11-24
+63,63,shellfish,vomiting,II,2017-07-18
+64,64,none,dizziness,I,2015-10-07
+65,65,tree nuts,hives,II,2019-07-26
+66,66,none,itchy skin,II,2020-03-12
+67,67,gluten,nausea,IV,2006-03-28
+68,68,wheat,coughing,III,2022-10-16
+69,69,none,coughing,III,2023-11-07
+70,70,dairy,nausea,II,2023-04-18
+71,71,tree nuts,vomiting,I,2003-07-06
+72,72,dairy,dizziness,II,2002-01-08
+73,73,peanuts,itchy skin,IV,2022-10-04
+74,74,dairy,vomiting,IV,2023-02-07
+75,75,dairy,sneezing,II,2015-12-17
+76,76,sesame,fatigue,II,2017-01-10
+77,77,none,wheezing,IV,2004-02-01
+78,78,eggs,swelling,III,2001-03-25
+79,79,eggs,watery eyes,IV,2014-11-08
+80,80,dairy,wheezing,IV,2005-01-06
+81,81,none,dizziness,II,2003-09-17
+82,82,none,fatigue,III,2014-01-25
+83,83,peanuts,headache,I,2000-12-07
+84,84,none,hives,I,2024-03-16
+85,85,gluten,headache,I,2002-04-19
+86,86,tree nuts,coughing,I,2014-10-17
+87,87,sesame,swelling,I,2018-06-19
+88,88,eggs,itchy skin,III,2004-09-08
+89,89,fish,runny nose,II,2021-01-30
+90,90,eggs,hives,I,2019-05-28
+91,91,shellfish,vomiting,I,2017-05-09
+92,92,peanuts,swelling,IV,2011-08-31
+93,93,peanuts,nausea,I,2023-01-25
+94,94,peanuts,vomiting,III,2011-04-11
+95,95,shellfish,wheezing,I,2002-02-03
+96,96,none,fatigue,I,2024-06-11
+97,97,none,hives,IV,2013-10-21
+98,98,none,fatigue,II,2016-04-02
+99,99,shellfish,coughing,II,2023-06-13
+100,100,soy,watery eyes,II,2022-11-30
+101,101,wheat,vomiting,I,2018-04-19
+102,102,peanuts,dizziness,II,2014-03-20
+103,103,eggs,dizziness,III,2011-05-07
+104,104,soy,vomiting,I,2010-12-21
+105,105,fish,hives,III,2001-10-10
+106,106,dairy,vomiting,III,2009-08-30
+107,107,fish,dizziness,I,2013-01-24
+108,108,none,itchy skin,III,2014-09-15
+109,109,dairy,coughing,III,2009-08-27
+110,110,eggs,nausea,IV,2015-06-17
+111,111,sesame,hives,III,2009-04-10
+112,112,none,hives,III,2018-10-22
+113,113,none,runny nose,I,2020-11-22
+114,114,dairy,shortness of breath,III,2014-08-10
+115,115,none,vomiting,I,2018-08-17
+116,116,none,hives,III,2008-01-26
+117,117,none,itchy skin,II,2024-01-07
+118,118,eggs,nausea,II,2002-09-06
+119,119,soy,itchy skin,III,2023-08-25
+120,120,none,dizziness,I,2021-03-27
+121,121,none,sneezing,I,2002-12-19
+122,122,sesame,fatigue,II,2013-02-28
+123,123,none,diarrhea,III,2007-10-30
+124,124,none,dizziness,II,2012-05-31
+125,125,none,diarrhea,I,2022-06-07
+126,126,shellfish,diarrhea,I,2009-09-09
+127,127,dairy,fatigue,I,2002-03-18
+128,128,none,diarrhea,II,2021-10-24
+129,129,none,swelling,III,2016-02-04
+130,130,soy,nausea,III,2010-06-05
+131,131,none,shortness of breath,II,2008-08-30
+132,132,none,dizziness,III,2014-01-13
+133,133,none,vomiting,I,2019-08-21
+134,134,soy,wheezing,III,2001-06-01
+135,135,eggs,fatigue,I,2002-09-02
+136,136,none,dizziness,III,2009-06-13
+137,137,shellfish,runny nose,II,2015-08-28
+138,138,tree nuts,wheezing,IV,2022-04-23
+139,139,sesame,headache,I,2009-03-28
+140,140,none,swelling,I,2006-06-07
+141,141,none,nausea,I,2021-10-03
+142,142,eggs,itchy skin,II,2006-06-03
+143,143,wheat,diarrhea,I,2005-01-27
+144,144,fish,shortness of breath,III,2024-03-28
+145,145,none,vomiting,III,2016-12-30
+146,146,eggs,watery eyes,I,2001-03-27
+147,147,sesame,itchy skin,IV,2011-04-29
+148,148,shellfish,sneezing,II,2000-11-17
+149,149,wheat,watery eyes,II,2020-12-01
+150,150,peanuts,runny nose,I,2005-04-01
+151,151,none,dizziness,III,2011-06-25
+152,152,none,diarrhea,III,2006-03-28
+153,153,none,hives,II,2023-08-26
+154,154,none,headache,II,2006-06-17
+155,155,tree nuts,diarrhea,II,2003-06-05
+156,156,none,headache,I,2008-04-23
+157,157,eggs,itchy skin,II,2005-12-21
+158,158,wheat,sneezing,II,2015-04-06
+159,159,none,coughing,III,2002-03-03
+160,160,none,sneezing,I,2010-07-31
+161,161,none,dizziness,II,2010-03-30
+162,162,dairy,wheezing,I,2013-12-30
+163,163,none,diarrhea,II,2007-05-21
+164,164,none,headache,III,2014-01-24
+165,165,none,itchy skin,I,2022-06-03
+166,166,none,watery eyes,I,2019-06-27
+167,167,eggs,wheezing,III,2007-03-23
+168,168,none,coughing,II,2022-12-27
+169,169,eggs,watery eyes,II,2010-02-25
+170,170,eggs,watery eyes,II,2015-07-18
+171,171,peanuts,wheezing,III,2013-01-13
+172,172,gluten,runny nose,IV,2006-11-09
+173,173,tree nuts,shortness of breath,III,2021-12-25
+174,174,wheat,nausea,II,2010-10-26
+175,175,dairy,coughing,III,2021-03-29
+176,176,wheat,wheezing,I,2017-03-06
+177,177,none,hives,I,2009-12-19
+178,178,none,shortness of breath,I,2018-08-17
+179,179,none,shortness of breath,I,2012-04-02
+180,180,sesame,dizziness,II,2019-02-01
+181,181,none,fatigue,I,2016-10-03
+182,182,shellfish,hives,II,2006-11-04
+183,183,fish,shortness of breath,I,2007-10-23
+184,184,none,diarrhea,I,2005-03-01
+185,185,fish,vomiting,II,2017-04-16
+186,186,gluten,vomiting,III,2012-09-30
+187,187,gluten,watery eyes,IV,2016-09-15
+188,188,shellfish,dizziness,II,2016-03-13
+189,189,none,headache,I,2015-10-11
+190,190,peanuts,headache,II,2019-09-19
+191,191,shellfish,vomiting,I,2021-05-16
+192,192,sesame,watery eyes,III,2020-08-02
+193,193,peanuts,dizziness,III,2005-10-03
+194,194,dairy,watery eyes,II,2012-04-30
+195,195,none,runny nose,II,2009-07-15
+196,196,shellfish,fatigue,II,2014-04-10
+197,197,sesame,fatigue,I,2019-05-11
+198,198,wheat,sneezing,I,2024-03-18
+199,199,soy,watery eyes,II,2014-06-15
+200,200,sesame,diarrhea,II,2015-02-08
+201,201,tree nuts,vomiting,I,2004-09-20
+202,202,wheat,diarrhea,II,2009-06-30
+203,203,none,fatigue,I,2015-11-20
+204,204,gluten,headache,I,2004-01-15
+205,205,sesame,fatigue,II,2012-11-07
+206,206,soy,diarrhea,III,2015-02-11
+207,207,dairy,vomiting,I,2011-01-07
+208,208,peanuts,hives,III,2011-09-15
+209,209,shellfish,vomiting,IV,2023-04-02
+210,210,none,coughing,I,2020-08-13
+211,211,none,headache,II,2011-03-14
+212,212,none,headache,II,2010-08-04
+213,213,tree nuts,runny nose,II,2007-03-16
+214,214,dairy,coughing,I,2010-01-01
+215,215,none,dizziness,II,2015-04-10
+216,216,none,fatigue,I,2007-09-23
+217,217,none,runny nose,II,2012-03-19
+218,218,sesame,watery eyes,II,2000-12-08
+219,219,sesame,runny nose,III,2022-01-14
+220,220,sesame,shortness of breath,II,2011-04-07
+221,221,shellfish,headache,IV,2023-01-17
+222,222,dairy,coughing,I,2017-01-06
+223,223,gluten,headache,I,2012-04-22
+224,224,gluten,vomiting,III,2008-11-13
+225,225,eggs,coughing,I,2015-11-26
+226,226,eggs,runny nose,II,2001-11-21
+227,227,none,shortness of breath,II,2006-09-21
+228,228,none,diarrhea,IV,2009-06-07
+229,229,none,nausea,I,2010-07-07
+230,230,sesame,swelling,I,2016-02-06
+231,231,soy,fatigue,III,2001-12-09
+232,232,none,sneezing,II,2008-08-08
+233,233,soy,dizziness,I,2010-08-22
+234,234,none,swelling,III,2016-05-30
+235,235,none,hives,IV,2009-09-08
+236,236,gluten,wheezing,II,2010-08-10
+237,237,peanuts,runny nose,I,2022-04-20
+238,238,wheat,coughing,II,2017-01-03
+239,239,wheat,dizziness,IV,2014-09-16
+240,240,none,hives,III,2003-11-17
+241,241,fish,watery eyes,I,2014-08-07
+242,242,none,itchy skin,I,2021-02-21
+243,243,none,diarrhea,I,2001-11-05
+244,244,fish,fatigue,II,2010-12-14
+245,245,none,fatigue,I,2004-08-13
+246,246,none,coughing,III,2024-04-23
+247,247,sesame,headache,I,2011-04-09
+248,248,none,swelling,I,2004-10-30
+249,249,peanuts,vomiting,II,2017-04-20
+250,250,tree nuts,wheezing,I,2003-01-04
+251,251,tree nuts,watery eyes,I,2023-05-24
+252,252,sesame,hives,II,2007-03-15
+253,253,sesame,coughing,I,2016-05-21
+254,254,none,sneezing,I,2008-01-04
+255,255,none,nausea,III,2000-10-07
+256,256,fish,vomiting,I,2021-01-02
+257,257,wheat,diarrhea,I,2002-01-20
+258,258,gluten,coughing,II,2019-07-03
+259,259,fish,diarrhea,IV,2020-10-10
+260,260,none,nausea,I,2017-04-17
+261,261,soy,nausea,I,2024-01-29
+262,262,fish,diarrhea,I,2011-11-22
+263,263,dairy,diarrhea,II,2011-06-17
+264,264,dairy,runny nose,II,2021-03-24
+265,265,dairy,fatigue,I,2022-03-26
+266,266,none,wheezing,I,2004-08-16
+267,267,wheat,wheezing,III,2016-07-28
+268,268,none,itchy skin,I,2019-11-07
+269,269,wheat,itchy skin,IV,2012-09-27
+270,270,peanuts,headache,I,2003-08-07
+271,271,none,dizziness,III,2014-03-31
+272,272,none,itchy skin,III,2009-05-28
+273,273,none,coughing,II,2014-06-28
+274,274,dairy,diarrhea,III,2006-12-10
+275,275,none,fatigue,III,2011-11-30
+276,276,none,nausea,I,2013-07-25
+277,277,wheat,fatigue,III,2009-12-30
+278,278,soy,nausea,II,2005-03-02
+279,279,peanuts,hives,IV,2018-01-17
+280,280,wheat,itchy skin,II,2001-01-29
+281,281,none,dizziness,II,2019-05-28
+282,282,dairy,shortness of breath,I,2008-10-17
+283,283,none,runny nose,I,2011-03-21
+284,284,none,headache,II,2019-05-06
+285,285,gluten,sneezing,II,2006-06-30
+286,286,none,dizziness,IV,2003-01-13
+287,287,none,dizziness,I,2024-02-11
+288,288,none,shortness of breath,I,2016-07-31
+289,289,fish,itchy skin,I,2010-12-05
+290,290,none,watery eyes,II,2018-02-21
+291,291,none,itchy skin,III,2018-10-30
+292,292,gluten,coughing,III,2004-07-23
+293,293,dairy,sneezing,I,2011-01-06
+294,294,tree nuts,fatigue,II,2004-09-24
+295,295,soy,runny nose,I,2023-06-04
+296,296,shellfish,headache,II,2018-11-25
+297,297,eggs,dizziness,II,2024-05-10
+298,298,tree nuts,diarrhea,IV,2013-10-15
+299,299,none,sneezing,I,2008-09-21
+300,300,none,dizziness,III,2020-05-18
+301,301,eggs,itchy skin,III,2006-11-21
+302,302,none,dizziness,IV,2004-10-16
+303,303,none,watery eyes,III,2000-12-18
+304,304,shellfish,itchy skin,IV,2001-05-24
+305,305,soy,shortness of breath,II,2010-05-16
+306,306,none,swelling,I,2022-02-07
+307,307,peanuts,wheezing,I,2024-08-10
+308,308,soy,runny nose,I,2009-04-12
+309,309,none,hives,I,2021-03-03
+310,310,none,fatigue,II,2006-07-02
+311,311,peanuts,swelling,I,2018-05-30
+312,312,none,swelling,IV,2012-09-18
+313,313,gluten,fatigue,I,2004-09-08
+314,314,tree nuts,wheezing,I,2012-03-31
+315,315,none,watery eyes,III,2016-11-09
+316,316,none,itchy skin,I,2016-06-14
+317,317,none,hives,I,2011-09-01
+318,318,wheat,headache,IV,2005-03-01
+319,319,none,vomiting,II,2020-07-20
+320,320,none,headache,I,2017-07-26
+321,321,wheat,runny nose,II,2016-01-16
+322,322,wheat,runny nose,II,2007-09-16
+323,323,sesame,hives,II,2015-03-27
+324,324,eggs,diarrhea,I,2008-09-20
+325,325,soy,swelling,I,2001-12-03
+326,326,wheat,headache,III,2015-12-26
+327,327,sesame,nausea,II,2001-10-18
+328,328,sesame,diarrhea,I,2023-09-12
+329,329,soy,vomiting,II,2010-03-12
+330,330,none,nausea,I,2016-12-13
+331,331,gluten,fatigue,I,2009-06-24
+332,332,none,vomiting,II,2009-02-04
+333,333,wheat,vomiting,I,2011-05-29
+334,334,none,coughing,IV,2002-10-10
+335,335,none,wheezing,I,2020-11-20
+336,336,none,sneezing,III,2011-04-03
+337,337,none,watery eyes,II,2004-04-07
+338,338,none,headache,III,2004-04-05
+339,339,fish,sneezing,II,2014-07-21
+340,340,none,runny nose,II,2023-03-28
+341,341,none,diarrhea,II,2007-01-04
+342,342,none,wheezing,I,2009-03-03
+343,343,sesame,coughing,I,2012-08-25
+344,344,none,sneezing,I,2007-06-19
+345,345,soy,vomiting,I,2006-01-30
+346,346,wheat,swelling,I,2013-12-06
+347,347,none,sneezing,I,2005-09-26
+348,348,wheat,sneezing,I,2011-09-29
+349,349,shellfish,diarrhea,I,2005-04-27
+350,350,dairy,dizziness,II,2019-04-03
+351,351,peanuts,sneezing,I,2005-01-16
+352,352,eggs,runny nose,III,2022-10-28
+353,353,none,vomiting,I,2016-06-25
+354,354,none,coughing,III,2010-11-02
+355,355,soy,coughing,III,2003-09-26
+356,356,none,wheezing,IV,2018-09-14
+357,357,fish,fatigue,II,2014-05-24
+358,358,tree nuts,fatigue,I,2017-10-10
+359,359,fish,runny nose,II,2021-06-10
+360,360,none,itchy skin,III,2003-06-07
+361,361,fish,nausea,I,2009-09-06
+362,362,dairy,dizziness,I,2013-05-20
+363,363,shellfish,swelling,IV,2020-04-10
+364,364,none,watery eyes,III,2014-06-22
+365,365,none,wheezing,I,2003-07-26
+366,366,sesame,dizziness,I,2024-02-18
+367,367,none,itchy skin,I,2005-08-20
+368,368,none,diarrhea,II,2017-02-24
+369,369,none,itchy skin,IV,2007-09-28
+370,370,none,nausea,II,2002-10-20
+371,371,sesame,runny nose,IV,2013-09-11
+372,372,none,shortness of breath,II,2013-08-02
+373,373,none,vomiting,III,2012-04-24
+374,374,gluten,coughing,I,2004-07-02
+375,375,soy,vomiting,I,2016-03-17
+376,376,peanuts,sneezing,II,2015-09-21
+377,377,none,wheezing,I,2022-12-30
+378,378,eggs,wheezing,III,2007-07-07
+379,379,none,dizziness,III,2018-06-13
+380,380,fish,dizziness,I,2004-09-21
+381,381,none,sneezing,II,2019-10-10
+382,382,eggs,wheezing,IV,2010-04-06
+383,383,none,swelling,IV,2018-02-22
+384,384,none,vomiting,IV,2016-03-24
+385,385,none,nausea,I,2002-11-22
+386,386,fish,nausea,III,2008-12-03
+387,387,eggs,hives,I,2010-09-02
+388,388,shellfish,dizziness,II,2015-10-15
+389,389,none,wheezing,I,2009-04-17
+390,390,none,runny nose,I,2005-08-16
+391,391,none,sneezing,I,2011-04-28
+392,392,sesame,runny nose,I,2004-11-28
+393,393,none,sneezing,II,2014-04-30
+394,394,none,coughing,IV,2013-10-21
+395,395,dairy,itchy skin,III,2000-12-06
+396,396,peanuts,fatigue,III,2008-09-25
+397,397,none,diarrhea,I,2022-12-08
+398,398,shellfish,wheezing,I,2020-11-13
+399,399,peanuts,fatigue,I,2017-06-17
+400,400,none,shortness of breath,I,2021-11-16
+401,401,none,runny nose,I,2011-09-24
+402,402,eggs,wheezing,II,2009-04-25
+403,403,dairy,sneezing,I,2005-04-07
+404,404,none,nausea,I,2000-12-28
+405,405,tree nuts,itchy skin,II,2014-12-22
+406,406,none,wheezing,II,2015-06-22
+407,407,none,vomiting,I,2010-06-05
+408,408,none,hives,I,2017-10-20
+409,409,soy,hives,II,2019-04-18
+410,410,soy,sneezing,IV,2007-09-30
+411,411,shellfish,dizziness,II,2002-09-02
+412,412,soy,watery eyes,I,2001-11-13
+413,413,none,nausea,IV,2016-08-06
+414,414,sesame,diarrhea,IV,2014-03-07
+415,415,none,shortness of breath,I,2010-07-08
+416,416,none,nausea,III,2012-12-09
+417,417,none,diarrhea,II,2001-11-24
+418,418,none,runny nose,III,2020-11-26
+419,419,dairy,itchy skin,I,2001-06-18
+420,420,none,fatigue,II,2012-12-06
+421,421,gluten,sneezing,II,2022-08-14
+422,422,none,itchy skin,II,2009-01-28
+423,423,none,runny nose,I,2016-01-01
+424,424,wheat,shortness of breath,I,2002-04-24
+425,425,eggs,runny nose,I,2018-02-13
+426,426,none,coughing,I,2003-10-08
+427,427,dairy,coughing,II,2007-07-23
+428,428,soy,diarrhea,I,2013-12-17
+429,429,none,wheezing,III,2019-09-28
+430,430,none,vomiting,II,2022-10-28
+431,431,none,diarrhea,II,2019-10-12
+432,432,fish,shortness of breath,I,2004-01-07
+433,433,none,shortness of breath,I,2003-12-05
+434,434,none,coughing,I,2018-11-24
+435,435,fish,diarrhea,IV,2020-03-30
+436,436,wheat,fatigue,III,2002-08-01
+437,437,peanuts,diarrhea,I,2006-04-18
+438,438,none,wheezing,II,2013-06-19
+439,439,none,hives,II,2019-10-20
+440,440,none,fatigue,II,2013-05-03
+441,441,none,dizziness,I,2003-02-18
+442,442,none,itchy skin,I,2016-03-10
+443,443,soy,itchy skin,III,2014-10-18
+444,444,shellfish,watery eyes,II,2019-11-13
+445,445,shellfish,swelling,I,2010-12-10
+446,446,none,headache,I,2022-04-03
+447,447,wheat,watery eyes,III,2007-03-28
+448,448,soy,sneezing,I,2010-03-18
+449,449,shellfish,coughing,I,2014-04-26
+450,450,dairy,headache,II,2006-09-30
+451,451,dairy,headache,IV,2019-05-18
+452,452,sesame,headache,I,2015-07-20
+453,453,none,nausea,II,2003-01-21
+454,454,none,hives,I,2014-06-19
+455,455,eggs,headache,III,2002-10-13
+456,456,peanuts,vomiting,II,2021-08-26
+457,457,shellfish,swelling,I,2006-01-13
+458,458,none,dizziness,I,2010-08-12
+459,459,none,fatigue,III,2002-07-28
+460,460,wheat,swelling,I,2012-04-16
+461,461,eggs,hives,I,2010-07-21
+462,462,peanuts,fatigue,I,2016-04-02
+463,463,none,sneezing,III,2006-04-14
+464,464,none,watery eyes,II,2007-06-12
+465,465,none,diarrhea,I,2001-07-07
+466,466,none,shortness of breath,I,2006-02-23
+467,467,none,wheezing,II,2012-12-04
+468,468,none,runny nose,II,2006-02-16
+469,469,wheat,shortness of breath,I,2012-07-28
+470,470,none,shortness of breath,III,2015-06-10
+471,471,none,hives,I,2014-11-22
+472,472,eggs,headache,I,2007-12-17
+473,473,none,headache,I,2021-12-12
+474,474,peanuts,hives,I,2023-03-26
+475,475,none,shortness of breath,I,2008-05-15
+476,476,none,runny nose,IV,2008-09-08
+477,477,none,itchy skin,II,2004-04-02
+478,478,shellfish,shortness of breath,IV,2019-12-29
+479,479,shellfish,wheezing,IV,2001-07-13
+480,480,none,wheezing,III,2003-09-22
+481,481,peanuts,sneezing,I,2014-03-16
+482,482,wheat,dizziness,II,2020-01-19
+483,483,none,fatigue,IV,2023-03-29
+484,484,tree nuts,shortness of breath,III,2004-11-08
+485,485,fish,watery eyes,I,2023-06-18
+486,486,none,hives,III,2008-12-26
+487,487,none,shortness of breath,IV,2003-02-26
+488,488,dairy,sneezing,I,2006-03-23
+489,489,none,watery eyes,I,2008-06-20
+490,490,none,nausea,I,2021-06-11
+491,491,none,shortness of breath,I,2019-05-09
+492,492,none,headache,III,2021-09-21
+493,493,tree nuts,fatigue,III,2017-07-24
+494,494,none,itchy skin,III,2012-06-29
+495,495,none,sneezing,II,2005-09-01
+496,496,fish,itchy skin,IV,2004-08-25
+497,497,none,vomiting,III,2016-05-11
+498,498,none,shortness of breath,I,2009-01-06
+499,499,none,shortness of breath,I,2010-12-13
+500,500,none,headache,III,2002-01-30
+501,501,dairy,headache,III,2016-03-05
+502,502,shellfish,itchy skin,I,2003-05-27
+503,503,none,fatigue,II,2009-03-15
+504,504,fish,wheezing,I,2008-05-19
+505,505,shellfish,swelling,II,2006-05-25
+506,506,fish,wheezing,III,2004-03-22
+507,507,fish,nausea,III,2007-08-18
+508,508,sesame,headache,II,2020-10-16
+509,509,none,nausea,II,2009-12-08
+510,510,none,shortness of breath,I,2012-05-29
+511,511,wheat,shortness of breath,III,2006-01-09
+512,512,soy,runny nose,II,2023-05-28
+513,513,none,nausea,I,2018-11-22
+514,514,shellfish,dizziness,II,2018-04-09
+515,515,none,swelling,II,2012-03-26
+516,516,gluten,wheezing,IV,2003-07-17
+517,517,sesame,runny nose,IV,2021-08-16
+518,518,eggs,watery eyes,I,2018-05-04
+519,519,gluten,vomiting,I,2010-12-06
+520,520,none,coughing,I,2023-07-13
+521,521,fish,wheezing,I,2024-06-24
+522,522,none,wheezing,I,2005-10-25
+523,523,dairy,dizziness,II,2024-03-26
+524,524,dairy,headache,I,2017-07-24
+525,525,eggs,itchy skin,III,2013-09-25
+526,526,none,shortness of breath,IV,2002-01-14
+527,527,none,runny nose,I,2014-01-09
+528,528,fish,wheezing,I,2007-08-15
+529,529,eggs,dizziness,III,2010-08-17
+530,530,none,runny nose,I,2002-04-14
+531,531,wheat,wheezing,II,2013-12-15
+532,532,fish,wheezing,I,2013-09-26
+533,533,tree nuts,headache,II,2017-03-15
+534,534,dairy,swelling,I,2016-09-29
+535,535,none,diarrhea,IV,2011-06-22
+536,536,none,wheezing,II,2017-10-10
+537,537,soy,shortness of breath,II,2002-02-06
+538,538,none,runny nose,III,2000-12-18
+539,539,tree nuts,diarrhea,III,2003-04-21
+540,540,sesame,watery eyes,IV,2004-11-06
+541,541,none,runny nose,II,2006-01-02
+542,542,none,coughing,II,2005-05-16
+543,543,none,fatigue,III,2017-11-22
+544,544,none,sneezing,III,2015-11-13
+545,545,none,wheezing,I,2014-04-16
+546,546,peanuts,diarrhea,IV,2021-12-24
+547,547,wheat,shortness of breath,I,2016-11-30
+548,548,tree nuts,watery eyes,I,2008-12-11
+549,549,soy,headache,II,2014-08-29
+550,550,wheat,diarrhea,I,2013-03-04
+551,551,none,fatigue,I,2020-05-14
+552,552,peanuts,shortness of breath,II,2006-10-18
+553,553,shellfish,shortness of breath,I,2023-02-01
+554,554,none,diarrhea,IV,2009-06-19
+555,555,none,itchy skin,II,2017-08-06
+556,556,peanuts,coughing,III,2011-09-21
+557,557,none,sneezing,II,2014-01-18
+558,558,fish,hives,II,2004-11-29
+559,559,shellfish,sneezing,III,2015-05-10
+560,560,none,watery eyes,I,2013-09-22
+561,561,none,wheezing,IV,2004-01-18
+562,562,none,coughing,III,2019-06-28
+563,563,none,swelling,II,2010-08-22
+564,564,none,headache,I,2013-09-22
+565,565,none,watery eyes,III,2004-08-14
+566,566,none,wheezing,II,2023-03-22
+567,567,none,dizziness,I,2004-03-06
+568,568,dairy,watery eyes,I,2018-02-24
+569,569,peanuts,watery eyes,IV,2002-05-29
+570,570,shellfish,fatigue,I,2004-06-02
+571,571,tree nuts,hives,II,2012-01-13
+572,572,none,swelling,III,2024-04-07
+573,573,soy,wheezing,IV,2023-11-25
+574,574,none,fatigue,I,2007-12-21
+575,575,eggs,runny nose,II,2004-02-18
+576,576,wheat,nausea,I,2002-03-26
+577,577,gluten,watery eyes,III,2016-02-09
+578,578,dairy,headache,II,2016-02-24
+579,579,sesame,watery eyes,I,2010-08-06
+580,580,shellfish,sneezing,I,2022-08-22
+581,581,tree nuts,diarrhea,II,2021-02-27
+582,582,sesame,runny nose,IV,2008-06-09
+583,583,none,dizziness,I,2020-07-19
+584,584,sesame,wheezing,IV,2022-10-05
+585,585,soy,diarrhea,II,2003-01-24
+586,586,dairy,coughing,II,2004-06-15
+587,587,peanuts,nausea,II,2012-03-11
+588,588,wheat,coughing,II,2012-07-31
+589,589,none,hives,II,2014-04-19
+590,590,wheat,sneezing,III,2017-07-13
+591,591,none,watery eyes,II,2005-04-05
+592,592,tree nuts,watery eyes,II,2023-11-20
+593,593,shellfish,vomiting,III,2023-03-02
+594,594,sesame,hives,I,2003-11-06
+595,595,none,headache,II,2024-06-18
+596,596,tree nuts,hives,II,2011-12-01
+597,597,none,itchy skin,III,2011-05-10
+598,598,eggs,sneezing,III,2022-07-24
+599,599,soy,headache,II,2010-05-04
+600,600,shellfish,swelling,II,2005-01-20
+601,601,none,sneezing,I,2008-01-01
+602,602,sesame,fatigue,I,2018-09-19
+603,603,eggs,sneezing,II,2005-09-11
+604,604,none,dizziness,IV,2015-08-26
+605,605,none,dizziness,III,2019-05-21
+606,606,gluten,swelling,IV,2014-03-16
+607,607,none,headache,I,2010-07-21
+608,608,eggs,hives,I,2007-09-07
+609,609,sesame,swelling,I,2021-08-20
+610,610,none,runny nose,II,2002-04-30
+611,611,none,shortness of breath,III,2000-12-13
+612,612,shellfish,watery eyes,I,2005-10-23
+613,613,none,nausea,III,2010-04-18
+614,614,none,diarrhea,II,2008-05-13
+615,615,eggs,vomiting,III,2007-09-04
+616,616,none,vomiting,IV,2015-06-03
+617,617,none,nausea,I,2001-01-31
+618,618,tree nuts,itchy skin,II,2017-11-21
+619,619,none,itchy skin,IV,2001-09-16
+620,620,sesame,shortness of breath,II,2009-02-07
+621,621,none,watery eyes,II,2008-10-08
+622,622,dairy,sneezing,II,2023-07-29
+623,623,soy,diarrhea,IV,2020-10-28
+624,624,none,diarrhea,I,2010-01-19
+625,625,shellfish,headache,I,2020-01-22
+626,626,none,hives,II,2020-04-16
+627,627,tree nuts,itchy skin,II,2010-04-16
+628,628,none,nausea,II,2001-06-25
+629,629,tree nuts,runny nose,III,2004-02-14
+630,630,gluten,fatigue,I,2007-07-03
+631,631,shellfish,wheezing,I,2016-02-24
+632,632,fish,runny nose,I,2016-12-23
+633,633,none,shortness of breath,I,2008-05-19
+634,634,fish,itchy skin,I,2000-09-06
+635,635,none,itchy skin,II,2019-04-22
+636,636,fish,wheezing,II,2011-11-06
+637,637,shellfish,nausea,I,2015-10-10
+638,638,soy,itchy skin,III,2013-08-25
+639,639,none,headache,III,2022-11-30
+640,640,none,coughing,II,2015-11-21
+641,641,none,itchy skin,II,2015-10-31
+642,642,sesame,hives,I,2013-10-11
+643,643,fish,vomiting,I,2012-09-23
+644,644,soy,fatigue,II,2013-10-31
+645,645,none,shortness of breath,I,2024-08-05
+646,646,gluten,dizziness,III,2009-04-05
+647,647,eggs,vomiting,II,2011-07-27
+648,648,none,diarrhea,I,2019-06-05
+649,649,none,fatigue,I,2020-08-31
+650,650,gluten,nausea,I,2006-03-20
+651,651,dairy,itchy skin,III,2007-09-18
+652,652,wheat,runny nose,I,2018-01-07
+653,653,tree nuts,sneezing,II,2004-04-01
+654,654,none,sneezing,I,2009-12-21
+655,655,none,wheezing,II,2020-01-24
+656,656,tree nuts,dizziness,II,2009-08-24
+657,657,none,coughing,III,2002-03-17
+658,658,shellfish,diarrhea,II,2001-11-11
+659,659,shellfish,watery eyes,I,2011-03-31
+660,660,eggs,headache,IV,2015-11-29
+661,661,shellfish,sneezing,II,2006-05-27
+662,662,none,runny nose,III,2020-06-30
+663,663,fish,fatigue,I,2015-06-30
+664,664,none,runny nose,IV,2003-11-15
+665,665,peanuts,diarrhea,II,2011-04-18
+666,666,none,dizziness,II,2009-11-17
+667,667,none,fatigue,IV,2006-09-10
+668,668,none,diarrhea,II,2005-06-12
+669,669,none,fatigue,I,2004-02-17
+670,670,none,vomiting,IV,2016-05-01
+671,671,wheat,hives,I,2023-02-25
+672,672,none,sneezing,I,2010-07-11
+673,673,gluten,nausea,III,2015-04-03
+674,674,none,dizziness,II,2012-06-01
+675,675,fish,coughing,II,2007-09-25
+676,676,none,runny nose,III,2016-02-19
+677,677,gluten,sneezing,I,2013-12-31
+678,678,wheat,headache,III,2010-10-08
+679,679,none,shortness of breath,I,2021-09-27
+680,680,none,runny nose,I,2024-07-17
+681,681,none,itchy skin,I,2022-07-24
+682,682,tree nuts,fatigue,II,2002-11-01
+683,683,none,diarrhea,III,2001-07-26
+684,684,fish,nausea,I,2018-10-16
+685,685,eggs,wheezing,I,2015-07-23
+686,686,sesame,hives,II,2015-07-02
+687,687,fish,sneezing,I,2004-12-23
+688,688,shellfish,shortness of breath,IV,2001-10-24
+689,689,none,diarrhea,III,2004-03-02
+690,690,gluten,watery eyes,IV,2019-07-20
+691,691,wheat,fatigue,II,2011-03-17
+692,692,none,sneezing,I,2020-04-01
+693,693,shellfish,dizziness,I,2014-11-24
+694,694,sesame,fatigue,III,2007-07-30
+695,695,dairy,swelling,I,2004-03-30
+696,696,shellfish,fatigue,I,2007-10-16
+697,697,soy,diarrhea,I,2011-06-15
+698,698,sesame,runny nose,IV,2020-05-31
+699,699,peanuts,vomiting,III,2013-10-09
+700,700,none,diarrhea,I,2007-01-02
+701,701,none,diarrhea,II,2007-01-20
+702,702,eggs,vomiting,II,2011-10-04
+703,703,none,runny nose,II,2006-04-04
+704,704,tree nuts,shortness of breath,I,2021-04-04
+705,705,eggs,swelling,II,2023-12-25
+706,706,none,diarrhea,II,2015-06-02
+707,707,none,diarrhea,III,2018-07-11
+708,708,tree nuts,runny nose,III,2019-11-27
+709,709,peanuts,fatigue,II,2017-11-20
+710,710,shellfish,shortness of breath,IV,2008-11-06
+711,711,none,hives,III,2014-08-27
+712,712,peanuts,headache,I,2011-09-28
+713,713,none,headache,II,2002-05-14
+714,714,gluten,wheezing,III,2020-05-23
+715,715,none,dizziness,I,2018-06-03
+716,716,none,shortness of breath,II,2020-05-13
+717,717,none,dizziness,I,2006-11-21
+718,718,eggs,nausea,I,2017-04-06
+719,719,dairy,watery eyes,I,2003-03-29
+720,720,dairy,sneezing,I,2013-08-28
+721,721,fish,nausea,I,2002-10-30
+722,722,none,coughing,III,2002-04-04
+723,723,gluten,hives,II,2012-11-26
+724,724,dairy,runny nose,I,2008-06-26
+725,725,shellfish,sneezing,II,2023-04-21
+726,726,dairy,itchy skin,III,2022-10-17
+727,727,soy,swelling,II,2003-12-02
+728,728,gluten,headache,I,2010-06-05
+729,729,none,diarrhea,I,2008-04-20
+730,730,none,wheezing,I,2015-07-18
+731,731,none,dizziness,I,2015-07-30
+732,732,shellfish,headache,I,2021-03-12
+733,733,wheat,headache,III,2016-03-03
+734,734,soy,sneezing,I,2021-09-02
+735,735,none,nausea,II,2001-05-25
+736,736,none,sneezing,I,2008-04-21
+737,737,wheat,dizziness,IV,2020-02-25
+738,738,fish,watery eyes,III,2008-06-25
+739,739,none,dizziness,III,2007-10-26
+740,740,none,dizziness,III,2023-01-12
+741,741,none,runny nose,IV,2009-03-07
+742,742,peanuts,wheezing,II,2023-10-13
+743,743,gluten,itchy skin,II,2018-09-22
+744,744,none,headache,I,2010-06-02
+745,745,soy,dizziness,II,2001-10-14
+746,746,gluten,vomiting,IV,2007-01-12
+747,747,none,dizziness,III,2011-01-29
+748,748,gluten,watery eyes,II,2013-01-06
+749,749,gluten,fatigue,I,2005-12-24
+750,750,none,sneezing,II,2015-04-09
+751,751,wheat,swelling,II,2014-07-01
+752,752,gluten,diarrhea,II,2011-03-02
+753,753,none,fatigue,II,2002-04-29
+754,754,none,swelling,I,2014-01-10
+755,755,fish,sneezing,III,2013-03-12
+756,756,soy,vomiting,I,2016-07-16
+757,757,none,swelling,I,2020-03-13
+758,758,dairy,shortness of breath,III,2021-04-18
+759,759,none,sneezing,II,2022-04-14
+760,760,sesame,itchy skin,I,2005-07-26
+761,761,none,runny nose,II,2004-06-12
+762,762,fish,dizziness,II,2019-07-04
+763,763,shellfish,coughing,II,2004-11-18
+764,764,none,diarrhea,III,2010-10-17
+765,765,peanuts,coughing,III,2015-02-01
+766,766,wheat,coughing,I,2024-01-25
+767,767,gluten,dizziness,II,2022-12-18
+768,768,none,sneezing,II,2011-11-05
+769,769,peanuts,watery eyes,II,2023-11-16
+770,770,none,itchy skin,IV,2008-05-28
+771,771,soy,vomiting,II,2012-07-01
+772,772,tree nuts,headache,III,2014-08-05
+773,773,shellfish,sneezing,I,2017-06-12
+774,774,shellfish,hives,I,2005-03-02
+775,775,none,watery eyes,II,2014-11-02
+776,776,none,coughing,II,2019-12-17
+777,777,dairy,fatigue,I,2010-10-28
+778,778,shellfish,dizziness,II,2024-07-13
+779,779,shellfish,vomiting,III,2006-08-08
+780,780,none,itchy skin,I,2012-04-22
+781,781,none,nausea,IV,2008-09-13
+782,782,none,runny nose,I,2020-05-07
+783,783,none,nausea,III,2014-11-14
+784,784,fish,runny nose,IV,2010-04-09
+785,785,eggs,watery eyes,II,2019-10-30
+786,786,gluten,dizziness,II,2018-10-20
+787,787,shellfish,headache,I,2010-04-16
+788,788,wheat,dizziness,I,2011-05-28
+789,789,none,watery eyes,II,2003-04-05
+790,790,soy,shortness of breath,I,2006-03-12
+791,791,soy,fatigue,I,2008-12-27
+792,792,none,wheezing,III,2015-04-21
+793,793,fish,shortness of breath,I,2010-06-09
+794,794,soy,diarrhea,III,2002-02-25
+795,795,eggs,runny nose,III,2019-02-04
+796,796,tree nuts,diarrhea,III,2011-07-19
+797,797,peanuts,sneezing,I,2023-09-07
+798,798,tree nuts,sneezing,II,2007-03-05
+799,799,sesame,dizziness,II,2020-07-09
+800,800,none,coughing,II,2001-10-10
+801,801,eggs,diarrhea,I,2018-09-24
+802,802,none,nausea,I,2007-12-06
+803,803,wheat,shortness of breath,I,2004-02-02
+804,804,none,itchy skin,IV,2018-03-04
+805,805,none,fatigue,II,2017-02-02
+806,806,eggs,watery eyes,III,2024-08-11
+807,807,none,wheezing,III,2008-03-04
+808,808,dairy,swelling,II,2013-04-15
+809,809,gluten,hives,I,2007-10-12
+810,810,wheat,watery eyes,III,2022-09-06
+811,811,none,runny nose,I,2009-04-18
+812,812,soy,fatigue,II,2002-09-16
+813,813,soy,shortness of breath,I,2023-07-06
+814,814,none,runny nose,I,2020-09-25
+815,815,sesame,sneezing,II,2013-05-30
+816,816,fish,wheezing,IV,2024-05-10
+817,817,none,swelling,I,2011-02-04
+818,818,none,vomiting,IV,2004-11-16
+819,819,soy,diarrhea,I,2016-06-08
+820,820,dairy,hives,II,2024-05-03
+821,821,eggs,diarrhea,I,2024-06-12
+822,822,peanuts,vomiting,I,2017-10-11
+823,823,wheat,headache,III,2021-07-13
+824,824,sesame,shortness of breath,I,2013-04-18
+825,825,sesame,dizziness,I,2018-04-19
+826,826,shellfish,diarrhea,II,2022-06-03
+827,827,peanuts,runny nose,I,2007-09-04
+828,828,dairy,wheezing,I,2010-01-27
+829,829,tree nuts,swelling,IV,2024-04-15
+830,830,peanuts,diarrhea,IV,2007-03-20
+831,831,wheat,diarrhea,I,2006-11-18
+832,832,wheat,fatigue,I,2018-02-03
+833,833,none,coughing,I,2003-05-30
+834,834,wheat,runny nose,II,2011-08-29
+835,835,none,fatigue,I,2009-09-18
+836,836,none,wheezing,III,2007-02-10
+837,837,none,headache,I,2014-07-24
+838,838,none,itchy skin,I,2007-08-16
+839,839,peanuts,headache,III,2014-07-07
+840,840,sesame,nausea,I,2021-05-11
+841,841,none,sneezing,II,2013-05-17
+842,842,sesame,nausea,II,2010-10-02
+843,843,shellfish,itchy skin,I,2002-02-12
+844,844,sesame,coughing,II,2010-09-14
+845,845,none,itchy skin,I,2009-03-06
+846,846,none,hives,III,2015-04-22
+847,847,soy,dizziness,I,2012-05-02
+848,848,none,hives,I,2016-04-25
+849,849,none,headache,II,2003-04-16
+850,850,none,swelling,II,2019-09-29
+851,851,dairy,nausea,III,2022-09-17
+852,852,none,itchy skin,II,2014-03-23
+853,853,none,headache,IV,2010-03-02
+854,854,none,headache,II,2009-05-23
+855,855,peanuts,swelling,I,2006-01-03
+856,856,none,coughing,III,2019-02-28
+857,857,none,swelling,I,2022-03-29
+858,858,none,dizziness,I,2023-02-06
+859,859,none,coughing,IV,2015-02-09
+860,860,gluten,diarrhea,I,2001-01-29
+861,861,none,sneezing,I,2022-04-06
+862,862,tree nuts,diarrhea,I,2005-03-27
+863,863,tree nuts,swelling,I,2016-07-14
+864,864,tree nuts,headache,IV,2010-06-12
+865,865,none,coughing,II,2015-05-28
+866,866,gluten,fatigue,I,2001-01-08
+867,867,tree nuts,dizziness,II,2021-06-20
+868,868,tree nuts,sneezing,I,2021-01-17
+869,869,dairy,fatigue,I,2021-03-23
+870,870,none,fatigue,II,2001-02-15
+871,871,none,shortness of breath,I,2015-05-17
+872,872,none,shortness of breath,II,2016-02-23
+873,873,none,sneezing,II,2004-08-26
+874,874,none,runny nose,III,2013-11-04
+875,875,none,dizziness,III,2001-05-29
+876,876,eggs,headache,I,2023-03-05
+877,877,none,dizziness,I,2017-08-16
+878,878,peanuts,fatigue,III,2017-05-13
+879,879,tree nuts,diarrhea,I,2016-08-07
+880,880,wheat,runny nose,II,2011-09-27
+881,881,none,diarrhea,II,2002-05-05
+882,882,fish,hives,I,2015-04-08
+883,883,none,itchy skin,I,2005-10-23
+884,884,none,nausea,II,2024-05-18
+885,885,none,nausea,II,2004-11-09
+886,886,fish,nausea,III,2021-12-05
+887,887,none,sneezing,III,2006-11-25
+888,888,sesame,hives,II,2013-09-12
+889,889,none,wheezing,II,2020-12-07
+890,890,tree nuts,coughing,I,2011-12-28
+891,891,fish,fatigue,III,2004-04-13
+892,892,none,vomiting,II,2005-06-08
+893,893,none,runny nose,II,2015-08-08
+894,894,tree nuts,wheezing,I,2011-01-31
+895,895,sesame,headache,I,2014-04-08
+896,896,soy,fatigue,I,2023-10-29
+897,897,none,sneezing,I,2011-01-27
+898,898,peanuts,swelling,II,2021-03-07
+899,899,dairy,sneezing,I,2001-11-30
+900,900,peanuts,nausea,II,2008-11-19
+901,901,none,wheezing,III,2015-02-22
+902,902,soy,shortness of breath,III,2012-11-13
+903,903,dairy,dizziness,II,2005-04-28
+904,904,none,runny nose,I,2019-11-18
+905,905,peanuts,hives,I,2013-03-29
+906,906,none,fatigue,I,2023-09-07
+907,907,eggs,hives,IV,2000-10-14
+908,908,eggs,dizziness,III,2019-06-23
+909,909,none,vomiting,II,2016-02-22
+910,910,wheat,watery eyes,II,2011-01-07
+911,911,none,swelling,III,2006-04-25
+912,912,none,runny nose,II,2008-01-13
+913,913,gluten,swelling,II,2014-08-09
+914,914,none,coughing,II,2022-11-02
+915,915,peanuts,sneezing,I,2006-06-14
+916,916,eggs,sneezing,I,2024-03-15
+917,917,none,dizziness,II,2021-06-16
+918,918,none,nausea,II,2018-03-25
+919,919,dairy,nausea,I,2008-04-02
+920,920,none,coughing,II,2007-05-21
+921,921,gluten,itchy skin,I,2001-03-21
+922,922,none,hives,II,2007-11-09
+923,923,sesame,shortness of breath,I,2009-07-08
+924,924,soy,headache,III,2018-08-23
+925,925,tree nuts,sneezing,I,2006-06-27
+926,926,soy,shortness of breath,II,2005-02-11
+927,927,dairy,swelling,IV,2001-10-04
+928,928,none,diarrhea,IV,2015-04-20
+929,929,none,fatigue,I,2022-08-22
+930,930,shellfish,vomiting,II,2012-01-09
+931,931,wheat,headache,I,2004-07-12
+932,932,fish,diarrhea,II,2013-07-12
+933,933,none,sneezing,I,2016-01-08
+934,934,none,sneezing,II,2004-10-21
+935,935,fish,headache,II,2024-08-15
+936,936,none,fatigue,III,2009-07-14
+937,937,fish,headache,I,2021-06-13
+938,938,soy,diarrhea,I,2015-03-08
+939,939,none,wheezing,II,2017-05-17
+940,940,none,vomiting,I,2017-10-29
+941,941,none,headache,II,2013-02-05
+942,942,none,wheezing,I,2023-04-21
+943,943,peanuts,shortness of breath,IV,2007-12-19
+944,944,none,shortness of breath,I,2014-02-02
+945,945,shellfish,swelling,I,2004-12-05
+946,946,none,hives,I,2005-06-15
+947,947,none,runny nose,III,2003-01-03
+948,948,none,watery eyes,I,2001-09-09
+949,949,dairy,coughing,III,2017-12-27
+950,950,none,nausea,I,2014-12-03
+951,951,none,vomiting,I,2009-02-15
+952,952,wheat,watery eyes,III,2021-01-08
+953,953,tree nuts,runny nose,II,2013-08-15
+954,954,shellfish,fatigue,IV,2020-05-16
+955,955,none,fatigue,III,2022-12-22
+956,956,shellfish,swelling,I,2019-09-10
+957,957,none,nausea,IV,2002-07-01
+958,958,peanuts,swelling,I,2019-09-26
+959,959,tree nuts,wheezing,II,2003-03-14
+960,960,shellfish,shortness of breath,II,2006-12-15
+961,961,none,fatigue,II,2010-06-16
+962,962,fish,wheezing,II,2001-01-18
+963,963,none,itchy skin,I,2021-06-06
+964,964,soy,diarrhea,I,2004-04-11
+965,965,sesame,itchy skin,I,2010-02-02
+966,966,fish,wheezing,I,2024-01-10
+967,967,eggs,sneezing,II,2020-08-22
+968,968,dairy,dizziness,II,2017-08-16
+969,969,sesame,dizziness,IV,2002-10-03
+970,970,wheat,vomiting,III,2019-08-06
+971,971,none,watery eyes,I,2023-11-27
+972,972,none,dizziness,I,2008-01-20
+973,973,shellfish,fatigue,I,2015-07-31
+974,974,soy,nausea,II,2009-09-27
+975,975,eggs,fatigue,I,2010-10-06
+976,976,soy,swelling,III,2018-10-31
+977,977,dairy,watery eyes,I,2013-06-27
+978,978,sesame,diarrhea,I,2022-07-10
+979,979,fish,diarrhea,I,2016-09-07
+980,980,none,itchy skin,I,2010-10-10
+981,981,tree nuts,nausea,I,2001-01-11
+982,982,eggs,dizziness,III,2007-01-23
+983,983,gluten,nausea,III,2020-08-21
+984,984,none,swelling,I,2002-08-15
+985,985,tree nuts,vomiting,II,2005-10-30
+986,986,none,hives,II,2001-05-29
+987,987,none,vomiting,II,2001-03-06
+988,988,none,wheezing,I,2003-11-18
+989,989,wheat,sneezing,II,2000-09-04
+990,990,none,fatigue,I,2009-09-16
+991,991,sesame,wheezing,I,2008-12-03
+992,992,none,dizziness,IV,2018-10-19
+993,993,dairy,watery eyes,II,2007-04-30
+994,994,soy,itchy skin,II,2007-09-16
+995,995,none,headache,II,2016-08-21
+996,996,soy,watery eyes,I,2021-04-19
+997,997,none,headache,IV,2022-12-20
+998,998,shellfish,dizziness,I,2014-10-19
+999,999,fish,hives,II,2019-11-22
+1000,1000,none,headache,III,2011-01-27
