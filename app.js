@@ -66,6 +66,11 @@ mysqlConnection.connect((err) => {
     res.render("patient-infor");
   });
 
+  // Register route
+  app.get("/doctor", function (req, res) {
+    res.render("doctor");
+  });
+
   // Handle 404 errors
   app.use((req, res, next) => {
     res.status(404).json({ message: "Resource not found" });

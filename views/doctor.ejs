@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Information</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      .appointment-tab {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 320px;
+        max-height: 400px;
+        overflow-y: auto;
+        z-index: 1050;
+      }
+
+      .appointment-tab .list-group-item {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Hospital Management</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Doctor List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Staff List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Appointment List</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <!-- Doctor Information Section -->
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-8 col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Doctor Information</h5>
+              <div class="row">
+                <div class="col-6">
+                  <p class="card-text">
+                    <strong>Name:</strong> <span id="doctor-name"></span>
+                  </p>
+                  <p class="card-text">
+                    <strong>ID:</strong> <span id="doctor-id"></span>
+                  </p>
+                  <p class="card-text">
+                    <strong>Email:</strong> <span id="doctor-email"></span>
+                  </p>
+                  <p class="card-text">
+                    <strong>Gender:</strong> <span id="doctor-gender"></span>
+                  </p>
+                </div>
+                <div class="col-6">
+                  <p class="card-text">
+                    <strong>Role:</strong> <span id="doctor-role"></span>
+                  </p>
+                  <p class="card-text">
+                    <strong>Department ID:</strong> <span id="doctor-department"></span>
+                  </p>
+                  <p class="card-text">
+                    <strong>Schedule:</strong> <span id="doctor-schedule"></span>
+                  </p>
+                  <p class="card-text">
+                    <strong>Salary:</strong> $<span id="doctor-salary"></span>
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex justify-content-center mt-3">
+                <a href="edit-doctor-info.html" class="btn btn-primary me-2"
+                  >Edit Information</a
+                >
+                <a href="create-appointment.html" class="btn btn-success"
+                  >Create Appointment</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Appointment History Section -->
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Appointment History</h5>
+              <div class="list-group">
+                <!-- Appointment History to be populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Appointment Tab -->
+    <div class="card appointment-tab">
+      <div class="card-body">
+        <h5 class="card-title">Upcoming Appointments</h5>
+        <div class="list-group">
+          <!-- Upcoming Appointments -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Sample data storage in local storage
+      localStorage.setItem(
+        "doctor",
+        JSON.stringify({
+          id: 1,
+          first_name: "Chariot",
+          last_name: "Frankis",
+          email: "cfrankis0@moonfruit.com",
+          role: "Doctor",
+          department_id: 9,
+          schedule: "Off-Sunday",
+          salary: 255279.32,
+          gender: "Male",
+        })
+      );
+
+      // Fetch doctor data from local storage
+      const doctorData = JSON.parse(localStorage.getItem("doctor"));
+
+      if (doctorData) {
+        document.getElementById("doctor-name").innerText = `${doctorData.first_name} ${doctorData.last_name}`;
+        document.getElementById("doctor-id").innerText = doctorData.id;
+        document.getElementById("doctor-email").innerText = doctorData.email;
+        document.getElementById("doctor-gender").innerText = doctorData.gender;
+        document.getElementById("doctor-role").innerText = doctorData.role;
+        document.getElementById("doctor-department").innerText = doctorData.department_id;
+        document.getElementById("doctor-schedule").innerText = doctorData.schedule;
+        document.getElementById("doctor-salary").innerText = doctorData.salary;
+      } else {
+        console.error("No doctor data found in local storage.");
+      }
+
+      // Load Appointment History from local storage or any other source
+      // (Here you can add more JavaScript to fetch and populate appointment history dynamically)
+    </script>
+  </body>
+</html>
