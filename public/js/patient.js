@@ -27,7 +27,7 @@ addressDiv.innerHTML = "Address: " + userData.address;
 // Div.innerHTML = "" + userData.;
 
 
-const apiUrl = "http://localhost:3000/patient/login";
+const apiUrl = "http://localhost:3000/patient/";
 
 fetch(apiUrl, {
   method: "POST",
