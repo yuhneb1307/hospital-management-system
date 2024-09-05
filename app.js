@@ -6,44 +6,35 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const morgan = require("morgan");
-const usersRoutes = require('./routes/UsersRoutes');
-const patientsRoutes = require('./routes/PatientsRoutes');
-const errorMiddleware = require('./middleware/errorMiddleware');
+// const usersRoutes = require('./routes/UsersRoutes');
+const patientsRoutes = require("./routes/PatientsRoutes");
+const errorMiddleware = require("./middleware/errorMiddleware");
 
-// MongoDB import Routes 
-const doctorNotesRoutes = require('./routes/doctorNotesRoutes');
-const appointmentNotesRoutes = require('./routes/appointmentNotes');
-const staffDocumentsRoutes = require('./routes/staffDocuments');
-const patientsAllergiesRoutes = require('./routes/patientsAllergies');
-const treatmentHistoryRoutes = require('./routes/treatmentHistory');
+// MongoDB import Routes
+const appointmentsRoutes = require("./routes/appointments");
+const staffDocumentsRoutes = require("./routes/staffDocuments");
+const patientsAllergiesRoutes = require("./routes/patientsAllergies");
 
 // Create an Express application
 const app = express();
-app.set('views', './views');
-app.use(express.static('public'));
-app.set('view engine', 'ejs');
-
+app.use(express.json());
+app.set("views", "./views");
+app.use(express.static("public"));
+app.set("view engine", "ejs");
 
 // Middleware setup
 app.use(cors()); // Enable CORS for all routes
 app.use(morgan("dev")); // Log HTTP requests to the console
 app.use(bodyParser.json()); // Parse JSON request bodies
-app.use('/users', usersRoutes);
-app.use('/patients', patientsRoutes);
+// app.use('/users', usersRoutes);
+app.use("/patients", patientsRoutes);
 
-// MongoDB 
-app.use('/doctor-notes', doctorNotesRoutes);
-app.use('/appointment-notes', appointmentNotesRoutes);
-app.use('/staff-documents', staffDocumentsRoutes);
-app.use('/patients-allergies', patientsAllergiesRoutes);
-app.use('/treatment-history', treatmentHistoryRoutes);
-
-
-app.use(express.json());
+// MongoDB
+app.use("/appointments", appointmentsRoutes);
+app.use("/staff-documents", staffDocumentsRoutes);
+app.use("/patients-allergies", patientsAllergiesRoutes);
 
 app.use(errorMiddleware);
-
-
 
 // Import your database connections from the config folder
 const mysqlConnection = require("./config/db"); // MySQL connection
@@ -61,13 +52,18 @@ mysqlConnection.connect((err) => {
   // Place route definitions here after MySQL connection is established
 
   // Default route require login
-  app.get('/', function (req, res) {
-    res.render('login');
+  app.get("/", function (req, res) {
+    console.log(mongoConfig);
+    res.render("login");
   });
 
   // Register route
-  app.get('/register', function (req, res) {
-    res.render('register');
+  app.get("/register", function (req, res) {
+    res.render("register");
+  });
+
+  app.get("/patient", function (req, res) {
+    res.render("patient-infor");
   });
 
   // Handle 404 errors
@@ -87,6 +83,10 @@ mysqlConnection.connect((err) => {
     console.log(`Server is running on port ${PORT}`);
   });
 });
+
+// mongoConfig.connection((err) => {
+//   console.error(err);
+// })
 
 // Debugging: Check if MongoDB is connected
 mongoose.connection.on("connected", () => {

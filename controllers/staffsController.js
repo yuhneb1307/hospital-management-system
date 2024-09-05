@@ -1,36 +1,36 @@
 const Staffs = require("../models/staffs");
 
 // READ
-exports.getAllPatients = async (req, res) => {
-  // Logic to get all patients
-  Patients.getAllPatients((err, patients) => {
+exports.getAllStaffs = async (req, res) => {
+  // Logic to get all staffs
+  Staffs.getAllStaffs((err, staffs) => {
     if (err) throw err;
-    callback(patients);
+    callback(staffs);
   });
 };
 
-exports.getPatientById = async (req, res) => {
+exports.getStaffById = async (req, res) => {
   const id = req.body.id;
 
-  Patients.getPatientById(id, (err, patients) => {
+  Staffs.getStaffById(id, (err, staffs) => {
     if (err) throw err;
-    res.json(patients);
+    res.json(staffs);
   });
 };
 
-exports.getPatientByDataOrder = async (req, res) => {
+exports.getStaffByDataOrder = async (req, res) => {
   const order = req.params.order;
   const data = req.params.data;
 
-  Patients.getPatientByDataOrder(data, order, (err, patients) => {
+  Staffs.getStaffByDataOrder(data, order, (err, staffs) => {
     if (err) throw err;
-    res.json(patients);
+    res.json(staffs);
   });
 };
 
 //CREATE
-exports.createPatient = async (req, res) => {
-  const patient = {
+exports.createStaff = async (req, res) => {
+  const staff = {
     id: req.body.id,
     name: req.body.name,
     age: req.body.age,
@@ -40,36 +40,37 @@ exports.createPatient = async (req, res) => {
     treatment_history: req.body.treatment_history,
   };
 
-  Patients.createPatient(patient, (err, patients) => {
+  Staffs.createStaff(staff, (err, staffs) => {
     if (err) throw err;
-    res.json({ message: "Patient created successfully" });
+    res.json({ message: "Staff created successfully" });
   });
 };
 
 // UPDATE
-exports.updatePatient = async (req, res) => {
+exports.updateStaff = async (req, res) => {
   const id = req.body.id;
-  const patient = {
+  const staff = {
     id: req.body.id,
-    name: req.body.name,
-    age: req.body.age,
-    gender: req.body.gender,
-    contact_details: req.body.contact_details,
-    allergies: req.body.allergies,
-    treatment_history: req.body.treatment_history,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    role: req.body.tole,
+    department_id: req.body.department_id,
+    schedule: req.body.schedule,
+    salary: req.body.salary,
+    managed_by: req.body.managed_by,
   };
 
-  Patients.updatePatient(patient, id, (err, result) => {
+  Staffs.updateStaff(staff, id, (err, result) => {
     if (err) throw err;
-    res.json({ message: "Patient updated successfully" });
+    res.json({ message: "Staff updated successfully" });
   });
 };
 
 // DELETE
-exports.deletePatient = async (req, res) => {
+exports.deleteStaff = async (req, res) => {
   const id = req.body.id;
-  Patients.deletePatient(id, (err, result) => {
+  Staffs.deleteStaff(id, (err, result) => {
     if (err) throw err;
-    res.json({ message: "patient deleted successfully" });
+    res.json({ message: "staff deleted successfully" });
   });
 };

@@ -17,6 +17,10 @@ exports.getPatientByDataOrder = function (data, order, callback) {
   }
 };
 
+exports.checkLogIn = function (username, password, callback) {
+    db.query(`SELECT * FROM patients WHERE username = ? AND password = ? LIMIT 1`, [username, password], callback);
+};
+
 // CREATE
 exports.createPatient = function (newPatient, callback) {
   db.query("INSERT INTO patients SET ?", [newPatient], callback);

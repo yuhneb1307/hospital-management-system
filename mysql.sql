@@ -17,12 +17,16 @@ CREATE TABLE Departments (
 -- Create Patients table
 CREATE TABLE Patients (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  age INT NOT NULL,
+  first_name VARCHAR(255) NOT NULL,
+  last_name VARCHAR(255) NOT NULL,
+  username VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  date_of_birth DATETIME NOT NULL,
   gender ENUM('Male', 'Female', 'Other'),
-  contact_details TEXT,
-  allergies TEXT,
-  treatment_history TEXT
+  phone VARCHAR(12),
+  address TEXT,
+  doctor_id int
 ) ENGINE = InnoDB;
 
 -- Create Staff table

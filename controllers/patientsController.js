@@ -6,6 +6,7 @@ exports.getAllPatients = (callback) => {
   Patients.getAllPatients((err, patients) => {
     if (err) throw err;
     callback(patients);
+    // res.json(patients);
   });
 };
 
@@ -26,16 +27,26 @@ exports.getPatientByDataOrder = async (req, res) => {
   });
 };
 
+exports.checkLogIn = async (req, res) => {
+  const password = req.body.password;
+  const username = req.body.username;
+
+  Patients.checkLogIn(username, password, (err, patients) => {
+    if (err) throw err;
+    res.json(patients);
+  });
+};
+
 //CREATE
 exports.createPatient = async (req, res) => {
   const patient = {
     id: req.body.id,
-    name: req.body.name,
-    age: req.body.age,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    date_of_birth: req.body.date_of_birth,
     gender: req.body.gender,
-    contact_details: req.body.contact_details,
-    allergies: req.body.allergies,
-    treatment_history: req.body.treatment_history,
+    phone: req.body.contact_details,
+    address: req.body.allergies
   };
 
   Patients.createPatient(patient, (err, patients) => {
