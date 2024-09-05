@@ -76,7 +76,8 @@
                 <div class="col-6">
                   <p class="card-text">
                     <strong>Name:</strong>
-                    <%= patient.name %>
+                    <%= patient.first_name %> 
+                    <%= patient.last_name %>
                   </p>
                   <p class="card-text">
                     <strong>ID:</strong>
@@ -84,17 +85,21 @@
                   </p>
                   <p class="card-text">
                     <strong>Date of Birth:</strong>
-                    <%= patient.age %>
+                    <%= patient.date_of_birth %>
                   </p>
                 </div>
                 <div class="col-6">
                   <p class="card-text">
-                    <strong>Contact Details:</strong>
-                    <%= patient.contact_details %>
+                    <strong>Phone:</strong>
+                    <%= patient.phone %>
+                  </p>
+                  <p class="card-text">
+                    <strong>Address:</strong>
+                    <%= patient.address %>
                   </p>
                   <p class="card-text">
                     <strong>Allergies:</strong>
-                    <%= patient.allergies %>
+                    <%= allergy[0].allergy_name %>
                   </p>
                 </div>
               </div>

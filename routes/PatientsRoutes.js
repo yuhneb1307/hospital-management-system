@@ -3,6 +3,7 @@ const router = express.Router();
 const patientsController = require("../controllers/patientsController.js");
 router.use(express.static("public"));
 const appointment_notes = require("../models/appointments.js"); // Import the model
+const allergy = require("../models/allergy.js"); // Import the model
 
 // Routes
 router.get("/", (req, res) => {
@@ -12,17 +13,26 @@ router.get("/", (req, res) => {
 });
 
 // READD
-router.get("/search", patientsController.getPatientById);
+router.get("/search/:id", async (req, res) => {
+  patientsController.getPatientById(req.params.id, (patient) => {
+    // console.log(patient);
+    res.json(patient);
+  });
+});
+
 router.get("/:id", async (req, res) => {
   var appointment_object = await appointment_notes
     .find({ patient_id: req.params.id })
     .exec();
-  console.log(appointment_object);
+
+  var allergy_object = await allergy.find({ patient_id: req.params.id }).exec();
+  console.log(allergy_object);
+
   patientsController.getPatientById(req.params.id, (patient) => {
-    console.log(patient);
     res.render("patient-infor", {
       patient: patient[0],
       appointment_notes: appointment_object,
+      allergy: allergy_object,
     });
   });
 });
