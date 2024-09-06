@@ -45,8 +45,8 @@ exports.createPatient = async (req, res) => {
     last_name: req.body.last_name,
     date_of_birth: req.body.date_of_birth,
     gender: req.body.gender,
-    phone: req.body.contact_details,
-    address: req.body.allergies
+    phone: req.body.phone,
+    address: req.body.address
   };
 
   Patients.createPatient(patient, (err, patients) => {
@@ -57,17 +57,17 @@ exports.createPatient = async (req, res) => {
 
 // UPDATE
 exports.updatePatient = async (req, res) => {
-  const id = req.body.id;
+  const id = req.params.id;
   const patient = {
     id: req.body.id,
-    name: req.body.name,
-    age: req.body.age,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    date_of_birth: req.body.date_of_birth,
     gender: req.body.gender,
-    contact_details: req.body.contact_details,
-    allergies: req.body.allergies,
-    treatment_history: req.body.treatment_history,
+    phone: req.body.phone,
+    address: req.body.address
   };
-
+  console.log(req.body);
   Patients.updatePatient(patient, id, (err, result) => {
     if (err) throw err;
     res.json({ message: "Patient updated successfully" });
