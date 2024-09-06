@@ -4,6 +4,9 @@ const patientsController = require("../controllers/patientsController.js");
 router.use(express.static("public"));
 const appointment_notes = require("../models/appointments.js"); // Import the model
 const allergy = require("../models/allergy.js"); // Import the model
+const staff = require("../models/staff_documents.js"); // Import the model
+
+
 
 // Routes
 router.get("/", (req, res) => {
@@ -25,9 +28,11 @@ router.get("/:id", async (req, res) => {
     .find({ patient_id: req.params.id })
     .exec();
 
-  var allergy_object = await allergy.find({ patient_id: req.params.id }).exec();
-  console.log(allergy_object);
-
+  var allergy_object = await allergy
+    .find({ patient_id: req.params.id })
+    .exec();
+  console.log(appointment_object);
+  
   patientsController.getPatientById(req.params.id, (patient) => {
     res.render("patient-infor", {
       patient: patient[0],
