@@ -48,7 +48,7 @@ router.post("/", patientsController.createPatient);
 router.post("/login", patientsController.checkLogIn);
 
 //UPDATE
-router.post("/update", patientsController.updatePatient);
+router.post("/update/:id", patientsController.updatePatient);
 // DELETE
 router.delete("/", patientsController.deletePatient);
 
