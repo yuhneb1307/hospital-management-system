@@ -29,7 +29,6 @@ router.get("/:id", async (req, res) => {
   // console.log(staff_object);
   
   patientsController.getPatientById(req.params.id, (patient) => {
-    console.log(patient);
     res.render("patient-infor", {
       patient: patient[0],
       appointment_notes: appointment_object,
