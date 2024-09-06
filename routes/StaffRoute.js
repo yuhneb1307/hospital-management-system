@@ -13,6 +13,8 @@ router.get("/", (req, res) => {
 // READ
 // router.get("/search", staffController.getStaffById);
 router.get("/", staffController.getAllStaffs);
+router.get("/doctors", staffController.getAllDoctors);
+router.get("/nurse", staffController.getAllNurses);
 router.get("/search/:id", staffController.getStaffById);
 router.get("/sort/:data/:order", staffController.getStaffByDataOrder);
 router.get("/search/allergy", staffController.getStaffById);

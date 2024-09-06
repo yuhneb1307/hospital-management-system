@@ -9,6 +9,22 @@ exports.getAllStaffs = async (req, res) => {
   });
 };
 
+exports.getAllDoctors = async (req, res) => {
+  // Logic to get all staffs
+  Staffs.getAllDoctors((err, staffs) => {
+    if (err) throw err;
+    res.json(staffs);
+  });
+};
+
+exports.getAllNurses = async (req, res) => {
+  // Logic to get all staffs
+  Staffs.getAllNurses((err, staffs) => {
+    if (err) throw err;
+    res.json(staffs);
+  });
+};
+
 exports.getStaffById = async (req, res) => {
   const id = req.params.id;
 
