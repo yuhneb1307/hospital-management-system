@@ -2,10 +2,9 @@ const express = require("express");
 const router = express.Router();
 const patientsController = require("../controllers/patientsController.js");
 router.use(express.static("public"));
-const appointment_notes = require("../models/appointments.js"); // Import the model
+const appointment = require("../models/appointments.js"); // Import the model
 const allergy = require("../models/allergy.js"); // Import the model
 const staff = require("../models/staff_documents.js"); // Import the model
-
 
 
 // Routes
@@ -24,14 +23,10 @@ router.get("/search/:id", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  var appointment_object = await appointment_notes
-    .find({ patient_id: req.params.id })
-    .exec();
-
-  var allergy_object = await allergy
-    .find({ patient_id: req.params.id })
-    .exec();
-  console.log(appointment_object);
+  var appointment_object = await appointment.find({ patient_id: req.params.id }).exec();
+  var allergy_object = await allergy.find({ patient_id: req.params.id }).exec();
+  // var staff_object = await staff.find({ staff_id: req.params.id }).exec();
+  // console.log(staff_object);
   
   patientsController.getPatientById(req.params.id, (patient) => {
     res.render("patient-infor", {
