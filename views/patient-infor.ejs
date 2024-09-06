@@ -74,6 +74,10 @@
                   <strong>Date of Birth:</strong>
                   <span class="formatted-date" data-dob="<%= patient.date_of_birth %>"></span>
                 </p>
+                <p class="card-text"></p>
+                <strong>Gender:</strong>
+                <%= patient.gender %>
+                  </p>
               </div>
               <div class="col-6">
                 <p class="card-text">
@@ -115,15 +119,19 @@
             <h5 class="card-title">Appointment History</h5>
             <div class="list-group">
               <% appointment_notes.forEach(function(note){ %>
-                <div href="#" class="list-group-item list-group-item-action mb-3">
-                  <strong>Date:</strong>
-                  <span class="formatted-date" data-dob="<%= note.date_of_appointment %>"></span><br />
-                  <strong>Observation:</strong>
-                  <%= note.observation %><br />
-                    <strong>Doctor's Note:</strong>
-                    <%= note.doctor_note %><br />
-                </div>
+                <% staff.forEach(function(staff){ %>
+                  <div href="#" class="list-group-item list-group-item-action mb-3">
+                    <strong>Date:</strong>
+                    <span class="formatted-date" data-dob="<%= note.date_of_appointment %>"></span><br />
+                    <strong>Observation:</strong>
+                    <%= note.observation %><br />
+                      <strong>Doctor Name:</strong>
+                      <%= staff.first_name %><br />
+                        <strong>Doctor's Note:</strong>
+                        <%= note.doctor_note %><br />
+                  </div>
                 <% }) %>
+              <% }) %>
             </div>
           </div>
         </div>
@@ -165,31 +173,40 @@
           <form action="/patients/update/<%= patient.id %>" method="post">
             <div class="mb-3">
               <label for="patientFirstName" class="form-label">First Name</label>
-              <input type="text" name="first_name" class="form-control" id="patientFirstName" value="<%= patient.first_name %>" />
+              <input type="text" name="first_name" class="form-control" id="patientFirstName"
+                value="<%= patient.first_name %>" />
             </div>
             <div class="mb-3">
               <label for="patientLastName" class="form-label">Last Name</label>
-              <input type="text" name="last_name" class="form-control" id="patientLastName" value="<%= patient.last_name %>" />
+              <input type="text" name="last_name" class="form-control" id="patientLastName"
+                value="<%= patient.last_name %>" />
             </div>
             <div class="mb-3">
               <label for="patientID" class="form-label">Patient ID</label>
-              <input type="text" name="id" class="form-control" id="patientID" value="<%= patient.id %>" />
+              <input type="text" name="id" class="form-control" id="patientID" value="<%= patient.id %>" disabled />
             </div>
             <div class="mb-3">
               <label for="patientDOB" class="form-label">Date of Birth</label>
-              <input type="date" name="date_of_birth" class="form-control" id="patientDOB" value="<%= patient.date_of_birth %>" />
+              <input type="date" name="date_of_birth" class="form-control" id="patientDOB"
+                value="<%= patient.date_of_birth %>" />
             </div>
             <div class="mb-3">
               <label for="patientAdress" class="form-label">Adress Details</label>
-              <input type="text" name="address" class="form-control" id="patientAdress" value="<%= patient.address %>" />
+              <input type="text" name="address" class="form-control" id="patientAdress"
+                value="<%= patient.address %>" />
             </div>
             <div class="mb-3">
               <label for="patientPhone" class="form-label">Phone Details</label>
               <input type="text" name="phone" class="form-control" id="patientPhone" value="<%= patient.phone %>" />
             </div>
             <div class="mb-3">
+              <label for="patientPhone" class="form-label">Gender</label>
+              <input type="text" name="gender" class="form-control" id="patientGender" value="<%= patient.gender %>" />
+            </div>
+            <div class="mb-3">
               <label for="patientAllergies" class="form-label">Allergies</label>
-              <input type="text" name="allergy" class="form-control" id="patientAllergies" value="<%= allergy.allergy_name %>" />
+              <input type="text" name="allergy" class="form-control" id="patientAllergies"
+                value="<%= allergy.allergy_name %>" />
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

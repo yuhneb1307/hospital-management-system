@@ -35,7 +35,6 @@ router.get("/:id", async (req, res) => {
 
   patientsController.getPatientById(req.params.id, (patient) => {
     staffs.getStaffsById(staff_ids, (err, staffs) => {
-      console.log(staffs);
       if (err) throw err;
       res.render("patient-infor", {
         patient: patient[0],
