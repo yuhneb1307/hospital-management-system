@@ -22,6 +22,7 @@ app.use(express.json());
 app.set("views", "./views");
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: false }))
 
 // Middleware setup
 app.use(cors()); // Enable CORS for all routes
@@ -42,6 +43,7 @@ app.use(errorMiddleware);
 const mysqlConnection = require("./config/db"); // MySQL connection
 const mongoose = require("mongoose");
 const mongoConfig = require("./config/mongodb"); // MongoDB connection
+
 
 // Debugging: Check if MySQL is connected
 mysqlConnection.connect((err) => {

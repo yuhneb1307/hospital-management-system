@@ -86,7 +86,7 @@
                 </p>
                 <p class="card-text">
                   <strong>Allergies:</strong>
-                  <%= allergy[0].allergy_name %>
+                  <%= allergy.allergy_name %>
                 </p>
               </div>
             </div>
@@ -189,7 +189,7 @@
             </div>
             <div class="mb-3">
               <label for="patientAllergies" class="form-label">Allergies</label>
-              <input type="text" name="allergy" class="form-control" id="patientAllergies" value="<%= allergy[0].allergy_name %>" />
+              <input type="text" name="allergy" class="form-control" id="patientAllergies" value="<%= allergy.allergy_name %>" />
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

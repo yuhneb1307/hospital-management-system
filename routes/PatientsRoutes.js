@@ -25,14 +25,13 @@ router.get("/search/:id", async (req, res) => {
 router.get("/:id", async (req, res) => {
   var appointment_object = await appointment.find({ patient_id: req.params.id }).exec();
   var allergy_object = await allergy.find({ patient_id: req.params.id }).exec();
-  // var staff_object = await staff.find({ staff_id: req.params.id }).exec();
-  // console.log(staff_object);
-  
+  console.log(allergy_object);
+
   patientsController.getPatientById(req.params.id, (patient) => {
     res.render("patient-infor", {
       patient: patient[0],
       appointment_notes: appointment_object,
-      allergy: allergy_object,
+      allergy: allergy_object[0],
     });
   });
 });
