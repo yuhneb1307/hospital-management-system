@@ -10,7 +10,7 @@ exports.getAllStaffs = async (req, res) => {
 };
 
 exports.getStaffById = async (req, res) => {
-  const id = req.body.id;
+  const id = req.params.id;
 
   Staffs.getStaffById(id, (err, staffs) => {
     if (err) throw err;
@@ -18,6 +18,15 @@ exports.getStaffById = async (req, res) => {
   });
 };
 
+exports.getStaffByID = async (req, res) => {
+  console.log(req);
+  // const id = req.body.id;
+
+  // Staffs.getStaffById(id, (err, staffs) => {
+  //   if (err) throw err;
+  //   res.json(staffs);
+  // });
+};
 exports.getStaffByDataOrder = async (req, res) => {
   const order = req.params.order;
   const data = req.params.data;
