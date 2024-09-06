@@ -118,19 +118,17 @@
           <div class="card-body">
             <h5 class="card-title">Appointment History</h5>
             <div class="list-group">
-              <% appointment_notes.forEach(function(note){ %>
-                <% staff.forEach(function(staff){ %>
+              <% appointment_notes.forEach(function(note, i){ %>
                   <div href="#" class="list-group-item list-group-item-action mb-3">
                     <strong>Date:</strong>
                     <span class="formatted-date" data-dob="<%= note.date_of_appointment %>"></span><br />
                     <strong>Observation:</strong>
                     <%= note.observation %><br />
                       <strong>Doctor Name:</strong>
-                      <%= staff.first_name %><br />
+                      <%= staff[i].first_name %><br />
                         <strong>Doctor's Note:</strong>
                         <%= note.doctor_note %><br />
                   </div>
-                <% }) %>
               <% }) %>
             </div>
           </div>
@@ -183,7 +181,7 @@
             </div>
             <div class="mb-3">
               <label for="patientID" class="form-label">Patient ID</label>
-              <input type="text" name="id" class="form-control" id="patientID" value="<%= patient.id %>" disabled />
+              <input type="text" name="id" class="form-control" id="patientID" value="<%= patient.id %>"  />
             </div>
             <div class="mb-3">
               <label for="patientDOB" class="form-label">Date of Birth</label>

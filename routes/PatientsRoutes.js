@@ -26,6 +26,7 @@ router.get("/:id", async (req, res) => {
   var appointment_object = await appointment.find({ patient_id: req.params.id }).exec();
   var allergy_object = await allergy.find({ patient_id: req.params.id }).exec();
   var staff_ids = [];
+  console.log(appointment_object);
 
   for (let appointment of appointment_object) {
     staff_ids.push(appointment.staff_id);
@@ -36,6 +37,7 @@ router.get("/:id", async (req, res) => {
   patientsController.getPatientById(req.params.id, (patient) => {
     staffs.getStaffsById(staff_ids, (err, staffs) => {
       if (err) throw err;
+      console.log(staffs)
       res.render("patient-infor", {
         patient: patient[0],
         appointment_notes: appointment_object,
@@ -66,7 +68,11 @@ router.post("/", patientsController.createPatient);
 router.post("/login", patientsController.checkLogIn);
 
 //UPDATE
-router.post("/update/:id", patientsController.updatePatient);
+router.post("/update/:id",  (req, res) => {
+   patientsController.updatePatient(req, res, (patients) => {
+    res.render("patients", { patients });
+  });
+});
 // DELETE
 router.delete("/", patientsController.deletePatient);
 

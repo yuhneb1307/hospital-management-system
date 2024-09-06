@@ -56,7 +56,7 @@ exports.createPatient = async (req, res) => {
 };
 
 // UPDATE
-exports.updatePatient = async (req, res) => {
+exports.updatePatient =  (req, res, callback) => {
   const id = req.params.id;
   const patient = {
     id: req.body.id,
@@ -70,7 +70,11 @@ exports.updatePatient = async (req, res) => {
   console.log(req.body);
   Patients.updatePatient(patient, id, (err, result) => {
     if (err) throw err;
-    res.json({ message: "Patient updated successfully" });
+    Patients.getAllPatients((err, patients) => {
+      if (err) throw err;
+      res.redirect("/patients/" + id);
+      // res.json(patients);
+    })
   });
 };
 
