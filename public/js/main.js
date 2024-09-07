@@ -34,14 +34,16 @@ loginButton.addEventListener("click", (e) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
+      console.log(response);
       return response.json();
     })
     .then((userData) => {
+      console.log(userData);
       // Process the newly created user data
       if (userData.length == 1) {
         localStorage.setItem("userData", JSON.stringify(userData));
         window.location.assign(
-          "http://localhost:3000/patients/" + userData[0].id
+          "http://localhost:3000/" + role.value + "/" + userData[0].id
         );
       }
     })

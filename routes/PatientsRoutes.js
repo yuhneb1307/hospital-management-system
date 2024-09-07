@@ -24,30 +24,63 @@ router.get("/search/:id", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const appointment_object = await appointment.find({ patient_id: req.params.id }).exec();
-    const allergy_object = await allergy.find({ patient_id: req.params.id }).exec();
-    const staff_ids = appointment_object.map(app => app.staff_id);
+    const appointment_object = await appointment
+      .find({ patient_id: req.params.id })
+      .exec();
+
+    const allergy_object = await allergy
+      .find({ patient_id: req.params.id })
+      .exec();
+      
+    const staff_ids = appointment_object.map((app) => app.staff_id);
 
     patientsController.getPatientById(req.params.id, (patient) => {
       if (!patient || patient.length === 0) {
         return res.status(404).send("Patient not found");
       }
 
-      staffs.getStaffsById(staff_ids, (err, staffs) => {
-        if (err) throw err;
+      if (staff_ids.length > 0) {
+        staffs.getStaffsById(staff_ids, (err, staffs) => {
+          if (err) throw err;
+
+          departments.getAllDepartments((err, departments) => {
+            if (err) throw err;
+            res.render("patient-infor", {
+              patient: patient[0],
+              appointment_notes: appointment_object,
+              allergy: allergy_object[0],
+              staff: staffs,
+              departments: departments,
+            });
+          });
+        });
+      } 
+      else {
+        const staff = {
+          id: 0,
+          first_name: "",
+          last_name: "",
+          email: "",
+          password: "",
+          role: "",
+          department_id: 0,
+          schedule: "",
+          salary: 0,
+          managed_by: null,
+          gender: null,
+        };
 
         departments.getAllDepartments((err, departments) => {
           if (err) throw err;
-          console.log(departments)
           res.render("patient-infor", {
             patient: patient[0],
             appointment_notes: appointment_object,
             allergy: allergy_object[0],
-            staff: staffs,
-            departments: departments
+            staff: staff,
+            departments: departments,
           });
         });
-      });
+      }
     });
   } catch (error) {
     console.error(error);
@@ -67,8 +100,8 @@ router.post("/", patientsController.createPatient);
 router.post("/login", patientsController.checkLogIn);
 
 //UPDATE
-router.post("/update/:id",  (req, res) => {
-   patientsController.updatePatient(req, res, (patients) => {
+router.post("/update/:id", (req, res) => {
+  patientsController.updatePatient(req, res, (patients) => {
     res.render("patients", { patients });
   });
 });

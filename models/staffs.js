@@ -30,6 +30,10 @@ exports.getStaffByDataOrder = function (data, order, callback) {
   }
 };
 
+exports.checkLogIn = function (email, password, callback) {
+  db.query(`SELECT * FROM staff WHERE email = ? AND password = ? LIMIT 1`, [email, password], callback);
+};
+
 // CREATE
 exports.createStaff = function (newStaff, callback) {
   db.query("INSERT INTO staff SET ?", [newStaff], callback);

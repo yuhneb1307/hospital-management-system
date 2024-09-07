@@ -55,6 +55,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Appointment List</a>
             </li>
+            <button id="logout-btn" class="nav-item">
+              <a class="nav-link" href="#">Log Out</a>
+            </button>
           </ul>
         </div>
       </div>
@@ -87,10 +90,12 @@
                     <strong>Role:</strong> <span id="doctor-role"></span>
                   </p>
                   <p class="card-text">
-                    <strong>Department ID:</strong> <span id="doctor-department"></span>
+                    <strong>Department ID:</strong>
+                    <span id="doctor-department"></span>
                   </p>
                   <p class="card-text">
-                    <strong>Schedule:</strong> <span id="doctor-schedule"></span>
+                    <strong>Schedule:</strong>
+                    <span id="doctor-schedule"></span>
                   </p>
                   <p class="card-text">
                     <strong>Salary:</strong> $<span id="doctor-salary"></span>
@@ -137,36 +142,46 @@
 
     <script>
       // Sample data storage in local storage
-      localStorage.setItem(
-        "doctor",
-        JSON.stringify({
-          id: 1,
-          first_name: "Chariot",
-          last_name: "Frankis",
-          email: "cfrankis0@moonfruit.com",
-          role: "Doctor",
-          department_id: 9,
-          schedule: "Off-Sunday",
-          salary: 255279.32,
-          gender: "Male",
-        })
-      );
+      // localStorage.setItem(
+      //   "doctor",
+      //   JSON.stringify({
+      //     id: 1,
+      //     first_name: "Chariot",
+      //     last_name: "Frankis",
+      //     email: "cfrankis0@moonfruit.com",
+      //     role: "Doctor",
+      //     department_id: 9,
+      //     schedule: "Off-Sunday",
+      //     salary: 255279.32,
+      //     gender: "Male",
+      //   })
+      // );
 
       // Fetch doctor data from local storage
-      const doctorData = JSON.parse(localStorage.getItem("doctor"));
+      const doctorData = JSON.parse(localStorage.getItem("userData"))[0];
 
       if (doctorData) {
-        document.getElementById("doctor-name").innerText = `${doctorData.first_name} ${doctorData.last_name}`;
+        document.getElementById(
+          "doctor-name"
+        ).innerText = `${doctorData.first_name} ${doctorData.last_name}`;
         document.getElementById("doctor-id").innerText = doctorData.id;
         document.getElementById("doctor-email").innerText = doctorData.email;
         document.getElementById("doctor-gender").innerText = doctorData.gender;
         document.getElementById("doctor-role").innerText = doctorData.role;
-        document.getElementById("doctor-department").innerText = doctorData.department_id;
-        document.getElementById("doctor-schedule").innerText = doctorData.schedule;
+        document.getElementById("doctor-department").innerText =
+          doctorData.department_id;
+        document.getElementById("doctor-schedule").innerText =
+          doctorData.schedule;
         document.getElementById("doctor-salary").innerText = doctorData.salary;
       } else {
         console.error("No doctor data found in local storage.");
       }
+
+      logoutBtn = document.getElementById("logout-btn");
+      logoutBtn.addEventListener("click", function () {
+        localStorage.removeItem("userData");
+        window.location.href = "http://localhost:3000/";
+      });
 
       // Load Appointment History from local storage or any other source
       // (Here you can add more JavaScript to fetch and populate appointment history dynamically)

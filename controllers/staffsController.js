@@ -34,6 +34,13 @@ exports.getStaffById = async (req, res) => {
   });
 };
 
+exports.getStaffById = (id, callback) => {
+  Staffs.getStaffById(id, (err, staffs) => {
+    if (err) throw err;
+    callback(staffs);
+  });
+};
+
 exports.getStaffByID = async (req, res) => {
   console.log(req);
   // const id = req.body.id;
@@ -53,18 +60,31 @@ exports.getStaffByDataOrder = async (req, res) => {
   });
 };
 
+exports.checkLogIn = async (req, res) => {
+  const password = req.body.password;
+  const email = req.body.email;
+
+  Staffs.checkLogIn(email, password, (err, staffs) => {
+    if (err) throw err;
+    res.json(staffs);
+  });
+};
+
 //CREATE
 exports.createStaff = async (req, res) => {
   const staff = {
     id: req.body.id,
-    name: req.body.name,
-    age: req.body.age,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    email: req.body.email,
+    password: req.body.password,
+    role: req.body.role,
+    department_id: req.body.department_id,
+    schedule: req.body.schedule,
+    salary: req.body.salary,
+    managed_by: req.body.managed_by,
     gender: req.body.gender,
-    contact_details: req.body.contact_details,
-    allergies: req.body.allergies,
-    treatment_history: req.body.treatment_history,
   };
-
   Staffs.createStaff(staff, (err, staffs) => {
     if (err) throw err;
     res.json({ message: "Staff created successfully" });
@@ -78,11 +98,14 @@ exports.updateStaff = async (req, res) => {
     id: req.body.id,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
-    role: req.body.tole,
+    email: req.body.email,
+    password: req.body.password,
+    role: req.body.role,
     department_id: req.body.department_id,
     schedule: req.body.schedule,
     salary: req.body.salary,
     managed_by: req.body.managed_by,
+    gender: req.body.gender,
   };
 
   Staffs.updateStaff(staff, id, (err, result) => {
