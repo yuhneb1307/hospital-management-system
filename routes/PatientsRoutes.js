@@ -4,7 +4,7 @@ const patientsController = require("../controllers/patientsController.js");
 router.use(express.static("public"));
 const appointment = require("../models/appointments.js"); // Import the model
 const allergy = require("../models/allergy.js"); // Import the model
-const staff = require("../models/staff_documents.js"); // Import the model
+const staffs = require("../models/staffs.js"); // Import the model
 
 
 // Routes
@@ -25,15 +25,35 @@ router.get("/search/:id", async (req, res) => {
 router.get("/:id", async (req, res) => {
   var appointment_object = await appointment.find({ patient_id: req.params.id }).exec();
   var allergy_object = await allergy.find({ patient_id: req.params.id }).exec();
-  // var staff_object = await staff.find({ staff_id: req.params.id }).exec();
-  // console.log(staff_object);
-  
+  var staff_ids = [];
+  console.log(appointment_object);
+
+  for (let appointment of appointment_object) {
+    staff_ids.push(appointment.staff_id);
+  }
+
+  console.log(staff_ids);
+
   patientsController.getPatientById(req.params.id, (patient) => {
-    res.render("patient-infor", {
-      patient: patient[0],
-      appointment_notes: appointment_object,
-      allergy: allergy_object,
+    staffs.getStaffsById(staff_ids, (err, staffs) => {
+      if (err) throw err;
+      console.log(staffs)
+      res.render("patient-infor", {
+        patient: patient[0],
+        appointment_notes: appointment_object,
+        allergy: allergy_object[0],
+        staff: staffs,
+      });
     });
+    // .getStaffById(staff_id, (staff) => {
+    //   console.log(staff);
+    //   res.render("patient-infor", {
+    //     patient: patient[0],
+    //     appointment_notes: appointment_object,
+    //     allergy: allergy_object[0],
+    //     staff: staff,
+    //   });
+    // });
   });
 });
 router.get("/", patientsController.getAllPatients);
@@ -48,7 +68,11 @@ router.post("/", patientsController.createPatient);
 router.post("/login", patientsController.checkLogIn);
 
 //UPDATE
-router.post("/update", patientsController.updatePatient);
+router.post("/update/:id",  (req, res) => {
+   patientsController.updatePatient(req, res, (patients) => {
+    res.render("patients", { patients });
+  });
+});
 // DELETE
 router.delete("/", patientsController.deletePatient);
 
