@@ -4,6 +4,7 @@ USE dataProject;
 DROP TABLE IF EXISTS Staff;
 DROP TABLE IF EXISTS Patients;
 DROP TABLE IF EXISTS Departments;
+DROP TABLE IF EXISTS Admin;
 
 -- Create Departments table first
 CREATE TABLE Departments (
@@ -32,7 +33,7 @@ CREATE TABLE Staff (
   last_name VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
-  role ENUM('Doctor', 'Nurse', 'Admin'),
+  role ENUM('Doctor', 'Nurse'),
   department_id INT,
   schedule TEXT,
   salary DECIMAL(10, 2),
@@ -41,10 +42,16 @@ CREATE TABLE Staff (
   FOREIGN KEY (department_id) REFERENCES Departments(id)
 ) ENGINE = InnoDB;
 
+
+-- Create Admin table
+CREATE TABLE Admin (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL
+) ENGINE = InnoDB;
+
 -- Select all data from each table
 SELECT * FROM Departments;
 SELECT * FROM Patients;
 SELECT * FROM Staff;
-SELECT * FROM Appointments;
-SELECT * FROM Relationships;
-SELECT * FROM Users;
+SELECT * FROM Admin;

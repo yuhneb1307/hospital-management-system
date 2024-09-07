@@ -67,7 +67,14 @@ exports.getPatientByDataOrder = function (data, order, callback) {
   }
 };
 
-// CHECK LOGIN CREDENTIALS
+exports.getPatientByDoctorIDOrder = function (id, data, order, callback) {
+  if (order == "asc") {
+    db.query(`SELECT * FROM patients WHERE doctor_id = ${id} ORDER BY ${data} ASC`, callback);
+  } else if (order == "desc") {
+    db.query(`SELECT * FROM patients WHERE doctor_id = ${id} ORDER BY ${data} DESC`, callback);
+  }
+};
+
 exports.checkLogIn = function (email, password, callback) {
   db.query(`SELECT * FROM patients WHERE email = ? AND password = ? LIMIT 1`, [email, password], callback);
 };
