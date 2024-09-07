@@ -43,7 +43,6 @@ const mysqlConnection = require("./config/db"); // MySQL connection
 const mongoose = require("mongoose");
 const mongoConfig = require("./config/mongodb"); // MongoDB connection
 
-
 // Debugging: Check if MySQL is connected
 mysqlConnection.connect((err) => {
   if (err) {
@@ -59,7 +58,6 @@ mysqlConnection.connect((err) => {
     console.log(mongoConfig);
     res.render("login");
   });
-
   app.get('/registerPatient', function (req, res) {
     res.render('registerPatient');
   });
