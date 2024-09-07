@@ -29,101 +29,24 @@ router.get("/:id", async (req, res) => {
     const appointment_object = await appointment.find({ patient_id: req.params.id }).exec();
     const allergy_object = await allergy.find({ patient_id: req.params.id }).exec();
     const staff_ids = appointment_object.map((app) => app.staff_id);
-router.get("/update-data", async (req, res) => {
-  try {
-    let Now = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
-    const past_appointment_object = await appointment
-      .updateMany({}, [
-        {
-          $set: {
-            status: {
-              $switch: {
-                branches: [
-                  {
-                    case: { $eq: ["$date_of_appointment", Now] },
-                    then: "During",
-                  },
-                  {
-                    case: { $lt: ["$date_of_appointment", Now] },
-                    then: "Completed",
-                  },
-                  {
-                    case: { $gt: ["$date_of_appointment", Now] },
-                    then: "Pending",
-                  },
-                ],
-                default: "Completed",
-              },
-            },
-          },
-        },
-      ])
-      .then((data) => {
-        res.json(data);
-      });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Server error");
-  }
-});
 
-router.get("/:id", async (req, res) => {
-  try {
-    const appointment_object = await appointment
-      .find({ patient_id: req.params.id })
-      .exec();
-    const staff_ids = appointment_object.map((app) => app.staff_id);
-
-    // let NOW = new Date().toJSON().slice(0, 10).replace(/-/g, "-");
-    // let Now = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
-    // const past_appointment_object = await appointment
-    //   .find({
-    //     date_of_appointment: { $lt: NOW },
-    //     patient_id: req.params.id,
-    //   })
-    //   .exec();
-
-    // const now_appointment_object = await appointment
-    //   .find({
-    //     date_of_appointment: Now,
-    //     patient_id: req.params.id,
-    //   })
-    //   .exec();
-
-    // const future_appointment_object = await appointment
-    //   .find({
-    //     date_of_appointment: { $gt: NOW },
-    //     patient_id: req.params.id,
-    //   })
-    //   .exec();
-
-    const allergy_object = await allergy
-      .find({ patient_id: req.params.id })
-      .exec();
-
-    patientsController.getPatientById(req.params.id, (patient) => {
-      if (!patient || patient.length === 0) {
-        return res.status(404).send("Patient not found");
-      }
-
-      const renderPatientInfo = (staffData) => {
+    const renderPatientInfo = (staffData) => {
       if (staff_ids.length > 0) {
         Staffs.getStaffsById(staff_ids, (err, staffs) => {
-          if (err) throw err;
-
+          if (err) return res.status(500).send("Failed to fetch staff.");
           departments.getAllDepartments((err, departments) => {
-            if (err) throw err;
-            Staffs.getAllStaffs((err, all_staffs)=>{
-            if (err) throw err;
-            res.render("patient-infor", {
-              patient: patient[0],
-              appointment_notes: appointment_object,
-              allergy: allergy_object[0],
-              staff: staffs,
-              departments: departments,
-              all_staffs: all_staffs,
+            if (err) return res.status(500).send("Failed to fetch departments.");
+            Staffs.getAllStaffs((err, all_staffs) => {
+              if (err) return res.status(500).send("Failed to fetch all staff.");
+              res.render("patient-infor", {
+                patient: patient[0],
+                appointment_notes: appointment_object,
+                allergy: allergy_object[0],
+                staff: staffs,
+                departments: departments,
+                all_staffs: all_staffs,
+              });
             });
-            })
           });
         });
       } else {
@@ -147,14 +70,20 @@ router.get("/:id", async (req, res) => {
             patient: patient[0],
             appointment_notes: appointment_object,
             allergy: allergy_object[0],
-            staff: staffData,
+            staff: staff,
             departments: departments,
           });
         });
-      };
+      }
+    };
+
+    patientsController.getPatientById(req.params.id, (patient) => {
+      if (!patient || patient.length === 0) {
+        return res.status(404).send("Patient not found");
+      }
 
       if (staff_ids.length > 0) {
-        staffs.getStaffsById(staff_ids, (err, staffData) => {
+        Staffs.getStaffsById(staff_ids, (err, staffData) => {
           if (err) return res.status(500).send("Failed to fetch staff.");
           renderPatientInfo(staffData);
         });
@@ -168,16 +97,46 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// Update appointment statuses
+router.get("/update-data", async (req, res) => {
+  try {
+    let now = new Date().toISOString().slice(0, 10); // Use ISO format for dates
+    const updateResult = await appointment.updateMany({}, [
+      {
+        $set: {
+          status: {
+            $switch: {
+              branches: [
+                {
+                  case: { $eq: ["$date_of_appointment", now] },
+                  then: "During",
+                },
+                {
+                  case: { $lt: ["$date_of_appointment", now] },
+                  then: "Completed",
+                },
+                {
+                  case: { $gt: ["$date_of_appointment", now] },
+                  then: "Pending",
+                },
+              ],
+              default: "Completed",
+            },
+          },
+        },
+      },
+    ]);
+    res.json(updateResult);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error");
+  }
+});
+
 // Paginated and filtered patients list
 router.get("/paginated", (req, res) => {
   const page = parseInt(req.query.page, 10) || 1;
   const searchTerm = req.query.search || ''; // Extract search term from query
-router.get("/", patientsController.getAllPatients);
-// router.get("/", patientsController.getAllPatients);
-router.get("/search/:data", patientsController.getPatientByDataOrder);
-router.get("/sort/:data/:order", patientsController.getPatientByDataOrder);
-// router.get("/login", patientsController.checkLogIn);
-router.get("/search/allergy", patientsController.getPatientById);
 
   patientsController.getPaginatedPatients(page, searchTerm, (err, patientsData) => {
     if (err) {
