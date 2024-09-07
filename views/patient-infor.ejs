@@ -72,8 +72,8 @@
                 </p>
                 <p class="card-text">
                   <strong>Date of Birth:</strong>
-                  <span class="formatted-date" data-dob="<%= patient.date_of_birth %>"></span>
-                </p>
+                  <span class="formatted-date" data-dob="<%= new Date(patient.date_of_birth).toISOString().split('T')[0] %>"></span>
+                </p>                
                 <p class="card-text"></p>
                 <strong>Gender:</strong>
                 <%= patient.gender %>
@@ -186,7 +186,7 @@
             <div class="mb-3">
               <label for="patientDOB" class="form-label">Date of Birth</label>
               <input type="date" name="date_of_birth" class="form-control" id="patientDOB"
-                value="<%= patient.date_of_birth %>" />
+                value="<%= new Date(patient.date_of_birth).toISOString().split('T')[0] %>" />
             </div>
             <div class="mb-3">
               <label for="patientAdress" class="form-label">Adress Details</label>
@@ -302,7 +302,7 @@
       const year = date.getFullYear();
       const month = String(date.getMonth() + 1).padStart(2, '0');
       const day = String(date.getDate()).padStart(2, '0');
-      return `${year}-${month}-${day}`;
+      return `${month}-${day}-${year}`;
     }
 
     // Format all dates on page load
