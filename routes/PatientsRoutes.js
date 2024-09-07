@@ -5,7 +5,7 @@ router.use(express.static("public"));
 const appointment = require("../models/appointments.js"); // Import the model
 const allergy = require("../models/allergy.js"); // Import the model
 const staffs = require("../models/staffs.js"); // Import the model
-const department = require("../models/department.js"); // Import the model
+const departments = require("../models/department.js"); // Import the model
 
 // Routes
 router.get("/", (req, res) => {
@@ -23,26 +23,38 @@ router.get("/search/:id", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  var appointment_object = await appointment.find({ patient_id: req.params.id }).exec();
-  var allergy_object = await allergy.find({ patient_id: req.params.id }).exec();
-  var staff_ids = [];
+  try {
+    const appointment_object = await appointment.find({ patient_id: req.params.id }).exec();
+    const allergy_object = await allergy.find({ patient_id: req.params.id }).exec();
+    const staff_ids = appointment_object.map(app => app.staff_id);
 
-  for (let appointment of appointment_object) {
-    staff_ids.push(appointment.staff_id);
-  }
+    patientsController.getPatientById(req.params.id, (patient) => {
+      if (!patient || patient.length === 0) {
+        return res.status(404).send("Patient not found");
+      }
 
-  patientsController.getPatientById(req.params.id, (patient) => {
-    staffs.getStaffsById(staff_ids, (err, staffs) => {
-      if (err) throw err;
-      res.render("patient-infor", {
-        patient: patient[0],
-        appointment_notes: appointment_object,
-        allergy: allergy_object[0],
-        staff: staffs,
+      staffs.getStaffsById(staff_ids, (err, staffs) => {
+        if (err) throw err;
+
+        departments.getAllDepartments((err, departments) => {
+          if (err) throw err;
+          console.log(departments)
+          res.render("patient-infor", {
+            patient: patient[0],
+            appointment_notes: appointment_object,
+            allergy: allergy_object[0],
+            staff: staffs,
+            departments: departments
+          });
+        });
       });
     });
-  });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error");
+  }
 });
+
 router.get("/", patientsController.getAllPatients);
 // router.get("/", patientsController.getAllPatients);
 router.get("/search/:data", patientsController.getPatientById);
