@@ -5,7 +5,7 @@ router.use(express.static("public"));
 const appointment = require("../models/appointments.js"); // Import the model
 const allergy = require("../models/allergy.js"); // Import the model
 const staffs = require("../models/staffs.js"); // Import the model
-
+const department = require("../models/department.js"); // Import the model
 
 // Routes
 router.get("/", (req, res) => {
