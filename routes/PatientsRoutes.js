@@ -4,7 +4,7 @@ const patientsController = require("../controllers/patientsController.js");
 router.use(express.static("public"));
 const appointment = require("../models/appointments.js"); // Import the model
 const allergy = require("../models/allergy.js"); // Import the model
-const staffs = require("../models/staffs.js"); // Import the model
+const Staffs = require("../models/staffs.js"); // Import the model
 const departments = require("../models/department.js"); // Import the model
 
 // Routes
@@ -27,12 +27,34 @@ router.get("/:id", async (req, res) => {
     const appointment_object = await appointment
       .find({ patient_id: req.params.id })
       .exec();
+    const staff_ids = appointment_object.map((app) => app.staff_id);
+
+    // let NOW = new Date().toJSON().slice(0, 10).replace(/-/g, "-");
+    // let Now = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
+    // const past_appointment_object = await appointment
+    //   .find({
+    //     date_of_appointment: { $lt: NOW },
+    //     patient_id: req.params.id,
+    //   })
+    //   .exec();
+
+    // const now_appointment_object = await appointment
+    //   .find({
+    //     date_of_appointment: Now,
+    //     patient_id: req.params.id,
+    //   })
+    //   .exec();
+
+    // const future_appointment_object = await appointment
+    //   .find({
+    //     date_of_appointment: { $gt: NOW },
+    //     patient_id: req.params.id,
+    //   })
+    //   .exec();
 
     const allergy_object = await allergy
       .find({ patient_id: req.params.id })
       .exec();
-      
-    const staff_ids = appointment_object.map((app) => app.staff_id);
 
     patientsController.getPatientById(req.params.id, (patient) => {
       if (!patient || patient.length === 0) {
@@ -40,8 +62,10 @@ router.get("/:id", async (req, res) => {
       }
 
       if (staff_ids.length > 0) {
-        staffs.getStaffsById(staff_ids, (err, staffs) => {
+        Staffs.getStaffsById(staff_ids, (err, staffs) => {
           if (err) throw err;
+
+          console.log(staffs);
 
           departments.getAllDepartments((err, departments) => {
             if (err) throw err;
@@ -54,8 +78,7 @@ router.get("/:id", async (req, res) => {
             });
           });
         });
-      } 
-      else {
+      } else {
         const staff = {
           id: 0,
           first_name: "",
@@ -90,7 +113,7 @@ router.get("/:id", async (req, res) => {
 
 router.get("/", patientsController.getAllPatients);
 // router.get("/", patientsController.getAllPatients);
-router.get("/search/:data", patientsController.getPatientById);
+router.get("/search/:data", patientsController.getPatientByDataOrder);
 router.get("/sort/:data/:order", patientsController.getPatientByDataOrder);
 // router.get("/login", patientsController.checkLogIn);
 router.get("/search/allergy", patientsController.getPatientById);

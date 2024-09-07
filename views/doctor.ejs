@@ -120,9 +120,34 @@
         <div class="col-md-10 col-lg-8">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Appointment History</h5>
-              <div class="list-group">
-                <!-- Appointment History to be populated dynamically -->
+              <h5 class="card-title">Patient List</h5>
+              <div class="container mt-5">
+                <div class="row">
+                  <% patients.forEach(function(patient){ %>
+                  <a
+                    href="/patients/<%= patient.id %>"
+                    class="col-12 col-md-6 col-lg-2 patient-card mb-4"
+                    style="text-decoration: none"
+                  >
+                    <div class="info">
+                      <div class="name">
+                        Name: <%= patient.first_name %> <%= patient.last_name %>
+                      </div>
+                      <div class="dob">
+                        Date Of Birth:
+                        <span
+                          class="formatted-date"
+                          data-dob="<%= patient.date_of_birth %>"
+                        ></span>
+                      </div>
+                      <div class="address">Address: <%= patient.address %></div>
+                      <div class="phone_number">
+                        Phone Number: <%= patient.phone %>
+                      </div>
+                    </div>
+                  </a>
+                  <% }) %>
+                </div>
               </div>
             </div>
           </div>
@@ -141,24 +166,8 @@
     </div>
 
     <script>
-      // Sample data storage in local storage
-      // localStorage.setItem(
-      //   "doctor",
-      //   JSON.stringify({
-      //     id: 1,
-      //     first_name: "Chariot",
-      //     last_name: "Frankis",
-      //     email: "cfrankis0@moonfruit.com",
-      //     role: "Doctor",
-      //     department_id: 9,
-      //     schedule: "Off-Sunday",
-      //     salary: 255279.32,
-      //     gender: "Male",
-      //   })
-      // );
-
       // Fetch doctor data from local storage
-      const doctorData = JSON.parse(localStorage.getItem("userData"))[0];
+      const doctorData = JSON.parse(localStorage.getItem("staffsData"))[0];
 
       if (doctorData) {
         document.getElementById(
@@ -179,7 +188,7 @@
 
       logoutBtn = document.getElementById("logout-btn");
       logoutBtn.addEventListener("click", function () {
-        localStorage.removeItem("userData");
+        localStorage.clear();
         window.location.href = "http://localhost:3000/";
       });
 

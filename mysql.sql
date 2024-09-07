@@ -45,6 +45,3 @@ CREATE TABLE Staff (
 SELECT * FROM Departments;
 SELECT * FROM Patients;
 SELECT * FROM Staff;
-SELECT * FROM Appointments;
-SELECT * FROM Relationships;
-SELECT * FROM Users;

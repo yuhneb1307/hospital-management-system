@@ -8,10 +8,10 @@ function isEmpty(str) {
   return !str.trim().length;
 }
 
-role.addEventListener("click", (e) => {
-  //   loginForm.action = "/" + role.value + "/login";
-  //   console.log(loginButton.value);
-});
+// role.addEventListener("click", (e) => {
+//   //   loginForm.action = "/" + role.value + "/login";
+//   //   console.log(loginButton.value);
+// });
 
 loginButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -41,7 +41,7 @@ loginButton.addEventListener("click", (e) => {
       console.log(userData);
       // Process the newly created user data
       if (userData.length == 1) {
-        localStorage.setItem("userData", JSON.stringify(userData));
+        localStorage.setItem(role.value + "Data", JSON.stringify(userData));
         window.location.assign(
           "http://localhost:3000/" + role.value + "/" + userData[0].id
         );

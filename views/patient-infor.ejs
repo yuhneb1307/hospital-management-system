@@ -37,13 +37,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Patient List</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Staff List</a>
+            <a class="nav-link active" href="#">Patient Information</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Appointment List</a>
@@ -320,7 +314,7 @@
 
     logoutBtn = document.getElementById("logout-btn");
     logoutBtn.addEventListener("click", function () {
-      localStorage.removeItem("userData");
+      localStorage.clear();
       window.location.href = "http://localhost:3000/";
     });
   </script>
