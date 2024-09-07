@@ -65,9 +65,9 @@ router.get("/:id", async (req, res) => {
         Staffs.getStaffsById(staff_ids, (err, staffs) => {
           if (err) throw err;
 
-          console.log(staffs);
-
           departments.getAllDepartments((err, departments) => {
+            if (err) throw err;
+            Staffs.getAllStaffs((err, all_staffs)=>{
             if (err) throw err;
             res.render("patient-infor", {
               patient: patient[0],
@@ -75,7 +75,9 @@ router.get("/:id", async (req, res) => {
               allergy: allergy_object[0],
               staff: staffs,
               departments: departments,
+              all_staffs: all_staffs,
             });
+            })
           });
         });
       } else {
