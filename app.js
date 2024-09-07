@@ -22,7 +22,6 @@ app.use(express.json());
 app.set("views", "./views");
 app.use(express.static("public"));
 app.set("view engine", "ejs");
-app.use(express.urlencoded({ extended: false }))
 
 // Middleware setup
 app.use(cors()); // Enable CORS for all routes
@@ -61,6 +60,9 @@ mysqlConnection.connect((err) => {
     res.render("login");
   });
 
+  app.get('/registerPatient', function (req, res) {
+    res.render('registerPatient');
+  });
   // Register route
   app.get("/register", function (req, res) {
     res.render("register");
@@ -68,11 +70,6 @@ mysqlConnection.connect((err) => {
 
   app.get("/patient", function (req, res) {
     res.render("patient-infor");
-  });
-
-  // Register route
-  app.get("/doctor", function (req, res) {
-    res.render("doctor");
   });
 
   // Handle 404 errors
