@@ -9,6 +9,36 @@ exports.getAllPatients = (callback) => {
     // res.json(patients);
   });
 };
+exports.getPaginatedPatients = (page, searchTerm = '', callback) => {
+  const limit = 250; // Number of patients per page
+  const offset = (page - 1) * limit; // Calculate offset based on page number
+
+  let query = "SELECT * FROM patients";
+  let queryParams = [];
+
+  // Add search filter if search term is provided
+  if (searchTerm) {
+    query += " WHERE first_name LIKE ? OR last_name LIKE ?";
+    queryParams.push(`%${searchTerm}%`, `%${searchTerm}%`);
+  }
+
+  query += " ORDER BY id LIMIT ? OFFSET ?";
+  queryParams.push(limit, offset);
+
+  db.query(query, queryParams, (err, patients) => {
+    if (err) throw err;
+
+    db.query("SELECT COUNT(*) AS total FROM patients", (err, total) => {
+      if (err) throw err;
+      const totalPages = Math.ceil(total[0].total / limit);
+      callback({
+        currentPage: page,
+        totalPages: totalPages,
+        data: patients,
+      });
+    });
+  });
+};
 
 exports.getPatientById = (id, callback) => {
   Patients.getPatientById(id, (err, patients) => {

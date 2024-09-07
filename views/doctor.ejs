@@ -141,22 +141,6 @@
     </div>
 
     <script>
-      // Sample data storage in local storage
-      // localStorage.setItem(
-      //   "doctor",
-      //   JSON.stringify({
-      //     id: 1,
-      //     first_name: "Chariot",
-      //     last_name: "Frankis",
-      //     email: "cfrankis0@moonfruit.com",
-      //     role: "Doctor",
-      //     department_id: 9,
-      //     schedule: "Off-Sunday",
-      //     salary: 255279.32,
-      //     gender: "Male",
-      //   })
-      // );
-
       // Fetch doctor data from local storage
       const doctorData = JSON.parse(localStorage.getItem("userData"))[0];
 
@@ -182,9 +166,6 @@
         localStorage.removeItem("userData");
         window.location.href = "http://localhost:3000/";
       });
-
-      // Load Appointment History from local storage or any other source
-      // (Here you can add more JavaScript to fetch and populate appointment history dynamically)
     </script>
   </body>
 </html>

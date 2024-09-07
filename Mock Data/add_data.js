@@ -2,12 +2,15 @@ const mysql = require("mysql2");
 const fs = require("fs");
 const fastcsv = require("fast-csv");
 
+require('dotenv').config();
+
 // update below conection config to match your system
 const con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Conchjma123@",
-  database: "dataproject",
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+  connectTimeout: 60000
 });
 
 let departmentStream = fs.createReadStream("Department.csv");
