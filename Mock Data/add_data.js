@@ -6,7 +6,7 @@ const fastcsv = require("fast-csv");
 const con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "Conchjma123@",
+  password: "123456",
   database: "dataproject",
 });
 
@@ -28,8 +28,7 @@ let departmentData = fastcsv
       if (error) {
         console.error(error);
       } else {
-        let query =
-          "INSERT INTO departments (id,name) VALUES ?";
+        let query = "INSERT INTO departments (id,name) VALUES ?";
         con.query(query, [departmentCSVData], (error, response) => {
           console.log(error || response);
         });
@@ -129,3 +128,31 @@ let nurseData = fastcsv
   });
 
 nurseStream.pipe(nurseData);
+
+let adminStream = fs.createReadStream("Admin.csv");
+let adminCSVData = [];
+let adminData = fastcsv
+  .parse()
+  .on("data", function (data) {
+    adminCSVData.push(data);
+
+    // console.log(adminCSVData);
+  })
+  .on("end", function () {
+    // remove the first line: header
+    adminCSVData.shift();
+
+    // connect to the MySQL database
+    con.connect((error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        let query = "INSERT INTO admin (id, email, password) VALUES ?";
+        con.query(query, [adminCSVData], (error, response) => {
+          console.log(error || response);
+        });
+      }
+    });
+    // save adminCSVData
+  });
+adminStream.pipe(adminData);

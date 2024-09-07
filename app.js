@@ -9,6 +9,7 @@ const morgan = require("morgan");
 // const usersRoutes = require('./routes/UsersRoutes');
 const patientsRoutes = require("./routes/PatientsRoutes");
 const staffsRoutes = require("./routes/StaffRoute");
+const adminsRoutes = require("./routes/AdminRoute");
 const errorMiddleware = require("./middleware/errorMiddleware");
 
 // MongoDB import Routes
@@ -31,6 +32,7 @@ app.use(bodyParser.json()); // Parse JSON request bodies
 // app.use('/users', usersRoutes);
 app.use("/patients", patientsRoutes);
 app.use("/staffs", staffsRoutes);
+app.use("/admins", adminsRoutes);
 
 // MongoDB
 app.use("/appointments", appointmentsRoutes);

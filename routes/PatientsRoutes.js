@@ -22,6 +22,44 @@ router.get("/search/:id", async (req, res) => {
   });
 });
 
+router.get("/update-data", async (req, res) => {
+  try {
+    let Now = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
+    const past_appointment_object = await appointment
+      .updateMany({}, [
+        {
+          $set: {
+            status: {
+              $switch: {
+                branches: [
+                  {
+                    case: { $eq: ["$date_of_appointment", Now] },
+                    then: "During",
+                  },
+                  {
+                    case: { $lt: ["$date_of_appointment", Now] },
+                    then: "Completed",
+                  },
+                  {
+                    case: { $gt: ["$date_of_appointment", Now] },
+                    then: "Pending",
+                  },
+                ],
+                default: "Completed",
+              },
+            },
+          },
+        },
+      ])
+      .then((data) => {
+        res.json(data);
+      });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error");
+  }
+});
+
 router.get("/:id", async (req, res) => {
   try {
     const appointment_object = await appointment
