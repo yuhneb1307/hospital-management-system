@@ -54,7 +54,11 @@
     <div class="row" id="patient-list">
       <% patients.forEach(function(patient){ %>
         <a href="/patients/<%= patient.id %>" class="col-12 col-md-6 col-lg-2 patient-card mb-4" style="text-decoration: none;">
+         
           <div class="info">
+            <div class="dob"> Patient ID:
+              <%= patient.id%>
+            </div>
             <div class="name"> Name:
               <%= patient.first_name %> <%= patient.last_name %>
             </div>
@@ -73,39 +77,105 @@
     </div>
   </div>
 
+  <!-- Pagination Controls -->
+  <div class="container mt-4">
+    <nav>
+      <ul class="pagination justify-content-center" id="pagination">
+        <!-- Pagination buttons will be dynamically generated here -->
+      </ul>
+    </nav>
+  </div>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const dateElements = document.querySelectorAll('.formatted-date');
-      const searchBar = document.getElementById('search-bar');
-      const patientList = document.getElementById('patient-list');
-      const patients = Array.from(patientList.children);
+  document.addEventListener("DOMContentLoaded", function () {
+  const dateElements = document.querySelectorAll('.formatted-date');
+  const searchBar = document.getElementById('search-bar');
+  const patientList = document.getElementById('patient-list');
+  const patients = Array.from(patientList.children);
+  const pagination = document.getElementById('pagination');
 
-      // Format the date for each patient
-      dateElements.forEach(function (element) {
-        const dob = element.getAttribute('data-dob');
-        const date = new Date(dob);
+  // Constants for pagination
+  const patientsPerPage = 50;
+  let currentPage = 1;
+  let filteredPatients = patients; // Start with all patients
+  let totalPages = Math.ceil(filteredPatients.length / patientsPerPage);
 
-        // Format the date as YYYY/MM/DD
-        const formattedDate = `${date.getFullYear()}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getDate().toString().padStart(2, '0')}`;
+  // Format the date for each patient
+  dateElements.forEach(function (element) {
+    const dob = element.getAttribute('data-dob');
+    const date = new Date(dob);
 
-        // Update the content of the element
-        element.textContent = formattedDate;
+    // Format the date as YYYY/MM/DD
+    const formattedDate = `${date.getFullYear()}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getDate().toString().padStart(2, '0')}`;
+
+    // Update the content of the element
+    element.textContent = formattedDate;
+  });
+
+  // Function to display patients for the current page
+  function displayPatients() {
+    // Hide all patients
+    patients.forEach(patient => patient.style.display = 'none');
+
+    // Calculate the start and end indices for the current page
+    const start = (currentPage - 1) * patientsPerPage;
+    const end = start + patientsPerPage;
+
+    // Show only the patients for the current page
+    filteredPatients.slice(start, end).forEach(patient => patient.style.display = '');
+  }
+
+  // Function to generate pagination buttons
+  function generatePaginationButtons() {
+    pagination.innerHTML = ''; // Clear previous buttons
+
+    for (let i = 1; i <= totalPages; i++) {
+      const li = document.createElement('li');
+      li.classList.add('page-item');
+      li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+
+      // Add active class to the current page button
+      if (i === currentPage) {
+        li.classList.add('active');
+      }
+
+      // Add click event listener to change page
+      li.addEventListener('click', function () {
+        currentPage = i;
+        displayPatients();
+        generatePaginationButtons();
       });
 
-      // Search and filter functionality
-      searchBar.addEventListener('input', function () {
-        const searchTerm = this.value.toLowerCase();
+      pagination.appendChild(li);
+    }
+  }
 
-        patients.forEach(patient => {
-          const patientName = patient.querySelector('.name').textContent.toLowerCase();
-          if (patientName.includes(searchTerm)) {
-            patient.style.display = ''; // Show matching patients
-          } else {
-            patient.style.display = 'none'; // Hide non-matching patients
-          }
-        });
+  // Initial display of patients and pagination buttons
+  displayPatients();
+  generatePaginationButtons();
+
+  // Search and filter functionality
+  searchBar.addEventListener('input', function () {
+    const searchTerm = this.value.toLowerCase();
+
+    if (searchTerm) {
+      // Filter patients based on the search term
+      filteredPatients = patients.filter(patient => {
+        const patientName = patient.querySelector('.name').textContent.toLowerCase();
+        return patientName.includes(searchTerm);
       });
-    });
+    } else {
+      // If the search input is cleared, reset to all patients
+      filteredPatients = patients;
+    }
+
+    // Reset pagination
+    currentPage = 1;
+    totalPages = Math.ceil(filteredPatients.length / patientsPerPage);
+    displayPatients();
+    generatePaginationButtons();
+  });
+});
   </script>
 </body>
 
