@@ -5,6 +5,7 @@ exports.getAllStaffs = async (req, res) => {
   // Logic to get all staffs
   Staffs.getAllStaffs((err, staffs) => {
     if (err) throw err;
+  
     callback(staffs);
   });
 };

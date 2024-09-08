@@ -44,16 +44,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link active" href="#">Staff Information</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost:3000/patients">Staff List</a>
+              <a class="nav-link" href="http://localhost:3000/patients">Patients List</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Appointment List</a>
+              <a class="nav-link" href="http://localhost:3000/staffs">Staff List</a>
             </li>
             <li class="nav-item">
               <button id="logout-btn" class="btn btn-link nav-link">Log Out</button>
@@ -106,63 +103,61 @@
         </div>
       </div>
 
-      <!-- Patient List Section -->
-      <div class="container-fluid p-5 text-center">
-        <h1>List Of Patients</h1>
-      </div>
+     <!-- Patient List Section -->
+<div class="container-fluid p-5 text-center">
+  <h1>List Of Patients</h1>
+</div>
 
-      <!-- Search Bar -->
-      <div class="container mb-4">
-        <div class="input-group">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Search Patients by Name..."
-            id="search-bar"
-          />
-        </div>
-      </div>
+<!-- Search Bar -->
+<div class="container mb-4">
+  <div class="input-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search Patients by Name..."
+      id="search-bar"
+    />
+  </div>
+</div>
 
-      <div class="row justify-content-center">
-        <div class="col-md-10 col-lg-8">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title text-center mb-4">Patient List</h5>
-              <div class="row" id="patient-list">
-                <% patients.forEach(function(patient){ %>
-                <div
-                  class="col-12 col-md-6 col-lg-4 mb-4 patient-card"
-                  data-name="<%= patient.first_name %> <%= patient.last_name %>"
-                >
-                  <a href="/patients/<%= patient.id %>" class="text-decoration-none">
-                    <div class="card h-100">
-                      <div class="card-body">
-                        <h6 class="card-subtitle mb-2 text-muted">
-                          Patient ID: <%= patient.id %>
-                        </h6>
-                        <h5 class="card-title">
-                          <%= patient.first_name %> <%= patient.last_name %>
-                        </h5>
-                        <p class="card-text">
-                          <strong>Date Of Birth:</strong>
-                          <span
-                            class="formatted-date"
-                            data-dob="<%= patient.date_of_birth %>"
-                          ></span
-                          ><br />
-                          <strong>Address:</strong> <%= patient.address %><br />
-                          <strong>Phone Number:</strong> <%= patient.phone %>
-                        </p>
-                      </div>
-                    </div>
-                  </a>
+<div class="row justify-content-center">
+  <div class="col-md-10 col-lg-12"> <!-- Adjusted column width to 12 for full width -->
+    <div class="card">
+      <div class="card-body">
+        <div class="row" id="patient-list">
+          <% patients.forEach(function(patient){ %>
+          <div
+            class="col-12 col-md-6 col-lg-3 mb-4 patient-card"
+            data-name="<%= patient.first_name %> <%= patient.last_name %>"  <!-- Correctly set data-name -->
+          >
+            <a href="/patients/<%= patient.id %>" class="text-decoration-none">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    Patient ID: <%= patient.id %>
+                  </h6>
+                  <h5 class="card-title">
+                    <%= patient.first_name %> <%= patient.last_name %>
+                  </h5>
+                  <p class="card-text">
+                    <strong>Date Of Birth:</strong>
+                    <span
+                      class="formatted-date"
+                      data-dob="<%= patient.date_of_birth %>"
+                    ></span><br />
+                    <strong>Address:</strong> <%= patient.address %><br />
+                    <strong>Phone Number:</strong> <%= patient.phone %>
+                  </p>
                 </div>
-                <% }) %>
               </div>
-            </div>
+            </a>
           </div>
+          <% }) %>
         </div>
       </div>
+    </div>
+  </div>
+</div>
       <!-- end patients list -->
     </div>
 
