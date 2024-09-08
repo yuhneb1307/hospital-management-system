@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS Staff;
 DROP TABLE IF EXISTS Patients;
 DROP TABLE IF EXISTS Departments;
 DROP TABLE IF EXISTS Admin;
+DROP TABLE IF EXISTS Emergency_contacts;
 
 -- Create Departments table first
 CREATE TABLE Departments (
@@ -50,8 +51,22 @@ CREATE TABLE Admin (
   password VARCHAR(255) NOT NULL
 ) ENGINE = InnoDB;
 
+-- _id,first_name,last_name,gender,phone,address,email,relationship,patient_id
+CREATE TABLE Emergency_contacts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(255) NOT NULL,
+  last_name VARCHAR(255) NOT NULL,
+  gender ENUM('Male', 'Female', 'Other'),
+  phone VARCHAR(12),
+  address TEXT,
+  email VARCHAR(255) NOT NULL,
+  relationship VARCHAR(255) NOT NULL,
+  patient_id INT
+) ENGINE = InnoDB;
+
 -- Select all data from each table
 SELECT * FROM Departments;
 SELECT * FROM Patients;
 SELECT * FROM Staff;
 SELECT * FROM Admin;
+SELECT * FROM Emergency_contacts;

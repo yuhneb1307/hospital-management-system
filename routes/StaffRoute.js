@@ -3,6 +3,7 @@ const router = express.Router();
 const staffController = require("../controllers/staffsController.js");
 router.use(express.static("public"));
 const patients = require("../models/patients.js"); // Import the model
+const Departments = require("../models/department.js"); // Import the model
 
 // Routes
 router.get("/", (req, res) => {

@@ -93,3 +93,9 @@ exports.updatePatient = function (updatedPatient, id, callback) {
 exports.deletePatient = function (id, callback) {
   db.query("DELETE FROM patients WHERE id = ?", [id], callback);
 };
+
+
+
+exports.countPatients = function ( callback) {
+  db.query("SELECT COUNT(id) AS patient_no FROM Patients;", callback);
+};

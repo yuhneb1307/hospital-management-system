@@ -2,7 +2,7 @@ const mysql = require("mysql2");
 const fs = require("fs");
 const fastcsv = require("fast-csv");
 
-require('dotenv').config();
+require("dotenv").config();
 
 // update below conection config to match your system
 const con = mysql.createConnection({
@@ -10,7 +10,7 @@ const con = mysql.createConnection({
   user: process.env.MYSQL_USER,
   password: process.env.MYSQL_PASSWORD,
   database: process.env.MYSQL_DATABASE,
-  connectTimeout: 60000
+  connectTimeout: 60000,
 });
 
 let departmentStream = fs.createReadStream("Department.csv");
@@ -159,3 +159,33 @@ let adminData = fastcsv
     // save adminCSVData
   });
 adminStream.pipe(adminData);
+
+let emergency_contactStream = fs.createReadStream("emergency_contact.csv");
+let emergency_contactCSVData = [];
+let emergency_contactData = fastcsv
+  .parse()
+  .on("data", function (data) {
+    emergency_contactCSVData.push(data);
+
+    // console.log(emergency_contactCSVData);
+  })
+  .on("end", function () {
+    // remove the first line: header
+    emergency_contactCSVData.shift();
+
+    // connect to the MySQL database
+    con.connect((error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        let query =
+          "INSERT INTO emergency_contacts (id,first_name,last_name,gender,phone,address,email,relationship,patient_id) VALUES ?";
+        con.query(query, [emergency_contactCSVData], (error, response) => {
+          console.log(error || response);
+        });
+      }
+    });
+    // save emergency_contactCSVData
+  });
+
+emergency_contactStream.pipe(emergency_contactData);

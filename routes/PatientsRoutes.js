@@ -62,38 +62,28 @@ router.get("/update-data", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const appointment_object = await appointment
+    var appointment_object = await appointment
       .find({ patient_id: req.params.id })
       .exec();
     const staff_ids = appointment_object.map((app) => app.staff_id);
     console.log(appointment_object);
 
-    // let NOW = new Date().toJSON().slice(0, 10).replace(/-/g, "-");
-    // let Now = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
-    // const past_appointment_object = await appointment
-    //   .find({
-    //     date_of_appointment: { $lt: NOW },
-    //     patient_id: req.params.id,
-    //   })
-    //   .exec();
-
-    // const now_appointment_object = await appointment
-    //   .find({
-    //     date_of_appointment: Now,
-    //     patient_id: req.params.id,
-    //   })
-    //   .exec();
-
-    // const future_appointment_object = await appointment
-    //   .find({
-    //     date_of_appointment: { $gt: NOW },
-    //     patient_id: req.params.id,
-    //   })
-    //   .exec();
-
-    const allergy_object = await allergy
+    var allergy_object = await allergy
       .find({ patient_id: req.params.id })
       .exec();
+
+      if (allergy_object.length == 0) {
+        allergy_object= [
+          {
+            _id: null,
+            patient_id: null,
+            allergy_name: null,
+            reation: null,
+            severity: null,
+            discovered_date: null
+          }
+        ]
+      }
 
     patientsController.getPatientById(req.params.id, (patient) => {
       if (!patient || patient.length === 0) {
@@ -152,12 +142,72 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.get("/", patientsController.getAllPatients);
-// router.get("/", patientsController.getAllPatients);
-router.get("/search/:data", patientsController.getPatientByDataOrder);
-router.get("/sort/:data/:order", patientsController.getPatientByDataOrder);
-// router.get("/login", patientsController.checkLogIn);
-router.get("/search/allergy", patientsController.getPatientById);
+// Update appointment statuses
+router.get("/update-data", async (req, res) => {
+  try {
+    let now = new Date().toISOString().slice(0, 10); // Use ISO format for dates
+    const updateResult = await appointment.updateMany({}, [
+      {
+        $set: {
+          status: {
+            $switch: {
+              branches: [
+                {
+                  case: { $eq: ["$date_of_appointment", now] },
+                  then: "During",
+                },
+                {
+                  case: { $lt: ["$date_of_appointment", now] },
+                  then: "Completed",
+                },
+                {
+                  case: { $gt: ["$date_of_appointment", now] },
+                  then: "Pending",
+                },
+              ],
+              default: "Completed",
+            },
+          },
+        },
+      },
+    ]);
+    res.json(updateResult);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error");
+  }
+});
+
+// Paginated and filtered patients list
+router.get("/paginated", (req, res) => {
+  const page = parseInt(req.query.page, 10) || 1;
+  const searchTerm = req.query.search || ""; // Extract search term from query
+
+  patientsController.getPaginatedPatients(
+    page,
+    searchTerm,
+    (err, patientsData) => {
+      if (err) {
+        console.error("Error fetching paginated patients:", err);
+        return res.status(500).json({ error: "Failed to fetch patients." });
+      }
+      res.json(patientsData);
+    }
+  );
+});
+
+// Sort patients by a specified field in ascending or descending order
+router.get("/sort/:data/:order", (req, res) => {
+  patientsController.getPatientByDataOrder(
+    req.params.data,
+    req.params.order,
+    (patients) => {
+      res.json(patients);
+    }
+  );
+});
+
+router.get("/count/user", patientsController.countPatients);
 
 // CREATE
 router.post("/", patientsController.createPatient);

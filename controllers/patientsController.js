@@ -57,6 +57,14 @@ exports.getPatientByDataOrder = async (req, res) => {
   });
 };
 
+exports.countPatients = async (req, res) => {
+  Patients.countPatients( (err, result) => {
+    if (err) throw err;
+    res.json(result);
+  });
+};
+
+
 exports.checkLogIn = async (req, res) => {
   const password = req.body.password;
   const email = req.body.email;
@@ -73,10 +81,13 @@ exports.createPatient = async (req, res) => {
     id: req.body.id,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
+    password:  req.body.password,
+    email:  req.body.email,
     date_of_birth: req.body.date_of_birth,
     gender: req.body.gender,
     phone: req.body.phone,
-    address: req.body.address
+    address: req.body.address,
+    doctor_id: req.body.doctor_id
   };
 
   Patients.createPatient(patient, (err, patients) => {

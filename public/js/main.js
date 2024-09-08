@@ -4,11 +4,6 @@ let email = document.getElementById("email");
 let password = document.getElementById("password");
 let loginButton = document.getElementById("loginButton");
 
-// role.addEventListener("click", (e) => {
-//   //   loginForm.action = "/" + role.value + "/login";
-//   //   console.log(loginButton.value);
-// });
-
 loginButton.addEventListener("click", (e) => {
   e.preventDefault();
   //   fetchData();
@@ -31,11 +26,9 @@ loginButton.addEventListener("click", (e) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      console.log(response);
       return response.json();
     })
     .then((userData) => {
-      console.log(userData);
       // Process the newly created user data
       if (userData.length == 1) {
         localStorage.setItem(role.value + "Data", JSON.stringify(userData));
@@ -54,4 +47,9 @@ fetch("http://localhost:3000/patients/update-data", {
   headers: {
     "Content-Type": "application/json",
   }
+}).then((response) => {
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return response.json();
 });
