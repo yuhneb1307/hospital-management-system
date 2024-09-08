@@ -225,26 +225,20 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="/patients/create-appoinment/<%= patient.id %>" method="post">
             <div class="mb-3">
               <label for="appointmentDate" class="form-label">Date of Appointment</label>
-              <input type="date" class="form-control" id="appointmentDate" />
+              <input name="date_of_appointment" type="date" class="form-control" id="appointmentDate" />
             </div>
             <div class="mb-3">
-              <label for="appointmentDepartment" class="form-label">Department</label>
-              <select class="form-select" id="appointmentDepartment" onchange="updateDoctors()">
-                <option selected disabled>Select Department</option>
-                <% departments.forEach(function(department){ %>
-                  <option value="<%= department.id %>"><%= department.name %></option>
+              <label for="appointmentDoctor" class="form-label">Doctor</label>
+              <select class="form-select" id="appointmentDoctor">
+                <option selected disabled>Select Doctor</option>
+                <% all_staffs.forEach(function(all_staff){ %>
+                  <option value="<%= all_staffs.id %>" name="staff_id" ><%= all_staff.first_name %> <%= all_staff.last_name %></option>
             </div>
             <% }) %>
               </select>
-        </div>
-        <div class="mb-3">
-          <label for="appointmentDoctor" class="form-label">Doctor</label>
-          <select class="form-select" id="appointmentDoctor" disabled>
-            <option selected disabled>Select Doctor</option>
-          </select>
         </div>
         <div class="mb-3">
           <label for="appointmentObservation" class="form-label">Observation</label>
@@ -266,9 +260,10 @@
       const department_id = document.getElementById(
         "appointmentDepartment"
       ).value;
+      console.log(department_id);
       const doctorSelect = document.getElementById("appointmentDoctor");
       doctorSelect.innerHTML = ""; // Clear existing options
-      let d = "<%= departments %>";
+      let d = "<%- JSON.stringify(departments) %>"; 
       console.log(d);
       let filtered_staffs = [];
       filtered_staffs = all_staff.filter((staff) => { staff.department_id == department_id});
@@ -286,7 +281,6 @@
       //     doctors = ["Dr. Alice White", "Dr. David Green"];
       //     break;
       // }
-
       filtered_staffs.forEach((doctor) => {
         const option = document.createElement("option");
         option.value = doctor;
