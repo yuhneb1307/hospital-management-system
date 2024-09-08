@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doctor Information</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -73,35 +73,27 @@
               <div class="row">
                 <div class="col-6">
                   <p class="card-text">
-                    <strong>Name:</strong>
-                    <%= staff.first_name %>
-                      <%= staff.last_name %>
+                    <strong>Name:</strong> <%= staff.first_name %> <%= staff.last_name %>
                   </p>
                   <p class="card-text">
-                    <strong>ID:</strong>
-                    <%= staff.id %>
+                    <strong>ID:</strong> <%= staff.id %>
                   </p>
-                  <p class="card-text"></p>
-                  <strong>Gender:</strong>
-                  <%= staff.gender %>
-                    </p>
+                  <p class="card-text">
+                    <strong>Gender:</strong> <%= staff.gender %>
+                  </p>
                 </div>
                 <div class="col-6">
                   <p class="card-text">
-                    <strong>Role:</strong>
-                    <%= staff.role %>
+                    <strong>Role:</strong> <%= staff.role %>
                   </p>
                   <p class="card-text">
-                    <strong>Department id:</strong>
-                    <%= staff.department_id %>
+                    <strong>Department id:</strong> <%= staff.department_id %>
                   </p>
                   <p class="card-text">
-                    <strong>Schedule:</strong>
-                    <%= staff.schedule %>
+                    <strong>Schedule:</strong> <%= staff.schedule %>
                   </p>
                   <p class="card-text">
-                    <strong>Salary:</strong>
-                    <%= staff.salary %>
+                    <strong>Salary:</strong> <%= staff.salary %>
                   </p>
                 </div>
               </div>
@@ -118,14 +110,19 @@
       <div class="container-fluid p-5 text-center">
         <h1>List Of Patients</h1>
       </div>
-    
+
       <!-- Search Bar -->
       <div class="container mb-4">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search Patients by Name..." id="search-bar">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search Patients by Name..."
+            id="search-bar"
+          />
         </div>
       </div>
-    
+
       <div class="row justify-content-center">
         <div class="col-md-10 col-lg-8">
           <div class="card">
@@ -133,21 +130,33 @@
               <h5 class="card-title text-center mb-4">Patient List</h5>
               <div class="row" id="patient-list">
                 <% patients.forEach(function(patient){ %>
-                  <div class="col-12 col-md-6 col-lg-4 mb-4 patient-card" data-name="<%= patient.first_name %> <%= patient.last_name %>">
-                    <a href="/patients/<%= patient.id %>" class="text-decoration-none">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <h6 class="card-subtitle mb-2 text-muted">Patient ID: <%= patient.id %></h6>
-                          <h5 class="card-title"><%= patient.first_name %> <%= patient.last_name %></h5>
-                          <p class="card-text">
-                            <strong>Date Of Birth:</strong> <span class="formatted-date" data-dob="<%= patient.date_of_birth %>"></span><br>
-                            <strong>Address:</strong> <%= patient.address %><br>
-                            <strong>Phone Number:</strong> <%= patient.phone %>
-                          </p>
-                        </div>
+                <div
+                  class="col-12 col-md-6 col-lg-4 mb-4 patient-card"
+                  data-name="<%= patient.first_name %> <%= patient.last_name %>"
+                >
+                  <a href="/patients/<%= patient.id %>" class="text-decoration-none">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">
+                          Patient ID: <%= patient.id %>
+                        </h6>
+                        <h5 class="card-title">
+                          <%= patient.first_name %> <%= patient.last_name %>
+                        </h5>
+                        <p class="card-text">
+                          <strong>Date Of Birth:</strong>
+                          <span
+                            class="formatted-date"
+                            data-dob="<%= patient.date_of_birth %>"
+                          ></span
+                          ><br />
+                          <strong>Address:</strong> <%= patient.address %><br />
+                          <strong>Phone Number:</strong> <%= patient.phone %>
+                        </p>
                       </div>
-                    </a>
-                  </div>
+                    </div>
+                  </a>
+                </div>
                 <% }) %>
               </div>
             </div>
@@ -169,22 +178,6 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Fetch doctor data from local storage
-        const doctorData = JSON.parse(localStorage.getItem("staffsData"))[0];
-
-        if (doctorData) {
-          document.getElementById("doctor-name").innerText = `${doctorData.first_name} ${doctorData.last_name}`;
-          document.getElementById("doctor-id").innerText = doctorData.id;
-          document.getElementById("doctor-email").innerText = doctorData.email;
-          document.getElementById("doctor-gender").innerText = doctorData.gender;
-          document.getElementById("doctor-role").innerText = doctorData.role;
-          document.getElementById("doctor-department").innerText = doctorData.department_id;
-          document.getElementById("doctor-schedule").innerText = doctorData.schedule;
-          document.getElementById("doctor-salary").innerText = doctorData.salary;
-        } else {
-          console.error("No doctor data found in local storage.");
-        }
-
         const logoutBtn = document.getElementById("logout-btn");
         logoutBtn.addEventListener("click", function () {
           localStorage.clear();
@@ -194,18 +187,31 @@
         // Search functionality
         const searchBar = document.getElementById("search-bar");
         const patientList = document.getElementById("patient-list");
-        const patientCards = Array.from(patientList.getElementsByClassName("patient-card"));
+        const patientCards = Array.from(
+          patientList.getElementsByClassName("patient-card")
+        );
 
         searchBar.addEventListener("input", function () {
           const searchTerm = this.value.toLowerCase();
 
-          patientCards.forEach(card => {
+          patientCards.forEach((card) => {
             const name = card.getAttribute("data-name").toLowerCase();
             if (name.includes(searchTerm)) {
               card.style.display = ""; // Show matching patients
             } else {
               card.style.display = "none"; // Hide non-matching patients
             }
+          });
+        });
+
+        // Format date of birth
+        const formattedDateElements = document.querySelectorAll(".formatted-date");
+        formattedDateElements.forEach((element) => {
+          const dob = new Date(element.getAttribute("data-dob"));
+          element.textContent = dob.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
           });
         });
       });

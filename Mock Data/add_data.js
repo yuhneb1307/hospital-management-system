@@ -2,7 +2,7 @@ const mysql = require("mysql2");
 const fs = require("fs");
 const fastcsv = require("fast-csv");
 
-require("dotenv").config();
+require('dotenv').config({ path: '../.env' });
 
 // update below conection config to match your system
 const con = mysql.createConnection({
