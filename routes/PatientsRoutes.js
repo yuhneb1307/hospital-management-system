@@ -66,6 +66,7 @@ router.get("/:id", async (req, res) => {
       .find({ patient_id: req.params.id })
       .exec();
     const staff_ids = appointment_object.map((app) => app.staff_id);
+    console.log(appointment_object);
 
     // let NOW = new Date().toJSON().slice(0, 10).replace(/-/g, "-");
     // let Now = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
@@ -161,6 +162,15 @@ router.get("/search/allergy", patientsController.getPatientById);
 // CREATE
 router.post("/", patientsController.createPatient);
 router.post("/login", patientsController.checkLogIn);
+router.post("/create-appoinment/:id", async (req, res) => {
+  try {
+    const newNote = new appointments(req.body);
+    const savedNote = await newNote.save();
+    res.status(201).json(savedNote);
+  } catch (error) {
+    res.status(400).json({ message: "Error adding appointment note", error });
+  }
+});
 
 //UPDATE
 router.post("/update/:id", (req, res) => {
