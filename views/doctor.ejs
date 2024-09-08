@@ -19,7 +19,6 @@
         overflow-y: auto;
         z-index: 1050;
       }
-
       .appointment-tab .list-group-item {
         font-size: 14px;
       }
@@ -55,9 +54,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Appointment List</a>
             </li>
-            <button id="logout-btn" class="nav-item">
-              <a class="nav-link" href="#">Log Out</a>
-            </button>
+            <li class="nav-item">
+              <button id="logout-btn" class="btn btn-link nav-link">Log Out</button>
+            </li>
           </ul>
         </div>
       </div>
@@ -103,56 +102,55 @@
                 </div>
               </div>
               <div class="d-flex justify-content-center mt-3">
-                <a href="edit-doctor-info.html" class="btn btn-primary me-2"
-                  >Edit Information</a
-                >
-                <a href="create-appointment.html" class="btn btn-success"
-                  >Create Appointment</a
-                >
+                <a href="edit-doctor-info.html" class="btn btn-primary me-2">Edit Information</a>
+                <a href="create-appointment.html" class="btn btn-success">Create Appointment</a>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Appointment History Section -->
+      <!-- Patient List Section -->
+      <div class="container-fluid p-5 text-center">
+        <h1>List Of Patients</h1>
+      </div>
+    
+      <!-- Search Bar -->
+      <div class="container mb-4">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search Patients by Name..." id="search-bar">
+        </div>
+      </div>
+    
       <div class="row justify-content-center">
         <div class="col-md-10 col-lg-8">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Patient List</h5>
-              <div class="container mt-5">
-                <div class="row">
-                  <% patients.forEach(function(patient){ %>
-                  <a
-                    href="/patients/<%= patient.id %>"
-                    class="col-12 col-md-6 col-lg-2 patient-card mb-4"
-                    style="text-decoration: none"
-                  >
-                    <div class="info">
-                      <div class="name">
-                        Name: <%= patient.first_name %> <%= patient.last_name %>
+              <h5 class="card-title text-center mb-4">Patient List</h5>
+              <div class="row" id="patient-list">
+                <% patients.forEach(function(patient){ %>
+                  <div class="col-12 col-md-6 col-lg-4 mb-4 patient-card" data-name="<%= patient.first_name %> <%= patient.last_name %>">
+                    <a href="/patients/<%= patient.id %>" class="text-decoration-none">
+                      <div class="card h-100">
+                        <div class="card-body">
+                          <h6 class="card-subtitle mb-2 text-muted">Patient ID: <%= patient.id %></h6>
+                          <h5 class="card-title"><%= patient.first_name %> <%= patient.last_name %></h5>
+                          <p class="card-text">
+                            <strong>Date Of Birth:</strong> <span class="formatted-date" data-dob="<%= patient.date_of_birth %>"></span><br>
+                            <strong>Address:</strong> <%= patient.address %><br>
+                            <strong>Phone Number:</strong> <%= patient.phone %>
+                          </p>
+                        </div>
                       </div>
-                      <div class="dob">
-                        Date Of Birth:
-                        <span
-                          class="formatted-date"
-                          data-dob="<%= patient.date_of_birth %>"
-                        ></span>
-                      </div>
-                      <div class="address">Address: <%= patient.address %></div>
-                      <div class="phone_number">
-                        Phone Number: <%= patient.phone %>
-                      </div>
-                    </div>
-                  </a>
-                  <% }) %>
-                </div>
+                    </a>
+                  </div>
+                <% }) %>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- end patients list -->
     </div>
 
     <!-- Appointment Tab -->
@@ -166,30 +164,46 @@
     </div>
 
     <script>
-      // Fetch doctor data from local storage
-      const doctorData = JSON.parse(localStorage.getItem("staffsData"))[0];
+      document.addEventListener("DOMContentLoaded", function () {
+        // Fetch doctor data from local storage
+        const doctorData = JSON.parse(localStorage.getItem("staffsData"))[0];
 
-      if (doctorData) {
-        document.getElementById(
-          "doctor-name"
-        ).innerText = `${doctorData.first_name} ${doctorData.last_name}`;
-        document.getElementById("doctor-id").innerText = doctorData.id;
-        document.getElementById("doctor-email").innerText = doctorData.email;
-        document.getElementById("doctor-gender").innerText = doctorData.gender;
-        document.getElementById("doctor-role").innerText = doctorData.role;
-        document.getElementById("doctor-department").innerText =
-          doctorData.department_id;
-        document.getElementById("doctor-schedule").innerText =
-          doctorData.schedule;
-        document.getElementById("doctor-salary").innerText = doctorData.salary;
-      } else {
-        console.error("No doctor data found in local storage.");
-      }
+        if (doctorData) {
+          document.getElementById("doctor-name").innerText = `${doctorData.first_name} ${doctorData.last_name}`;
+          document.getElementById("doctor-id").innerText = doctorData.id;
+          document.getElementById("doctor-email").innerText = doctorData.email;
+          document.getElementById("doctor-gender").innerText = doctorData.gender;
+          document.getElementById("doctor-role").innerText = doctorData.role;
+          document.getElementById("doctor-department").innerText = doctorData.department_id;
+          document.getElementById("doctor-schedule").innerText = doctorData.schedule;
+          document.getElementById("doctor-salary").innerText = doctorData.salary;
+        } else {
+          console.error("No doctor data found in local storage.");
+        }
 
-      logoutBtn = document.getElementById("logout-btn");
-      logoutBtn.addEventListener("click", function () {
-        localStorage.clear();
-        window.location.href = "http://localhost:3000/";
+        const logoutBtn = document.getElementById("logout-btn");
+        logoutBtn.addEventListener("click", function () {
+          localStorage.clear();
+          window.location.href = "http://localhost:3000/";
+        });
+
+        // Search functionality
+        const searchBar = document.getElementById("search-bar");
+        const patientList = document.getElementById("patient-list");
+        const patientCards = Array.from(patientList.getElementsByClassName("patient-card"));
+
+        searchBar.addEventListener("input", function () {
+          const searchTerm = this.value.toLowerCase();
+
+          patientCards.forEach(card => {
+            const name = card.getAttribute("data-name").toLowerCase();
+            if (name.includes(searchTerm)) {
+              card.style.display = ""; // Show matching patients
+            } else {
+              card.style.display = "none"; // Hide non-matching patients
+            }
+          });
+        });
       });
     </script>
   </body>
