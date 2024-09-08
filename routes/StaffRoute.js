@@ -6,7 +6,7 @@ const patients = require("../models/patients.js"); // Import the model
 const Departments = require("../models/department.js"); // Import the model
 
 // Routes
-router.get("/", (req, res) => {
+router.get("/staffs", (req, res) => {
   staffController.getAllStaffs((staffs) => {
     res.render("staffs", { staffs });
   });

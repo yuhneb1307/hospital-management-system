@@ -2,6 +2,7 @@ const db = require("../config/db");
 
 // READ
 exports.getAllStaffs = function (callback) {
+  
   db.query("SELECT * FROM staff", callback);
 };
 
