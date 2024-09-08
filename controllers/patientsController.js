@@ -108,7 +108,6 @@ exports.updatePatient =  (req, res, callback) => {
     phone: req.body.phone,
     address: req.body.address
   };
-  console.log(req.body);
   Patients.updatePatient(patient, id, (err, result) => {
     if (err) throw err;
     Patients.getAllPatients((err, patients) => {
