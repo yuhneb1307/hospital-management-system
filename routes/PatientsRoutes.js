@@ -72,18 +72,18 @@ router.get("/:id", async (req, res) => {
       .find({ patient_id: req.params.id })
       .exec();
 
-      if (allergy_object.length == 0) {
-        allergy_object= [
-          {
-            _id: null,
-            patient_id: null,
-            allergy_name: null,
-            reation: null,
-            severity: null,
-            discovered_date: null
-          }
-        ]
-      }
+    if (allergy_object.length == 0) {
+      allergy_object = [
+        {
+          _id: null,
+          patient_id: null,
+          allergy_name: null,
+          reation: null,
+          severity: null,
+          discovered_date: null,
+        },
+      ];
+    }
 
     patientsController.getPatientById(req.params.id, (patient) => {
       if (!patient || patient.length === 0) {
@@ -96,17 +96,17 @@ router.get("/:id", async (req, res) => {
 
           departments.getAllDepartments((err, departments) => {
             if (err) throw err;
-            Staffs.getAllStaffs((err, all_staffs)=>{
-            if (err) throw err;
-            res.render("patient-infor", {
-              patient: patient[0],
-              appointment_notes: appointment_object,
-              allergy: allergy_object[0],
-              staff: staffs,
-              departments: departments,
-              all_staffs: all_staffs,
+            Staffs.getAllStaffs((err, all_staffs) => {
+              if (err) throw err;
+              res.render("patient-infor", {
+                patient: patient[0],
+                appointment_notes: appointment_object,
+                allergy: allergy_object[0],
+                staff: staffs,
+                departments: departments,
+                all_staffs: all_staffs,
+              });
             });
-            })
           });
         });
       } else {

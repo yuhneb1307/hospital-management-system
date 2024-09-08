@@ -34,6 +34,15 @@ exports.getStaffById = async (req, res) => {
   });
 };
 
+exports.getDoctorByDepartment = async (req, res) => {
+  const id = req.params.id;
+
+  Staffs.getDoctorByDepartment(id, (err, staffs) => {
+    if (err) throw err;
+    res.json(staffs);
+  });
+};
+
 exports.getStaffById = (id, callback) => {
   Staffs.getStaffById(id, (err, staffs) => {
     if (err) throw err;

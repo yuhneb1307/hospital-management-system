@@ -34,6 +34,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.get("/doctor/department/:id", staffController.getDoctorByDepartment);
 router.get("/doctors", staffController.getAllDoctors);
 router.get("/nurse", staffController.getAllNurses);
 router.get("/search/:id", staffController.getStaffById);

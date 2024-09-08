@@ -12,6 +12,21 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/appointment/count", async (req, res) => {
+  try {
+    const agg = [
+      {
+        '$count': 'totalRecords'
+      }
+    ];
+    const notes = await appointments.aggregate(agg);
+    res.json(notes);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+
 // POST /appointment-notes
 router.post("/", async (req, res) => {
   try {

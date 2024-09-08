@@ -39,9 +39,6 @@
           <li class="nav-item">
             <a class="nav-link active" href="">Patient Information</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Appointment List</a>
-          </li>
           <button id="logout-btn">
             <a class="nav-link">Log Out</a></button>
         </ul>
@@ -224,28 +221,43 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="/patients/create-appoinment/<%= patient.id %>" method="post">
+          <form id="createAppointment" method="post">
             <div class="mb-3">
-              <label for="appointmentDate" class="form-label">Date of Appointment</label>
-              <input name="date_of_appointment" type="date" class="form-control" id="appointmentDate" />
+              <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+              <input name="date_of_appointment" type="date" class="form-control" id="date_of_appointment" />
             </div>
+
             <div class="mb-3">
-              <label for="appointmentDoctor" class="form-label">Doctor</label>
-              <select class="form-select" id="appointmentDoctor">
-                <option selected disabled>Select Doctor</option>
-                <% all_staffs.forEach(function(all_staff){ %>
-                  <option value="<%= all_staffs.id %>" name="staff_id" ><%= all_staff.first_name %> <%= all_staff.last_name %></option>
-            </div>
-            <% }) %>
+              <label for="appointmentDepartment" class="form-label">Department</label>
+              <select class="form-select" id="appointmentDepartment" onchange="updateDoctors()">
+                <option selected disabled>Select Department</option>
+                <% departments.forEach(function(department){ %>
+                  <option value="<%= department.id %>"><%= department.name %></option>
+                <% }) %>
               </select>
+            </div>
+            <div class="mb-3"> 
+              <label for="appointmentDoctor" class="form-label">Doctor</label>
+              <select class="form-select" id="staff_id">
+                <option selected disabled>Select Doctor</option>
+                <!-- <% all_staffs.forEach(function(staff){ %>
+                  <option value="<%= staff.id %>" name="id_staff" > <%= staff.first_name %> <%= staff.last_name %></option>
+                <% }) %> -->
+              </select>
+            </div>
+
+            
+            <input hidden name="patient_id" type="text" class="form-control" id="patient_id" value="<%= patient.id %>"/>
+            <input hidden name="status" type="text" class="form-control" id="status" value="Pending">
+            <div class="mb-3">
+              <label for="appointmentObservation" class="form-label">Observation</label>
+              <textarea class="form-control" id="appointmentObservation" rows="3"></textarea>
+            </div>
         </div>
-        <div class="mb-3">
-          <label for="appointmentObservation" class="form-label">Observation</label>
-          <textarea class="form-control" id="appointmentObservation" rows="3"></textarea>
-        </div>
+       
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-success">Create Appointment</button>
+          <button id="submitBtn" type="button" class="btn btn-success">Create Appointment</button>
         </div>
         </form>
       </div>
@@ -255,25 +267,27 @@
 
   <!-- JavaScript to dynamically update doctors based on department selection -->
   <script>
-    logoutBtn = document.getElementById("logout-btn");
-    logoutBtn.addEventListener("click", function (e) {
-      console.log("logout");
-      localStorage.clear();
-      window.location.href = "http://localhost:3000/";
-    });
     function updateDoctors() {
       const department_id = document.getElementById(
         "appointmentDepartment"
       ).value;
-      console.log(department_id);
-      const doctorSelect = document.getElementById("appointmentDoctor");
-      doctorSelect.innerHTML = ""; // Clear existing options
-      let d = <%- JSON.stringify(departments) %>; 
-      console.log(d);
-      let filtered_staffs = [];
-      filtered_staffs = all_staff.filter((staff) => { staff.department_id == department_id});
+      var filtered_staffs;
+      doctorSelect = document.getElementById("staff_id");
 
-      filtered_staffs.forEach((doctor) => {
+      fetch("http://localhost:3000/staffs/doctor/department/" + department_id, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        console.log(response);
+        return response.json();
+      }).then((data) => {
+        console.log(data);
+        data.forEach((doctor) => {
         const option = document.createElement("option");
         option.value = doctor;
         option.text = doctor;
@@ -281,25 +295,82 @@
       });
 
       doctorSelect.disabled = false; // Enable doctor selection
+      })
+
+      console.log(filtered_staffs);
+
+      
+
+      // let filtered_staffs = [];
+      // filtered_staffs = all_staff.filter((staff) => { staff.department_id == department_id});
+
+      
     }
+
+    logoutBtn = document.getElementById("logout-btn");
+    logoutBtn.addEventListener("click", function (e) {
+      console.log("logout");
+      localStorage.clear();
+      window.location.href = "http://localhost:3000/";
+    });
+
+    createAppointment = document.getElementById("createAppointment");
+
+    submitBtn = document.getElementById("submitBtn");
+    var countRecord = 0;
+
+    fetch("http://localhost:3000/appointments/appointment/count", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    }).then((data) => {
+      countRecord = data[0].totalRecords + 1;
+    })
+
+    submitBtn.addEventListener("click", function (e) {
+      console.log(createAppointment);
+      for (var i = 0; i < 7; i++){
+        console.log(createAppointment[i].value);
+      }
+      
+
+      const formData = {        
+          "patient_id": 558,
+          "department_id": 1,
+          "staff_id": 132,
+          "status": "Completed",
+          "date_of_appointment": "2004/12/11",
+          "observation": "Poisoning by local antifungal, anti-infective and anti-inflammatory drugs, accidental (unintentional), initial encounter",
+          "doctor_note": "Repair Left Breast, Via Natural or Artificial Opening"        
+      }
+
+      // createAppointment.submit();
+    });
 
     // Date formatting function for YYYY/MM/DD format
     function formatDate(dateString) {
       const date = new Date(dateString);
       const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, '0');
-      const day = String(date.getDate()).padStart(2, '0');
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
       return `${month}-${day}-${year}`;
     }
 
     // Format all dates on page load
-    document.addEventListener('DOMContentLoaded', function () {
-      const dateElements = document.querySelectorAll('.formatted-date');
-      dateElements.forEach(el => {
-        const date = el.getAttribute('data-dob');
+    document.addEventListener("DOMContentLoaded", function () {
+      const dateElements = document.querySelectorAll(".formatted-date");
+      dateElements.forEach((el) => {
+        const date = el.getAttribute("data-dob");
         el.textContent = formatDate(date);
       });
     });
+
   </script>
 </body>
 

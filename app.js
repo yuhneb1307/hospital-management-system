@@ -62,6 +62,7 @@ mysqlConnection.connect((err) => {
     console.log(mongoConfig);
     res.render("login");
   });
+  
   app.get('/registerPatient', function (req, res) {
     res.render('registerPatient');
   });

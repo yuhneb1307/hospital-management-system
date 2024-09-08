@@ -8,7 +8,9 @@ exports.getAllStaffs = function (callback) {
 exports.getAllDoctors = function (callback) {
   db.query("SELECT * FROM staff WHERE role = 'Doctor'", callback);
 };
-
+exports.getDoctorByDepartment = function (id, callback) {
+  db.query("SELECT * FROM staff WHERE role = 'Doctor' AND department_id = ?",[id] , callback);
+};
 exports.getAllNurses = function (callback) {
   db.query("SELECT * FROM staff WHERE role = 'Nurse'", callback);
 };
