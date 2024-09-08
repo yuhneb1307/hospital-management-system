@@ -221,7 +221,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="createAppointment" method="post">
+          <form action="create-appoinment/1" id="createAppointment" method="post">
             <div class="mb-3">
               <label for="date_of_appointment" class="form-label">Date of Appointment</label>
               <input name="date_of_appointment" type="date" class="form-control" id="date_of_appointment" />
@@ -240,15 +240,14 @@
               <label for="appointmentDoctor" class="form-label">Doctor</label>
               <select class="form-select" id="staff_id">
                 <option selected disabled>Select Doctor</option>
-                <!-- <% all_staffs.forEach(function(staff){ %>
-                  <option value="<%= staff.id %>" name="id_staff" > <%= staff.first_name %> <%= staff.last_name %></option>
-                <% }) %> -->
               </select>
             </div>
 
             
             <input hidden name="patient_id" type="text" class="form-control" id="patient_id" value="<%= patient.id %>"/>
             <input hidden name="status" type="text" class="form-control" id="status" value="Pending">
+            <input hidden name="doctor_note" type="text" class="form-control" id="doctor_note" value="">
+            
             <div class="mb-3">
               <label for="appointmentObservation" class="form-label">Observation</label>
               <textarea class="form-control" id="appointmentObservation" rows="3"></textarea>
@@ -283,14 +282,13 @@
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        console.log(response);
         return response.json();
       }).then((data) => {
-        console.log(data);
+        for (i = 0; i < data.length; i++) {}
         data.forEach((doctor) => {
         const option = document.createElement("option");
-        option.value = doctor;
-        option.text = doctor;
+        option.value = doctor.id;
+        option.text = doctor.first_name + " " + doctor.last_name;
         doctorSelect.appendChild(option);
       });
 
@@ -340,17 +338,17 @@
       }
       
 
-      const formData = {        
-          "patient_id": 558,
-          "department_id": 1,
-          "staff_id": 132,
-          "status": "Completed",
-          "date_of_appointment": "2004/12/11",
-          "observation": "Poisoning by local antifungal, anti-infective and anti-inflammatory drugs, accidental (unintentional), initial encounter",
-          "doctor_note": "Repair Left Breast, Via Natural or Artificial Opening"        
+      const formData = {
+          "patient_id": createAppointment[3].value,
+          "department_id": createAppointment[1].value,
+          "staff_id": createAppointment[2].value,
+          "status": createAppointment[4].value,
+          "date_of_appointment": createAppointment[0].value,
+          "observation": createAppointment[5].value,
+          "doctor_note": createAppointment[6].value        
       }
 
-      // createAppointment.submit();
+      createAppointment.submit();
     });
 
     // Date formatting function for YYYY/MM/DD format
