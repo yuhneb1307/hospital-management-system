@@ -53,55 +53,76 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title text-center">Patient Information</h5>
-            <div class="row">
-              <div class="col-6">
-                <p class="card-text">
-                  <strong>Name:</strong>
-                  <%= patient.first_name %>
-                    <%= patient.last_name %>
-                </p>
-                <p class="card-text">
-                  <strong>ID:</strong>
-                  <%= patient.id %>
-                </p>
-                <p class="card-text">
-                  <strong>Date of Birth:</strong>
-                  <span class="formatted-date"
-                    data-dob="<%= new Date(patient.date_of_birth).toISOString().split('T')[0] %>"></span>
-                </p>
-                <p class="card-text"></p>
-                <strong>Gender:</strong>
-                <%= patient.gender %>
-                  </p>
+  
+            <!-- Tabs -->
+            <ul class="nav nav-tabs" id="patientInfoTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="current-info-tab" data-bs-toggle="tab" href="#current-info" role="tab" aria-controls="current-info" aria-selected="true">Current Patient Information</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="emergency-contact-tab" data-bs-toggle="tab" href="#emergency-contact" role="tab" aria-controls="emergency-contact" aria-selected="false">Emergency Contact</a>
+              </li>
+            </ul>
+  
+            <!-- Tab Content -->
+            <div class="tab-content" id="patientInfoTabsContent">
+              <!-- Current Patient Information -->
+              <div class="tab-pane fade show active" id="current-info" role="tabpanel" aria-labelledby="current-info-tab">
+                <div class="row mt-3">
+                  <div class="col-6">
+                    <p class="card-text">
+                      <strong>Name:</strong>
+                      <%= patient.first_name %> <%= patient.last_name %>
+                    </p>
+                    <p class="card-text">
+                      <strong>ID:</strong>
+                      <%= patient.id %>
+                    </p>
+                    <p class="card-text">
+                      <strong>Date of Birth:</strong>
+                      <span class="formatted-date" data-dob="<%= new Date(patient.date_of_birth).toISOString().split('T')[0] %>"></span>
+                    </p>
+                    <p class="card-text">
+                      <strong>Gender:</strong>
+                      <%= patient.gender %>
+                    </p>
+                  </div>
+                  <div class="col-6">
+                    <p class="card-text">
+                      <strong>Phone:</strong>
+                      <%= patient.phone %>
+                    </p>
+                    <p class="card-text">
+                      <strong>Address:</strong>
+                      <%= patient.address %>
+                    </p>
+                    <p class="card-text">
+                      <strong>Email:</strong>
+                      <%= patient.email %>
+                    </p>
+                    <p class="card-text">
+                      <strong>Allergies:</strong>
+                      <%= allergy.allergy_name %>
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div class="col-6">
-                <p class="card-text">
-                  <strong>Phone:</strong>
-                  <%= patient.phone %>
-                </p>
-                <p class="card-text">
-                  <strong>Address:</strong>
-                  <%= patient.address %>
-                </p>
-                <p class="card-text">
-                  <strong>Email:</strong>
-                  <%= patient.email %>
-                </p>
-                <p class="card-text">
-                  <strong>Allergies:</strong>
-                  <%= allergy.allergy_name %>
-                </p>
+  
+              <!-- Emergency Contact -->
+              <div class="tab-pane fade" id="emergency-contact" role="tabpanel" aria-labelledby="emergency-contact-tab">
+                <div class="row mt-3">
+                  
+                </div>
               </div>
             </div>
+  
             <div class="d-flex justify-content-center mt-3">
               <!-- Button trigger modal for editing information -->
-              <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal"
-                data-bs-target="#editPatientModal">
+              <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#editPatientModal">
                 Edit Information
               </button>
               <!-- Button trigger modal for creating appointment -->
-              <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                data-bs-target="#createAppointmentModal">
+              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createAppointmentModal">
                 Create Appointment
               </button>
             </div>
@@ -109,6 +130,8 @@
         </div>
       </div>
     </div>
+  </div>
+  
 
     <!-- Appointment History Section -->
     <div class="row justify-content-center">

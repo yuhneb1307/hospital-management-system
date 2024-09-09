@@ -62,14 +62,10 @@ router.get("/update-data", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    var appointment_object = await appointment
-      .find({ patient_id: req.params.id })
-      .exec();
+    var appointment_object = await appointment.find({ patient_id: req.params.id }).exec();
     const staff_ids = appointment_object.map((app) => app.staff_id);
 
-    var allergy_object = await allergy
-      .find({ patient_id: req.params.id })
-      .exec();
+    var allergy_object = await allergy.find({ patient_id: req.params.id }).exec();
 
     if (allergy_object.length == 0) {
       allergy_object = [
