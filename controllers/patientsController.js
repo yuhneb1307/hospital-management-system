@@ -47,6 +47,13 @@ exports.getPatientById = (id, callback) => {
   });
 };
 
+exports.getListPatientByIds = (id, callback) => {
+  Patients.getListPatientByIds(id, (err, patients) => {
+    if (err) throw err;
+    callback(patients);
+  });
+};
+
 exports.getPatientByDataOrder = async (req, res) => {
   const order = req.params.order;
   const data = req.params.data;

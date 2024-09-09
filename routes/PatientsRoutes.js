@@ -6,6 +6,7 @@ const appointment = require("../models/appointments.js"); // Import the model
 const allergy = require("../models/allergy.js"); // Import the model
 const Staffs = require("../models/staffs.js"); // Import the model
 const departments = require("../models/department.js"); // Import the model
+let now = new Date().toISOString().slice(0, 10); // Use ISO format for dates
 
 // Routes
 router.get("/", (req, res) => {
@@ -63,7 +64,10 @@ router.get("/update-data", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     var appointment_object = await appointment.find({ patient_id: req.params.id }).exec();
+    var upcoming_appointment = await appointment.find({patient_id: req.params.id, date_of_appointment: {"$gt": now}}).exec();
     const staff_ids = appointment_object.map((app) => app.staff_id);
+
+    // console.log(upcoming_appointment);
 
     var allergy_object = await allergy.find({ patient_id: req.params.id }).exec();
 
@@ -86,7 +90,7 @@ router.get("/:id", async (req, res) => {
       }
 
       if (staff_ids.length > 0) {
-        Staffs.getStaffsById(staff_ids, (err, staffs) => {
+        Staffs.getStaffsByIds(staff_ids, (err, staffs) => {
           if (err) throw err;
 
           departments.getAllDepartments((err, departments) => {
@@ -100,6 +104,7 @@ router.get("/:id", async (req, res) => {
                 staff: staffs,
                 departments: departments,
                 all_staffs: all_staffs,
+                upcoming_appointment: upcoming_appointment,
               });
             });
           });
@@ -127,6 +132,7 @@ router.get("/:id", async (req, res) => {
             allergy: allergy_object[0],
             staff: staff,
             departments: departments,
+            upcoming_appointment: [],
           });
         });
       }
@@ -140,7 +146,6 @@ router.get("/:id", async (req, res) => {
 // Update appointment statuses
 router.get("/update-data", async (req, res) => {
   try {
-    let now = new Date().toISOString().slice(0, 10); // Use ISO format for dates
     const updateResult = await appointment.updateMany({}, [
       {
         $set: {

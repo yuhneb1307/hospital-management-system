@@ -19,7 +19,7 @@ exports.getStaffById = function (id, callback) {
   db.query("SELECT * FROM staff WHERE id = ?", [id], callback);
 };
 
-exports.getStaffsById = function (id, callback) {
+exports.getStaffsByIds = function (id, callback) {
   db.query("SELECT * FROM staff WHERE id IN (?)", [id], callback);
 };
 

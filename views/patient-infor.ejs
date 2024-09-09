@@ -467,10 +467,10 @@
           throw new Error("Network response was not ok");
         }
         return response.json();
-      });
-      // .then((data) => {
-      //   countRecord = data[0].totalRecords + 1;
-      // })
+      })
+      .then((data) => {
+        window.location.reload();
+      })
     });
 
     // Date formatting function for YYYY/MM/DD format
