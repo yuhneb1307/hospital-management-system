@@ -53,82 +53,109 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title text-center">Patient Information</h5>
-            <div class="row">
-              <div class="col-6">
-                <p class="card-text">
-                  <strong>Name:</strong>
-                  <%= patient.first_name %>
-                    <%= patient.last_name %>
-                </p>
-                <p class="card-text">
-                  <strong>ID:</strong>
-                  <%= patient.id %>
-                </p>
-                <p class="card-text">
-                  <strong>Date of Birth:</strong>
-                  <span class="formatted-date"
-                    data-dob="<%= new Date(patient.date_of_birth).toISOString().split('T')[0] %>"></span>
-                </p>
-                <p class="card-text"></p>
-                <strong>Gender:</strong>
-                <%= patient.gender %>
-                  </p>
+  
+            <!-- Tabs -->
+            <ul class="nav nav-tabs" id="patientInfoTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="current-info-tab" data-bs-toggle="tab" href="#current-info" role="tab"
+                  aria-controls="current-info" aria-selected="true">Current Patient Information</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="emergency-contact-tab" data-bs-toggle="tab" href="#emergency-contact" role="tab"
+                  aria-controls="emergency-contact" aria-selected="false">Emergency Contact</a>
+              </li>
+            </ul>
+  
+            <!-- Tab Content -->
+            <div class="tab-content" id="patientInfoTabsContent">
+              <!-- Current Patient Information -->
+              <div class="tab-pane fade show active" id="current-info" role="tabpanel"
+                aria-labelledby="current-info-tab">
+                <div class="row mt-3">
+                  <div class="col-6">
+                    <p class="card-text">
+                      <strong>Name:</strong>
+                      <%= patient.first_name %> <%= patient.last_name %>
+                    </p>
+                    <p class="card-text">
+                      <strong>ID:</strong>
+                      <%= patient.id %>
+                    </p>
+                    <p class="card-text">
+                      <strong>Date of Birth:</strong>
+                      <span class="formatted-date"
+                        data-dob="<%= new Date(patient.date_of_birth).toISOString().split('T')[0] %>"></span>
+                    </p>
+                    <p class="card-text">
+                      <strong>Gender:</strong>
+                      <%= patient.gender %>
+                    </p>
+                  </div>
+                  <div class="col-6">
+                    <p class="card-text">
+                      <strong>Phone:</strong>
+                      <%= patient.phone %>
+                    </p>
+                    <p class="card-text">
+                      <strong>Address:</strong>
+                      <%= patient.address %>
+                    </p>
+                    <p class="card-text">
+                      <strong>Email:</strong>
+                      <%= patient.email %>
+                    </p>
+                    <p class="card-text">
+                      <strong>Allergies:</strong>
+                      <%= allergy.allergy_name %>
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div class="col-6">
-                <p class="card-text">
-                  <strong>Phone:</strong>
-                  <%= patient.phone %>
-                </p>
-                <p class="card-text">
-                  <strong>Address:</strong>
-                  <%= patient.address %>
-                </p>
-                <p class="card-text">
-                  <strong>Email:</strong>
-                  <%= patient.email %>
-                </p>
-                <p class="card-text">
-                  <strong>Allergies:</strong>
-                  <%= allergy.allergy_name %>
-                </p>
+  
+              <!-- Emergency Contact -->
+              <div class="tab-pane fade" id="emergency-contact" role="tabpanel" aria-labelledby="emergency-contact-tab">
+                <div class="row mt-3">
+                  <div class="col-6">
+                    <p class="card-text">
+                      <strong>Emergency Contact Name:</strong>
+                      Reagen Crolla
+                    </p>
+                    <p class="card-text">
+                      <strong>Relationship:</strong>
+                      Husband
+                    </p>
+                  </div>
+                  <div class="col-6">
+                    <p class="card-text">
+                      <strong>Phone:</strong>
+                      6836132702
+                    </p>
+                    <p class="card-text">
+                      <strong>Email:</strong>
+                      rcrolla0@dagondesign.com
+                    </p>
+                    <p class="card-text">
+                      <strong>Address:</strong>
+                      33 Anzinger Terrace
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
+  
             <div class="d-flex justify-content-center mt-3">
-              <!-- Button trigger modal for editing information -->
-              <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal"
-                data-bs-target="#editPatientModal">
-                Edit Information
+              <!-- Button trigger modal for editing patient information -->
+              <button type="button" id="editPatientBtn" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#editPatientModal">
+                Edit Patient Information
               </button>
               <!-- Button trigger modal for creating appointment -->
-              <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                data-bs-target="#createAppointmentModal">
+              <button type="button" id="createAppointmentBtn" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#createAppointmentModal">
                 Create Appointment
               </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Appointment History Section -->
-    <div class="row justify-content-center">
-      <div class="col-md-10 col-lg-8">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Appointment History</h5>
-            <div class="list-group">
-              <% appointment_notes.forEach(function(note, i){ %>
-                <div href="#" class="list-group-item list-group-item-action mb-3">
-                  <strong>Date:</strong>
-                  <span class="formatted-date" data-dob="<%= note.date_of_appointment %>"></span><br />
-                  <strong>Observation:</strong>
-                  <%= note.observation %><br />
-                    <strong>Doctor Name:</strong>
-                    <%= staff[i].first_name %><br />
-                      <strong>Doctor's Note:</strong>
-                      <%= note.doctor_note %><br />
-                </div>
-                <% }) %>
+              <!-- Button trigger modal for editing emergency contact -->
+              <button type="button" id="editEmergencyContactBtn" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editEmergencyContactModal">
+                Edit Emergency Contact
+              </button>
             </div>
           </div>
         </div>
@@ -136,23 +163,44 @@
     </div>
   </div>
 
+  <!-- Appointment History Section -->
+  <div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Appointment History</h5>
+          <div class="list-group">
+            <% appointment_notes.forEach(function(note, i){ %>
+              <div href="#" class="list-group-item list-group-item-action mb-3">
+                <strong>Date:</strong>
+                <span class="formatted-date" data-dob="<%= note.date_of_appointment %>"></span><br />
+                <strong>Observation:</strong>
+                <%= note.observation %><br />
+                  <strong>Doctor Name:</strong>
+                  <%= staff[i].first_name %><br />
+                    <strong>Doctor's Note:</strong>
+                    <%= note.doctor_note %><br />
+              </div>
+              <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
   <!-- Appointment Tab -->
   <div class="card appointment-tab">
     <div class="card-body">
       <h5 class="card-title">Upcoming Appointments</h5>
       <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action mb-3">
-          <strong>Date:</strong> 2023-12-10<br />
-          <strong>Doctor:</strong> Dr. John Smith<br />
-          <strong>Department:</strong> General Medicine<br />
-          <strong>Status:</strong> Upcoming
-        </a>
-        <a href="#" class="list-group-item list-group-item-action mb-3">
-          <strong>Date:</strong> 2024-01-15<br />
-          <strong>Doctor:</strong> Dr. Emily Davis<br />
-          <strong>Department:</strong> Cardiology<br />
-          <strong>Status:</strong> Upcoming
-        </a>
+        <% upcoming_appointment.forEach(function(appointment, i){ %>
+          <div href="#" class="list-group-item list-group-item-action mb-3">            
+            <span class="formatted-date" data-dob="<%= appointment.date_of_appointment %>"></span><br />
+            <strong>Observation:</strong>  <%= appointment.observation %><br />
+            <strong>Status:</strong> Upcoming
+          </div>
+          <% }) %>
       </div>
     </div>
   </div>
@@ -226,6 +274,52 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal for Editing Emergency Contact -->
+  <div class="modal fade" id="editEmergencyContactModal" tabindex="-1" aria-labelledby="editEmergencyContactModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editEmergencyContactModalLabel">Edit Emergency Contact</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editEmergencyContactForm">
+            <div class="mb-3">
+              <label for="emergencyContactName" class="form-label">Emergency Contact Name</label>
+              <input type="text" class="form-control" id="emergencyContactName" name="emergencyContactName"
+                value="Reagen Crolla">
+            </div>
+            <div class="mb-3">
+              <label for="relationship" class="form-label">Relationship</label>
+              <input type="text" class="form-control" id="relationship" name="relationship" value="Husband">
+            </div>
+            <div class="mb-3">
+              <label for="emergencyContactPhone" class="form-label">Phone</label>
+              <input type="text" class="form-control" id="emergencyContactPhone" name="emergencyContactPhone"
+                value="6836132702">
+            </div>
+            <div class="mb-3">
+              <label for="emergencyContactEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="emergencyContactEmail" name="emergencyContactEmail"
+                value="rcrolla0@dagondesign.com">
+            </div>
+            <div class="mb-3">
+              <label for="emergencyContactAddress" class="form-label">Address</label>
+              <input type="text" class="form-control" id="emergencyContactAddress" name="emergencyContactAddress"
+                value="33 Anzinger Terrace">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Modal for Creating Appointment -->
   <div class="modal fade" id="createAppointmentModal" tabindex="-1" aria-labelledby="createAppointmentModalLabel"
@@ -368,10 +462,10 @@
           throw new Error("Network response was not ok");
         }
         return response.json();
-      });
-      // .then((data) => {
-      //   countRecord = data[0].totalRecords + 1;
-      // })
+      })
+      .then((data) => {
+        window.location.reload();
+      })
     });
 
     // Date formatting function for YYYY/MM/DD format
@@ -392,6 +486,44 @@
       });
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+    const editPatientBtn = document.getElementById('editPatientBtn');
+    const createAppointmentBtn = document.getElementById('createAppointmentBtn');
+    const editEmergencyContactBtn = document.getElementById('editEmergencyContactBtn');
+    
+    const tabs = document.querySelectorAll('#patientInfoTabs a[data-bs-toggle="tab"]');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('shown.bs.tab', function (event) {
+        const targetId = event.target.getAttribute('href').substring(1);
+        
+        if (targetId === 'current-info') {
+          editPatientBtn.style.display = 'block';
+          createAppointmentBtn.style.display = 'block';
+          editEmergencyContactBtn.style.display = 'none';
+        } else if (targetId === 'emergency-contact') {
+          editPatientBtn.style.display = 'none';
+          createAppointmentBtn.style.display = 'none';
+          editEmergencyContactBtn.style.display = 'block';
+        }
+      });
+    });
+    
+    // Initial check to display buttons for the active tab on page load
+    const activeTab = document.querySelector('.nav-link.active');
+    if (activeTab) {
+      const targetId = activeTab.getAttribute('href').substring(1);
+      if (targetId === 'current-info') {
+        editPatientBtn.style.display = 'block';
+        createAppointmentBtn.style.display = 'block';
+        editEmergencyContactBtn.style.display = 'none';
+      } else if (targetId === 'emergency-contact') {
+        editPatientBtn.style.display = 'none';
+        createAppointmentBtn.style.display = 'none';
+        editEmergencyContactBtn.style.display = 'block';
+      }
+    }
+  });
   </script>
 </body>
 
