@@ -6,15 +6,9 @@ const patients = require("../models/patients.js"); // Import the model
 const Departments = require("../models/department.js"); // Import the model
 
 // Routes
-router.get("/staffs", (req, res) => {
-  staffController.getAllStaffs((staffs) => {
-    res.render("staffs", { staffs });
-  });
-});
-
+router.get("/", staffController.getAllStaffs);
 // READ
 // router.get("/search", staffController.getStaffById);
-router.get("/", staffController.getAllStaffs);
 router.get("/:id", async (req, res) => {
   try {
     staffController.getStaffById(req.params.id, (staff) => {

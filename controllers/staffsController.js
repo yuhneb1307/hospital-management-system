@@ -1,46 +1,36 @@
 const Staffs = require("../models/staffs");
 
 // READ
-exports.getAllStaffs = (callback) => {
-  // Logic to get all staffs
+exports.getAllStaffs = (req, res) => {
   Staffs.getAllStaffs((err, staffs) => {
-    if (err) throw err;
-    callback(staffs);
+    if (err) {
+      console.error('Error fetching staffs:', err);
+      return res.status(500).json({ error: 'Failed to retrieve staffs.' });
+    }
+    res.render("staffsList", { staffs }); // Render the EJS view with staff data
   });
 };
 
 exports.getAllDoctors = async (req, res) => {
-  // Logic to get all staffs
-  Staffs.getAllDoctors((err, staffs) => {
-    if (err) throw err;
-    res.json(staffs);
-  });
+  try {
+    Staffs.getAllDoctors((err, staffs) => {
+      if (err) throw err;
+      res.json(staffs);
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
 exports.getAllNurses = async (req, res) => {
-  // Logic to get all staffs
-  Staffs.getAllNurses((err, staffs) => {
-    if (err) throw err;
-    res.json(staffs);
-  });
-};
-
-exports.getStaffById = async (req, res) => {
-  const id = req.params.id;
-
-  Staffs.getStaffById(id, (err, staffs) => {
-    if (err) throw err;
-    res.json(staffs);
-  });
-};
-
-exports.getDoctorByDepartment = async (req, res) => {
-  const id = req.params.id;
-
-  Staffs.getDoctorByDepartment(id, (err, staffs) => {
-    if (err) throw err;
-    res.json(staffs);
-  });
+  try {
+    Staffs.getAllNurses((err, staffs) => {
+      if (err) throw err;
+      res.json(staffs);
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
 exports.getStaffById = (id, callback) => {
@@ -50,86 +40,79 @@ exports.getStaffById = (id, callback) => {
   });
 };
 
-exports.getStaffByID = async (req, res) => {
-  console.log(req);
-  // const id = req.body.id;
-
-  // Staffs.getStaffById(id, (err, staffs) => {
-  //   if (err) throw err;
-  //   res.json(staffs);
-  // });
+exports.getDoctorByDepartment = async (req, res) => {
+  try {
+    const id = req.params.id;
+    Staffs.getDoctorByDepartment(id, (err, staffs) => {
+      if (err) throw err;
+      res.json(staffs);
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
-exports.getStaffByDataOrder = async (req, res) => {
-  const order = req.params.order;
-  const data = req.params.data;
 
-  Staffs.getStaffByDataOrder(data, order, (err, staffs) => {
-    if (err) throw err;
-    res.json(staffs);
-  });
+exports.getStaffByDataOrder = async (req, res) => {
+  try {
+    const order = req.params.order;
+    const data = req.params.data;
+    Staffs.getStaffByDataOrder(data, order, (err, staffs) => {
+      if (err) throw err;
+      res.json(staffs);
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
 exports.checkLogIn = async (req, res) => {
-  const password = req.body.password;
-  const email = req.body.email;
-
-  Staffs.checkLogIn(email, password, (err, staffs) => {
-    if (err) throw err;
-    res.json(staffs);
-  });
+  try {
+    const { email, password } = req.body;
+    Staffs.checkLogIn(email, password, (err, staffs) => {
+      if (err) throw err;
+      res.json(staffs);
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
-//CREATE
+// CREATE
 exports.createStaff = async (req, res) => {
-  const staff = {
-    id: req.body.id,
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    email: req.body.email,
-    password: req.body.password,
-    role: req.body.role,
-    department_id: req.body.department_id,
-    schedule: req.body.schedule,
-    salary: req.body.salary,
-    managed_by: req.body.managed_by,
-    gender: req.body.gender,
-  };
-  Staffs.createStaff(staff, (err, staffs) => {
-    if (err) throw err;
-    res.json({ message: "Staff created successfully" });
-  });
+  try {
+    const staff = req.body; // Directly use req.body to capture all fields
+    Staffs.createStaff(staff, (err, staffs) => {
+      if (err) throw err;
+      res.json({ message: "Staff created successfully" });
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
 // UPDATE
-exports.updateStaff = async (req, res, callback) => {
-  const id = req.body.id;
-  const staff = {
-    id: req.body.id,
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    email: req.body.email,
-    password: req.body.password,
-    role: req.body.role,
-    department_id: req.body.department_id,
-    schedule: req.body.schedule,
-    salary: req.body.salary,
-    managed_by: req.body.managed_by,
-    gender: req.body.gender,
-  };
-  Staffs.updateStaff(staff, id, (err, result) => {
-    if (err) throw err;
-    Staffs.getAllStaffs((err, staffs) => {
+exports.updateStaff = async (req, res) => {
+  try {
+    const id = req.body.id;
+    const staff = req.body;
+    Staffs.updateStaff(staff, id, (err, result) => {
       if (err) throw err;
       res.redirect('/staffs/' + id);
-    })
-  });
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
 // DELETE
 exports.deleteStaff = async (req, res) => {
-  const id = req.body.id;
-  Staffs.deleteStaff(id, (err, result) => {
-    if (err) throw err;
-    res.json({ message: "staff deleted successfully" });
-  });
+  try {
+    const id = req.body.id;
+    Staffs.deleteStaff(id, (err, result) => {
+      if (err) throw err;
+      res.json({ message: "Staff deleted successfully" });
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
