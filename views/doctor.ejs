@@ -186,8 +186,8 @@
               <div class="card-body">
                 <div class="row" id="appointment-list">
                   <% appointment_object.forEach(function(appointment){ %>
-                    <div class="col-12 col-md-6 col-lg-3 mb-4">
-                      <div class="card h-100">
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 ">
+                      <div class="card h-100 appointment-card shadow-sm hover-shadow" data-bs-toggle="modal" data-bs-target="#editAppointmentModal" data-id="<%= appointment.id %>" data-name="<%= appointment.patient_name %>" data-date="<%= appointment.date_of_appointment %>" data-observation="<%= appointment.observation %>" data-note="<%= appointment.doctor_note %>">
                         <div class="card-body">
                           <h6 class="card-subtitle mb-2 text-muted">
                             Appointment ID: <%= appointment.id %>
@@ -196,12 +196,9 @@
                             <%= appointment.patient_name %>
                           </h5>
                           <p class="card-text">
-                            <strong>Date:</strong>
-                            <%= appointment.date_of_appointment %><br />
-                            <strong>Observation:</strong>
-                            <%= appointment.observation %><br />
-                            <strong>Doctor Note:</strong>
-                            <%= appointment.doctor_note %>
+                            <strong>Date:</strong> <%= appointment.date_of_appointment %><br />
+                            <strong>Observation:</strong> <%= appointment.observation %><br />
+                            <strong>Doctor Note:</strong> <%= appointment.doctor_note %>
                           </p>
                         </div>
                       </div>
@@ -213,6 +210,39 @@
           </div>
         </div>
       </div>
+      
+      <!-- Modal for Editing Appointment -->
+      <div class="modal fade" id="editAppointmentModal" tabindex="-1" aria-labelledby="editAppointmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editAppointmentModalLabel">Edit Doctor Note</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="editAppointmentForm">
+                <div class="mb-3">
+                  <label for="appointmentId" class="form-label">Appointment ID</label>
+                  <input type="text" class="form-control" id="appointmentId" readonly>
+                </div>
+                <div class="mb-3">
+                  <label for="appointmentDate" class="form-label">Date</label>
+                  <input type="text" class="form-control" id="appointmentDate" readonly>
+                </div>
+                <div class="mb-3">
+                  <label for="doctorNote" class="form-label">Doctor Note</label>
+                  <textarea class="form-control" id="doctorNote" rows="3"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" onclick="saveAppointmentChanges()">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -245,6 +275,43 @@
           }
         });
       });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const editAppointmentModal = document.getElementById("editAppointmentModal");
+      const appointmentIdField = document.getElementById("appointmentId");
+      const appointmentDateField = document.getElementById("appointmentDate");
+      const doctorNoteField = document.getElementById("doctorNote");
+  
+      // When an appointment card is clicked, populate the modal with the data
+      document.querySelectorAll(".appointment-card").forEach(function (card) {
+        card.addEventListener("click", function () {
+          const appointmentId = this.getAttribute("data-id");
+          const appointmentDate = this.getAttribute("data-date");
+          const doctorNote = this.getAttribute("data-note");
+  
+          // Fill the modal fields with appointment data
+          appointmentIdField.value = appointmentId;
+          appointmentDateField.value = appointmentDate;
+          doctorNoteField.value = doctorNote;
+        });
+      });
+  
+      // Function to save changes (you can adjust this to send data to your server)
+      function saveAppointmentChanges() {
+        const updatedDoctorNote = doctorNoteField.value;
+        const appointmentId = appointmentIdField.value;
+  
+        // You can now send this data to your server using AJAX, fetch, or a form submission
+        console.log(`Saving changes for appointment ID: ${appointmentId} with new note: ${updatedDoctorNote}`);
+        
+        // Close the modal
+        bootstrap.Modal.getInstance(editAppointmentModal).hide();
+      }
+  
+      // Attach the save function to the global scope or modify to your needs
+      window.saveAppointmentChanges = saveAppointmentChanges;
     });
   </script>
 </body>
