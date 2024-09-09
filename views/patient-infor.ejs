@@ -84,6 +84,10 @@
                   <%= patient.address %>
                 </p>
                 <p class="card-text">
+                  <strong>Email:</strong>
+                  <%= patient.email %>
+                </p>
+                <p class="card-text">
                   <strong>Allergies:</strong>
                   <%= allergy.allergy_name %>
                 </p>
@@ -176,7 +180,7 @@
             </div>
             <div class="mb-3">
               <label for="patientID" class="form-label">Patient ID</label>
-              <input type="text" name="id" class="form-control" id="patientID" value="<%= patient.id %>" />
+              <input type="text" name="id" class="form-control" id="patientID" value="<%= patient.id %>" readonly />
             </div>
             <div class="mb-3">
               <label for="patientDOB" class="form-label">Date of Birth</label>
@@ -193,8 +197,20 @@
               <input type="text" name="phone" class="form-control" id="patientPhone" value="<%= patient.phone %>" />
             </div>
             <div class="mb-3">
-              <label for="patientPhone" class="form-label">Gender</label>
-              <input type="text" name="gender" class="form-control" id="patientGender" value="<%= patient.gender %>" />
+              <label for="patientEmail" class="form-label">Email Details</label>
+              <input type="text" name="email" class="form-control" id="patientemail" value="<%= patient.email %>" />
+            </div>
+            <div class="mb-3">
+              <label for="patientPassword" class="form-label">Password Details</label>
+              <input type="password" name="email" class="form-control" id="patientemail" value="<%= patient.email %>" />
+            </div>
+            <div class="mb-3">
+              <label for="patientGender" class="form-label">Gender</label>
+              <select name="gender" class="form-control" id="patientGender">
+                <option value="Male" <%=patient.gender==="Male" ? "selected" : "" %>>Male</option>
+                <option value="Female" <%=patient.gender==="Female" ? "selected" : "" %>>Female</option>
+                <option value="Other" <%=patient.gender==="Other" ? "selected" : "" %>>Other</option>
+              </select>
             </div>
             <div class="mb-3">
               <label for="patientAllergies" class="form-label">Allergies</label>
@@ -232,28 +248,29 @@
               <select class="form-select" id="appointmentDepartment" onchange="updateDoctors()">
                 <option selected disabled>Select Department</option>
                 <% departments.forEach(function(department){ %>
-                  <option value="<%= department.id %>"><%= department.name %></option>
-                <% }) %>
+                  <option value="<%= department.id %>">
+                    <%= department.name %>
+                  </option>
+                  <% }) %>
               </select>
             </div>
-            <div class="mb-3"> 
+            <div class="mb-3">
               <label for="appointmentDoctor" class="form-label">Doctor</label>
               <select class="form-select" id="staff_id">
                 <option selected disabled>Select Doctor</option>
               </select>
             </div>
-
-            
-            <input hidden name="patient_id" type="text" class="form-control" id="patient_id" value="<%= patient.id %>"/>
+            <input hidden name="patient_id" type="text" class="form-control" id="patient_id"
+              value="<%= patient.id %>" />
             <input hidden name="status" type="text" class="form-control" id="status" value="Pending">
             <input hidden name="doctor_note" type="text" class="form-control" id="doctor_note" value="">
-            
+
             <div class="mb-3">
               <label for="appointmentObservation" class="form-label">Observation</label>
               <textarea class="form-control" id="appointmentObservation" rows="3"></textarea>
             </div>
         </div>
-       
+
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button id="submitBtn" type="button" class="btn btn-success">Create Appointment</button>
@@ -284,25 +301,25 @@
         }
         return response.json();
       }).then((data) => {
-        for (i = 0; i < data.length; i++) {}
+        for (i = 0; i < data.length; i++) { }
         data.forEach((doctor) => {
-        const option = document.createElement("option");
-        option.value = doctor.id;
-        option.text = doctor.first_name + " " + doctor.last_name;
-        doctorSelect.appendChild(option);
-      });
+          const option = document.createElement("option");
+          option.value = doctor.id;
+          option.text = doctor.first_name + " " + doctor.last_name;
+          doctorSelect.appendChild(option);
+        });
 
-      doctorSelect.disabled = false; // Enable doctor selection
+        doctorSelect.disabled = false; // Enable doctor selection
       })
 
       console.log(filtered_staffs);
 
-      
+
 
       // let filtered_staffs = [];
       // filtered_staffs = all_staff.filter((staff) => { staff.department_id == department_id});
 
-      
+
     }
 
     logoutBtn = document.getElementById("logout-btn");
@@ -333,19 +350,19 @@
 
     submitBtn.addEventListener("click", function (e) {
       console.log(createAppointment);
-      for (var i = 0; i < 7; i++){
+      for (var i = 0; i < 7; i++) {
         console.log(createAppointment[i].value);
       }
-      
+
 
       const formData = {
-          "patient_id": createAppointment[3].value,
-          "department_id": createAppointment[1].value,
-          "staff_id": createAppointment[2].value,
-          "status": createAppointment[4].value,
-          "date_of_appointment": createAppointment[0].value,
-          "observation": createAppointment[5].value,
-          "doctor_note": createAppointment[6].value        
+        "patient_id": createAppointment[3].value,
+        "department_id": createAppointment[1].value,
+        "staff_id": createAppointment[2].value,
+        "status": createAppointment[4].value,
+        "date_of_appointment": createAppointment[0].value,
+        "observation": createAppointment[5].value,
+        "doctor_note": createAppointment[6].value
       }
 
       createAppointment.submit();

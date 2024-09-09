@@ -1,11 +1,10 @@
 const Staffs = require("../models/staffs");
 
 // READ
-exports.getAllStaffs = async (req, res) => {
+exports.getAllStaffs = (callback) => {
   // Logic to get all staffs
   Staffs.getAllStaffs((err, staffs) => {
     if (err) throw err;
-  
     callback(staffs);
   });
 };
@@ -102,7 +101,7 @@ exports.createStaff = async (req, res) => {
 };
 
 // UPDATE
-exports.updateStaff = async (req, res) => {
+exports.updateStaff = async (req, res, callback) => {
   const id = req.body.id;
   const staff = {
     id: req.body.id,
@@ -117,10 +116,12 @@ exports.updateStaff = async (req, res) => {
     managed_by: req.body.managed_by,
     gender: req.body.gender,
   };
-
   Staffs.updateStaff(staff, id, (err, result) => {
     if (err) throw err;
-    res.json({ message: "Staff updated successfully" });
+    Staffs.getAllStaffs((err, staffs) => {
+      if (err) throw err;
+      res.redirect('/staffs/' + id);
+    })
   });
 };
 

@@ -22,6 +22,7 @@ router.get("/:id", async (req, res) => {
         return res.status(404).send("Staff not found");
       }
       patients.getPatientByDoctorIDOrder(req.params.id, "doctor_id", "asc", (err, patients) => {
+        console.log(staff);
         res.render("doctor", {
           staff: staff[0],
           patients: patients,
@@ -46,7 +47,11 @@ router.post("/", staffController.createStaff);
 router.post("/login", staffController.checkLogIn);
 
 //UPDATE
-router.post("/update", staffController.updateStaff);
+router.post("/update/:id", (req, res) => {
+  staffController.updateStaff(req, res, (staffs) => {
+    res.render("staffs", {staffs});
+  });
+});
 // DELETE
 router.delete("/", staffController.deleteStaff);
 
