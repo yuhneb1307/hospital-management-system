@@ -5,9 +5,9 @@ let password = document.getElementById("password");
 let loginButton = document.getElementById("loginButton");
 let notification = document.getElementById("notification");
 
-// role.addEventListener("click", (e) => {
-  // notification.classList.add("d-none");
-// });
+role.addEventListener("click", (e) => {
+  notification.classList.add("d-none");
+});
 
 loginButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -15,6 +15,11 @@ loginButton.addEventListener("click", (e) => {
   // Hide notification by default
   notification.classList.add("d-none");
 
+  if (email !== null && email.value === "" || password !== null && password.value === "") {
+    notification.classList.remove("d-none");
+    notification.innerText ="Please enter your email/password";
+    console.error("Error: ", "Please enter your email/password");
+  } else {
   const formData = {
     email: email.value,
     password: password.value,
@@ -34,6 +39,7 @@ loginButton.addEventListener("click", (e) => {
       if (!response.ok) {
         throw new Error("Invalid email or password.");
       }
+      console.log(response);
       return response.json();
     })
     .then((userData) => {
@@ -42,6 +48,8 @@ loginButton.addEventListener("click", (e) => {
         window.location.assign(
           "http://localhost:3000/" + role.value + "/" + userData[0].id
         );
+      } else if (userData.length == 0) {
+        throw new Error("Invalid email or password.");
       }
     })
     .catch((error) => {
@@ -50,4 +58,5 @@ loginButton.addEventListener("click", (e) => {
       notification.innerText = error.message;
       console.error("Error:", error);
     });
+  }
 });
