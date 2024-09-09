@@ -94,6 +94,7 @@ exports.createPatient = async (req, res) => {
     gender: req.body.gender,
     phone: req.body.phone,
     address: req.body.address,
+    emergency_id: req.body.emergency_id,
     doctor_id: req.body.doctor_id
   };
 

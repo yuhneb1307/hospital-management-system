@@ -1,7 +1,7 @@
 const Admins = require("../models/admins");
 
 // READ
-exports.getAllAdmins = async (req, res) => {
+exports.getAllAdmins = (callback) => {
   // Logic to get all admins
   Admins.getAllAdmins((err, admins) => {
     if (err) throw err;
