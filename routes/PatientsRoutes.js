@@ -66,7 +66,6 @@ router.get("/:id", async (req, res) => {
       .find({ patient_id: req.params.id })
       .exec();
     const staff_ids = appointment_object.map((app) => app.staff_id);
-    console.log(appointment_object);
 
     var allergy_object = await allergy
       .find({ patient_id: req.params.id })

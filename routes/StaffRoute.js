@@ -3,6 +3,7 @@ const router = express.Router();
 const staffController = require("../controllers/staffsController.js");
 router.use(express.static("public"));
 const patients = require("../models/patients.js"); // Import the model
+const appointment = require("../models/appointments.js"); // Import the model
 const Departments = require("../models/department.js"); // Import the model
 
 // Routes
@@ -11,6 +12,8 @@ router.get("/", staffController.getAllStaffs);
 // router.get("/search", staffController.getStaffById);
 router.get("/:id", async (req, res) => {
   try {
+    var appointment_object = await appointment.find({staff_id : req.params.id}).exec();
+    console.log(appointment_object);
     staffController.getStaffById(req.params.id, (staff) => {
       if (!staff || staff.length === 0) {
         return res.status(404).send("Staff not found");
@@ -20,6 +23,7 @@ router.get("/:id", async (req, res) => {
         res.render("doctor", {
           staff: staff[0],
           patients: patients,
+          appointment_object: appointment_object,
         });
       })
     });
