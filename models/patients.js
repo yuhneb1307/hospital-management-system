@@ -58,6 +58,12 @@ exports.getPatientById = function (id, callback) {
   db.query("SELECT * FROM patients WHERE id = ?", [id], callback);
 };
 
+
+
+exports.getListPatientByIds = function (id, callback) {
+  db.query("SELECT * FROM patients WHERE id IN (?)", [id], callback);
+};
+
 // GET PATIENTS BY DATA ORDER
 exports.getPatientByDataOrder = function (data, order, callback) {
   if (order === "asc") {

@@ -90,7 +90,7 @@ router.get("/:id", async (req, res) => {
       }
 
       if (staff_ids.length > 0) {
-        Staffs.getStaffsById(staff_ids, (err, staffs) => {
+        Staffs.getStaffsByIds(staff_ids, (err, staffs) => {
           if (err) throw err;
 
           departments.getAllDepartments((err, departments) => {

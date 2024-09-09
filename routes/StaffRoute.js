@@ -12,20 +12,36 @@ router.get("/", staffController.getAllStaffs);
 // router.get("/search", staffController.getStaffById);
 router.get("/:id", async (req, res) => {
   try {
-    var appointment_object = await appointment.find({staff_id : req.params.id}).exec();
-    console.log(appointment_object);
+    var appointment_object = await appointment
+      .find({ staff_id: req.params.id })
+      .exec();
+
+    const patient_ids = appointment_object.map((app) => app.patient_id);
+    console.log(patient_ids);
+
+    
+
     staffController.getStaffById(req.params.id, (staff) => {
       if (!staff || staff.length === 0) {
         return res.status(404).send("Staff not found");
       }
-      patients.getPatientByDoctorIDOrder(req.params.id, "doctor_id", "asc", (err, patients) => {
-        console.log(staff);
-        res.render("doctor", {
-          staff: staff[0],
-          patients: patients,
-          appointment_object: appointment_object,
-        });
-      })
+      patients.getPatientByDoctorIDOrder(
+        req.params.id,
+        "doctor_id",
+        "asc",
+        (err, patient_list_doc) => {
+          if (patient_ids.length != 0) {
+            patients.getListPatientByIds(patient_ids, (patients_list) => {
+              console.log(patients_list);
+            });
+          }
+          res.render("doctor", {
+            staff: staff[0],
+            patients: patient_list_doc,
+            appointment_object: appointment_object,
+          });
+        }
+      );
     });
   } catch (error) {
     console.error(error);
@@ -47,7 +63,7 @@ router.post("/login", staffController.checkLogIn);
 //UPDATE
 router.post("/update/:id", (req, res) => {
   staffController.updateStaff(req, res, (staffs) => {
-    res.render("staffs", {staffs});
+    res.render("staffs", { staffs });
   });
 });
 // DELETE
