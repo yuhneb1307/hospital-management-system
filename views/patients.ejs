@@ -15,21 +15,30 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Hospital Management</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-      
           <li class="nav-item">
-            <a class="nav-link active" href="#">Personal information</a>
+            <a class="nav-link" href="javascript:window.history.back()">Persontional Information</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Patient List</a>
+            <a class="nav-link active" href="javascript:location.reload()">Patients List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Appointment List</a>
+            <a class="nav-link" href="http://localhost:3000/staffs">Staff List</a>
+          </li>
+          <li class="nav-item">
+            <button id="logout-btn" class="btn btn-link nav-link">Log Out</button>
           </li>
         </ul>
       </div>

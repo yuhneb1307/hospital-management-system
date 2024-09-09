@@ -12,6 +12,6 @@ Nurse:
 alearoyd0@dropbox.com
 zE1t1E(muU\
 
-                <!-- <% all_staffs.forEach(function(staff){ %>
-                  <option value="<%= staff.id %>" name="id_staff" > <%= staff.first_name %> <%= staff.last_name %></option>
-                <% }) %> -->
+Admin: 
+lbatteson0@scribd.com
+f8v45S2D
