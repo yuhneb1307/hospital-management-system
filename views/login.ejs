@@ -28,9 +28,6 @@
       </nav>
     </header>
     <div class="container login py-5 text-center">
-      <div id="notification" class="alert alert-danger d-none" role="alert">
-        Invalid email or password.
-      </div>
       <form id="loginForm" method="post">
         <div class="mb-3">
           <input
@@ -43,7 +40,7 @@
             type="text"
           />
         </div>
-  
+
         <!-- Input group with password field and toggle button -->
         <div class="mb-3 mx-auto w-25">
           <div class="input-group">
@@ -63,7 +60,7 @@
             </button>
           </div>
         </div>
-  
+
         <div class="mb-3">
           <select class="form-select mx-auto w-auto" name="symbol" id="role">
             <option disabled="" selected="">Role</option>
@@ -75,17 +72,12 @@
         <button id="loginButton" class="btn btn-primary" type="button">
           Log In
         </button>
-        <button
-          id="registerBtn"
-          class="btn btn-secondary"
-          type="button"
-          onclick="window.location.href='http://localhost:3000/register'"
-        >
+        <button id="registerBtn" class="btn btn-secondary" type="button" onclick="window.location.href='http://localhost:3000/register'">
           New Patient
         </button>
       </form>
     </div>
-  
+
     <script>
       function togglePassword() {
         const passwordField = document.getElementById("password");
@@ -101,7 +93,6 @@
         }
       }
     </script>
-    <script src="/js/main.js" crossorigin="anonymous"></script>
+     <script src="/js/main.js" crossorigin="anonymous"></script>
   </body>
-  
 </html>

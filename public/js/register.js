@@ -55,12 +55,12 @@ registerButton.addEventListener("click", (e) => {
     })
     .then((userData) => {
       // Process the newly created user data
-      // if (userData.length == 1) {
-      //   localStorage.setItem(role.value + "Data", JSON.stringify(userData));
-      //   window.location.assign(
-      //     "http://localhost:3000/" + role.value + "/" + userData[0].id
-      //   );
-      // }
+      if (userData.length == 1) {
+        localStorage.setItem(role.value + "Data", JSON.stringify(userData));
+        window.location.assign(
+          "http://localhost:3000/" + role.value + "/" + userData[0].id
+        );
+      }
       console.log(userData);
     })
     .catch((error) => {

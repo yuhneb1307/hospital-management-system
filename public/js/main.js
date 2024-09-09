@@ -5,9 +5,13 @@ let password = document.getElementById("password");
 let loginButton = document.getElementById("loginButton");
 let notification = document.getElementById("notification");
 
+// role.addEventListener("click", (e) => {
+  // notification.classList.add("d-none");
+// });
+
 loginButton.addEventListener("click", (e) => {
   e.preventDefault();
-  
+
   // Hide notification by default
   notification.classList.add("d-none");
 

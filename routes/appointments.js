@@ -29,8 +29,10 @@ router.get("/appointment/count", async (req, res) => {
 
 // POST /appointment-notes
 router.post("/", async (req, res) => {
+  // console.log(req.body);
   try {
     const newNote = new appointments(req.body);
+    console.log(newNote);
     const savedNote = await newNote.save();
     res.status(201).json(savedNote);
   } catch (error) {

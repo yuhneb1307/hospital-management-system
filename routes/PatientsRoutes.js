@@ -212,15 +212,15 @@ router.get("/count/user", patientsController.countPatients);
 // CREATE
 router.post("/", patientsController.createPatient);
 router.post("/login", patientsController.checkLogIn);
-router.post("/create-appoinment/:id", async (req, res) => {
-  try {
-    const newNote = new appointments(req.body);
-    const savedNote = await newNote.save();
-    res.status(201).json(savedNote);
-  } catch (error) {
-    res.status(400).json({ message: "Error adding appointment note", error });
-  }
-});
+// router.post("/create-appoinment/:id", async (req, res) => {
+//   try {
+//     const newNote = new appointments(req.body);
+//     const savedNote = await newNote.save();
+//     res.status(201).json(savedNote);
+//   } catch (error) {
+//     res.status(400).json({ message: "Error adding appointment note", error });
+//   }
+// });
 
 //UPDATE
 router.post("/update/:id", (req, res) => {
