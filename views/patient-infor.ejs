@@ -194,18 +194,13 @@
     <div class="card-body">
       <h5 class="card-title">Upcoming Appointments</h5>
       <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action mb-3">
-          <strong>Date:</strong> 2023-12-10<br />
-          <strong>Doctor:</strong> Dr. John Smith<br />
-          <strong>Department:</strong> General Medicine<br />
-          <strong>Status:</strong> Upcoming
-        </a>
-        <a href="#" class="list-group-item list-group-item-action mb-3">
-          <strong>Date:</strong> 2024-01-15<br />
-          <strong>Doctor:</strong> Dr. Emily Davis<br />
-          <strong>Department:</strong> Cardiology<br />
-          <strong>Status:</strong> Upcoming
-        </a>
+        <% upcoming_appointment.forEach(function(appointment, i){ %>
+          <div href="#" class="list-group-item list-group-item-action mb-3">            
+            <span class="formatted-date" data-dob="<%= appointment.date_of_appointment %>"></span><br />
+            <strong>Observation:</strong>  <%= appointment.observation %><br />
+            <strong>Status:</strong> Upcoming
+          </div>
+          <% }) %>
       </div>
     </div>
   </div>
